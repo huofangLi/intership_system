@@ -1,0 +1,100 @@
+{
+    "name": "GraduationProject",
+    "fields": [
+        {
+            "fieldName": "graduationProjectTitle",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "source",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "taskBook",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "taskBookCheck",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "taskBookReviews",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "openingReport",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "openingReportCheck",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "openingReportReviews",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "midTermInspection",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "midTermInspectionCheck",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "midTermInspectionReviews",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "firstDraft",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "firstDraftCheck",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "firstDraftReviews",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "finalDraft",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "finalDraftCheck",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "finalDraftReviews",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "createdTime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "modifyTime",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "student",
+            "otherEntityRelationshipName": "graduationProject",
+            "relationshipName": "stuId",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200509080901",
+    "javadoc": "毕业设计",
+    "entityTableName": "graduation_project",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

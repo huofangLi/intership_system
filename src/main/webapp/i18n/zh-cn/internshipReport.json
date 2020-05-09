@@ -1,0 +1,31 @@
+{
+  "intershipSystemApp": {
+    "internshipReport": {
+      "home": {
+        "title": "Internship Reports",
+        "createLabel": "创建新 Internship Report",
+        "createOrEditLabel": "创建或编辑 Internship Report",
+        "notFound": "No Internship Report found"
+      },
+      "created": "Internship Report {{ param }} 创建成功",
+      "updated": "Internship Report {{ param }} 更新成功",
+      "deleted": "Internship Report {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Internship Report {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Internship Report"
+      },
+      "reportType": "Report Type",
+      "projectName": "Project Name",
+      "intershipStage": "Intership Stage",
+      "annex": "Annex",
+      "reportContent": "Report Content",
+      "createTime": "Create Time",
+      "star": "Star",
+      "status": "Status",
+      "operating": "Operating",
+      "interId": "Inter Id"
+    }
+  }
+}

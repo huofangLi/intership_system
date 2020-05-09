@@ -1,0 +1,222 @@
+entity Student {
+    stuId Long,
+    gender Boolean,
+    stuClass String,
+    stuDepartment String,
+    stuProfession String,
+    phone String,
+    privince String,
+    privinceCode String,
+    city String,
+    cityCode String,
+    country String,
+    countryCode String,
+    address String,
+    hobby String,
+    skill String,
+    selfEvaluation String,
+    skin String,
+    createdTime ZonedDateTime,
+    modifyTime ZonedDateTime
+}
+
+entity Teacher {
+    teaId Long,
+    teaName String,
+    gender Boolean,
+    teaDepartment String,
+    skin String,
+    createdTime ZonedDateTime,
+    modifyTime ZonedDateTime
+}
+
+entity StuTea {
+    createTime ZonedDateTime
+}
+
+/**我的实习*/
+entity Intership {
+    batchName String,
+    practiceType String,
+    course String,
+    beginIntership ZonedDateTime,
+    endIntership ZonedDateTime,
+    tutorScore Integer,
+    masterScore Integer,
+    intershipScore Integer,
+    companyCreditCode String,
+    companyName String,
+    internship String,
+    companyContactName String,
+    companyContactJob String,
+    companyContactPhone String,
+    masterContactName String,
+    masterContactSkill String,
+    masterContactPhone String,
+    urgentContactName String,
+    urgentContactPhone String,
+    urgentContactAddress String,
+    accommodationType String,
+    accommodationAddress String,
+    companyAddress String,
+    companyDetailAddress String,
+    companyNature String,
+    scale String,
+    industry String,
+    companyProfile String,
+    isInsurance String,
+    insuranceCompanyAndPolicyNumber String,
+    /**是否签订实习协议*/
+    isInternshipAgreement Boolean,
+    annex String,
+    createTime ZonedDateTime,
+    modifyTime ZonedDateTime
+}
+
+/**查看考勤管理：签到记录*/
+entity AttendanceManagement  {
+	signIn ZonedDateTime,
+    /**签到位置*/
+    position String,
+     /**签到坐标*/
+    coordinate String,
+    company String,
+    createdTime ZonedDateTime
+}
+
+/**请假记录*/
+entity Leave {
+	submitTime ZonedDateTime,
+    leaveTime ZonedDateTime,
+    leaveDays Double,
+    company String,
+    leaveReason String,
+    status Boolean,
+    createdTime ZonedDateTime
+}
+
+/**缺勤记录*/
+entity AbsenceRecord {
+	absenceStartTime ZonedDateTime,
+    absenceEndTime ZonedDateTime,
+    absenceDays Double,
+    company String,
+    remarks String,
+    createdTime ZonedDateTime
+}
+
+/**岗位变更记录*/
+entity JobChangeRecords {
+    unitChange String,
+    positionChange String,
+    createTime ZonedDateTime
+}
+
+/**实习报告*/
+entity 	InternshipReport {
+    reportType String,
+    projectName String,
+    intershipStage String,
+    annex String,
+    reportContent String,
+    createTime ZonedDateTime,
+    star String,
+    status String,
+    operating String,
+}
+
+/**实习任务*/
+entity InternshipTask {
+    taskTitle String,
+    founder String,
+    startTime ZonedDateTime,
+    endTime ZonedDateTime,
+    importance String,
+    complexity String,
+    taskAnnex String,
+    star String,
+    status String,
+    operating String,
+    createTime ZonedDateTime
+}
+
+/**毕业设计*/
+entity GraduationProject {
+    graduationProjectTitle String,
+    source String,
+    taskBook String,
+    taskBookCheck Boolean,
+    taskBookReviews String,
+    openingReport String,
+    openingReportCheck Boolean,
+    openingReportReviews String,
+    midTermInspection String,
+    midTermInspectionCheck Boolean,
+    midTermInspectionReviews String,
+    firstDraft String,
+    firstDraftCheck Boolean,
+    firstDraftReviews String,
+    finalDraft String,
+    finalDraftCheck Boolean,
+    finalDraftReviews String,
+    createdTime ZonedDateTime,
+    modifyTime ZonedDateTime
+}
+/**共享中心*/
+entity SharingCenter {
+    fileName String,
+    fileSize String,
+    uploadedBy String,
+    department String,
+    operating String,
+    createdTime ZonedDateTime,
+    modifyTime ZonedDateTime
+}
+
+/**事件管理——考勤记录*/
+entity AttendanceRecord {
+    internshipBatch String,
+    punchTime ZonedDateTime,
+    punchLocation String,
+    attendanceStatus String,
+    createdTime ZonedDateTime,
+    modifyTime ZonedDateTime
+}
+
+/**事件管理——告警事件*/
+entity AlarmEvent {
+    title String,
+    content String,
+    remarks String,
+    createdTime ZonedDateTime
+}
+
+/**我的证书*/
+entity Certificate {
+    certificateName String,
+    certificateType String,
+    certificateLevel String,
+    certificateAcquisitionTime ZonedDateTime,
+    certificatePhoto String,
+    createdTime ZonedDateTime,
+    modifyTime ZonedDateTime
+}
+
+relationship ManyToOne {
+	StuTea{stuId} to Student
+    StuTea{teaId} to Teacher
+    Intership{stuId} to Student
+    InternshipReport{interId} to Intership
+    InternshipTask{interId} to Intership
+    JobChangeRecords{interId} to Intership
+	AttendanceManagement{stuId} to Student
+    Leave{stuId} to Student
+    AbsenceRecord{stuId} to Student
+    AttendanceRecord{stuId} to Student
+    SharingCenter{stuId} to Student
+    AlarmEvent{stuId} to Student
+    GraduationProject{stuId} to Student
+}
+
+paginate all with pagination
+service all with serviceImpl

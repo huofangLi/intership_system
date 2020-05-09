@@ -1,0 +1,49 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="attendanceManagement">
+            <h2><span jhiTranslate="intershipSystemApp.attendanceManagement.detail.title">Attendance Management</span> {{attendanceManagement.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="intershipSystemApp.attendanceManagement.signIn">Sign In</span></dt>
+                <dd>
+                    <span>{{attendanceManagement.signIn}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.attendanceManagement.position" [ngbTooltip]="'intershipSystemApp.attendanceManagement.help.position' | translate">Position</span></dt>
+                <dd>
+                    <span>{{attendanceManagement.position}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.attendanceManagement.coordinate" [ngbTooltip]="'intershipSystemApp.attendanceManagement.help.coordinate' | translate">Coordinate</span></dt>
+                <dd>
+                    <span>{{attendanceManagement.coordinate}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.attendanceManagement.company">Company</span></dt>
+                <dd>
+                    <span>{{attendanceManagement.company}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.attendanceManagement.createdTime">Created Time</span></dt>
+                <dd>
+                    <span>{{attendanceManagement.createdTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.attendanceManagement.stuId">Stu Id</span></dt>
+                <dd>
+                    <div *ngIf="attendanceManagement.stuId">
+                        <a [routerLink]="['/student', attendanceManagement.stuId?.id, 'view']">{{attendanceManagement.stuId?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/attendance-management', attendanceManagement.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

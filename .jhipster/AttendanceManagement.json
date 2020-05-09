@@ -1,0 +1,46 @@
+{
+    "name": "AttendanceManagement",
+    "fields": [
+        {
+            "fieldName": "signIn",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "position",
+            "javadoc": "签到位置",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "coordinate",
+            "javadoc": "签到坐标",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "company",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "createdTime",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "student",
+            "otherEntityRelationshipName": "attendanceManagement",
+            "relationshipName": "stuId",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200509080855",
+    "javadoc": "查看考勤管理：签到记录",
+    "entityTableName": "attendance_management",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

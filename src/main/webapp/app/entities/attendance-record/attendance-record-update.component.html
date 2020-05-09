@@ -1,0 +1,64 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-attendance-record-heading" jhiTranslate="intershipSystemApp.attendanceRecord.home.createOrEditLabel">Create or edit a Attendance Record</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.attendanceRecord.internshipBatch" for="field_internshipBatch">Internship Batch</label>
+                    <input type="text" class="form-control" name="internshipBatch" id="field_internshipBatch"
+                           formControlName="internshipBatch"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.attendanceRecord.punchTime" for="field_punchTime">Punch Time</label>
+                    <div class="d-flex">
+                        <input id="field_punchTime" type="datetime-local" class="form-control" name="punchTime" formControlName="punchTime" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.attendanceRecord.punchLocation" for="field_punchLocation">Punch Location</label>
+                    <input type="text" class="form-control" name="punchLocation" id="field_punchLocation"
+                           formControlName="punchLocation"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.attendanceRecord.attendanceStatus" for="field_attendanceStatus">Attendance Status</label>
+                    <input type="text" class="form-control" name="attendanceStatus" id="field_attendanceStatus"
+                           formControlName="attendanceStatus"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.attendanceRecord.createdTime" for="field_createdTime">Created Time</label>
+                    <div class="d-flex">
+                        <input id="field_createdTime" type="datetime-local" class="form-control" name="createdTime" formControlName="createdTime" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.attendanceRecord.modifyTime" for="field_modifyTime">Modify Time</label>
+                    <div class="d-flex">
+                        <input id="field_modifyTime" type="datetime-local" class="form-control" name="modifyTime" formControlName="modifyTime" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.attendanceRecord.stuId" for="field_stuId">Stu Id</label>
+                    <select class="form-control" id="field_stuId" name="stuId" formControlName="stuId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="studentOption.id === editForm.get('stuId').value?.id ? editForm.get('stuId').value : studentOption" *ngFor="let studentOption of students; trackBy: trackStudentById">{{studentOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

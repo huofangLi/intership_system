@@ -1,0 +1,101 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="intershipSystemApp.student.home.title">Students</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-student" [routerLink]="['/student/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="intershipSystemApp.student.home.createLabel">
+            Create new Student
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="students?.length === 0">
+        <span jhiTranslate="intershipSystemApp.student.home.notFound">No students found</span>
+    </div>
+    <div class="table-responsive" *ngIf="students?.length > 0">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="stuId"><span jhiTranslate="intershipSystemApp.student.stuId">Stu Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="gender"><span jhiTranslate="intershipSystemApp.student.gender">Gender</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="stuClass"><span jhiTranslate="intershipSystemApp.student.stuClass">Stu Class</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="stuDepartment"><span jhiTranslate="intershipSystemApp.student.stuDepartment">Stu Department</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="stuProfession"><span jhiTranslate="intershipSystemApp.student.stuProfession">Stu Profession</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="phone"><span jhiTranslate="intershipSystemApp.student.phone">Phone</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="privince"><span jhiTranslate="intershipSystemApp.student.privince">Privince</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="privinceCode"><span jhiTranslate="intershipSystemApp.student.privinceCode">Privince Code</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="city"><span jhiTranslate="intershipSystemApp.student.city">City</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="cityCode"><span jhiTranslate="intershipSystemApp.student.cityCode">City Code</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="country"><span jhiTranslate="intershipSystemApp.student.country">Country</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="countryCode"><span jhiTranslate="intershipSystemApp.student.countryCode">Country Code</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="address"><span jhiTranslate="intershipSystemApp.student.address">Address</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="hobby"><span jhiTranslate="intershipSystemApp.student.hobby">Hobby</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="skill"><span jhiTranslate="intershipSystemApp.student.skill">Skill</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="selfEvaluation"><span jhiTranslate="intershipSystemApp.student.selfEvaluation">Self Evaluation</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="skin"><span jhiTranslate="intershipSystemApp.student.skin">Skin</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="createdTime"><span jhiTranslate="intershipSystemApp.student.createdTime">Created Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifyTime"><span jhiTranslate="intershipSystemApp.student.modifyTime">Modify Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let student of students ;trackBy: trackId">
+                <td><a [routerLink]="['/student', student.id, 'view' ]">{{student.id}}</a></td>
+                <td>{{student.stuId}}</td>
+                <td>{{student.gender}}</td>
+                <td>{{student.stuClass}}</td>
+                <td>{{student.stuDepartment}}</td>
+                <td>{{student.stuProfession}}</td>
+                <td>{{student.phone}}</td>
+                <td>{{student.privince}}</td>
+                <td>{{student.privinceCode}}</td>
+                <td>{{student.city}}</td>
+                <td>{{student.cityCode}}</td>
+                <td>{{student.country}}</td>
+                <td>{{student.countryCode}}</td>
+                <td>{{student.address}}</td>
+                <td>{{student.hobby}}</td>
+                <td>{{student.skill}}</td>
+                <td>{{student.selfEvaluation}}</td>
+                <td>{{student.skin}}</td>
+                <td>{{student.createdTime | date:'medium'}}</td>
+                <td>{{student.modifyTime | date:'medium'}}</td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/student', student.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/student', student.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'student', { outlets: { popup: student.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div [hidden]="students?.length === 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

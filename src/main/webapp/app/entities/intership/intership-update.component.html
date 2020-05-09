@@ -1,0 +1,205 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-intership-heading" jhiTranslate="intershipSystemApp.intership.home.createOrEditLabel">Create or edit a Intership</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.intership.batchName" for="field_batchName">Batch Name</label>
+                    <input type="text" class="form-control" name="batchName" id="field_batchName"
+                           formControlName="batchName"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.intership.practiceType" for="field_practiceType">Practice Type</label>
+                    <input type="text" class="form-control" name="practiceType" id="field_practiceType"
+                           formControlName="practiceType"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.intership.course" for="field_course">Course</label>
+                    <input type="text" class="form-control" name="course" id="field_course"
+                           formControlName="course"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.intership.beginIntership" for="field_beginIntership">Begin Intership</label>
+                    <div class="d-flex">
+                        <input id="field_beginIntership" type="datetime-local" class="form-control" name="beginIntership" formControlName="beginIntership" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.intership.endIntership" for="field_endIntership">End Intership</label>
+                    <div class="d-flex">
+                        <input id="field_endIntership" type="datetime-local" class="form-control" name="endIntership" formControlName="endIntership" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.intership.tutorScore" for="field_tutorScore">Tutor Score</label>
+                    <input type="number" class="form-control" name="tutorScore" id="field_tutorScore"
+                           formControlName="tutorScore"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.intership.masterScore" for="field_masterScore">Master Score</label>
+                    <input type="number" class="form-control" name="masterScore" id="field_masterScore"
+                           formControlName="masterScore"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.intership.intershipScore" for="field_intershipScore">Intership Score</label>
+                    <input type="number" class="form-control" name="intershipScore" id="field_intershipScore"
+                           formControlName="intershipScore"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.intership.companyCreditCode" for="field_companyCreditCode">Company Credit Code</label>
+                    <input type="text" class="form-control" name="companyCreditCode" id="field_companyCreditCode"
+                           formControlName="companyCreditCode"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.intership.companyName" for="field_companyName">Company Name</label>
+                    <input type="text" class="form-control" name="companyName" id="field_companyName"
+                           formControlName="companyName"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.intership.internship" for="field_internship">Internship</label>
+                    <input type="text" class="form-control" name="internship" id="field_internship"
+                           formControlName="internship"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.intership.companyContactName" for="field_companyContactName">Company Contact Name</label>
+                    <input type="text" class="form-control" name="companyContactName" id="field_companyContactName"
+                           formControlName="companyContactName"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.intership.companyContactJob" for="field_companyContactJob">Company Contact Job</label>
+                    <input type="text" class="form-control" name="companyContactJob" id="field_companyContactJob"
+                           formControlName="companyContactJob"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.intership.companyContactPhone" for="field_companyContactPhone">Company Contact Phone</label>
+                    <input type="text" class="form-control" name="companyContactPhone" id="field_companyContactPhone"
+                           formControlName="companyContactPhone"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.intership.masterContactName" for="field_masterContactName">Master Contact Name</label>
+                    <input type="text" class="form-control" name="masterContactName" id="field_masterContactName"
+                           formControlName="masterContactName"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.intership.masterContactSkill" for="field_masterContactSkill">Master Contact Skill</label>
+                    <input type="text" class="form-control" name="masterContactSkill" id="field_masterContactSkill"
+                           formControlName="masterContactSkill"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.intership.masterContactPhone" for="field_masterContactPhone">Master Contact Phone</label>
+                    <input type="text" class="form-control" name="masterContactPhone" id="field_masterContactPhone"
+                           formControlName="masterContactPhone"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.intership.urgentContactName" for="field_urgentContactName">Urgent Contact Name</label>
+                    <input type="text" class="form-control" name="urgentContactName" id="field_urgentContactName"
+                           formControlName="urgentContactName"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.intership.urgentContactPhone" for="field_urgentContactPhone">Urgent Contact Phone</label>
+                    <input type="text" class="form-control" name="urgentContactPhone" id="field_urgentContactPhone"
+                           formControlName="urgentContactPhone"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.intership.urgentContactAddress" for="field_urgentContactAddress">Urgent Contact Address</label>
+                    <input type="text" class="form-control" name="urgentContactAddress" id="field_urgentContactAddress"
+                           formControlName="urgentContactAddress"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.intership.accommodationType" for="field_accommodationType">Accommodation Type</label>
+                    <input type="text" class="form-control" name="accommodationType" id="field_accommodationType"
+                           formControlName="accommodationType"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.intership.accommodationAddress" for="field_accommodationAddress">Accommodation Address</label>
+                    <input type="text" class="form-control" name="accommodationAddress" id="field_accommodationAddress"
+                           formControlName="accommodationAddress"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.intership.companyAddress" for="field_companyAddress">Company Address</label>
+                    <input type="text" class="form-control" name="companyAddress" id="field_companyAddress"
+                           formControlName="companyAddress"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.intership.companyDetailAddress" for="field_companyDetailAddress">Company Detail Address</label>
+                    <input type="text" class="form-control" name="companyDetailAddress" id="field_companyDetailAddress"
+                           formControlName="companyDetailAddress"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.intership.companyNature" for="field_companyNature">Company Nature</label>
+                    <input type="text" class="form-control" name="companyNature" id="field_companyNature"
+                           formControlName="companyNature"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.intership.scale" for="field_scale">Scale</label>
+                    <input type="text" class="form-control" name="scale" id="field_scale"
+                           formControlName="scale"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.intership.industry" for="field_industry">Industry</label>
+                    <input type="text" class="form-control" name="industry" id="field_industry"
+                           formControlName="industry"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.intership.companyProfile" for="field_companyProfile">Company Profile</label>
+                    <input type="text" class="form-control" name="companyProfile" id="field_companyProfile"
+                           formControlName="companyProfile"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.intership.isInsurance" for="field_isInsurance">Is Insurance</label>
+                    <input type="text" class="form-control" name="isInsurance" id="field_isInsurance"
+                           formControlName="isInsurance"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.intership.insuranceCompanyAndPolicyNumber" for="field_insuranceCompanyAndPolicyNumber">Insurance Company And Policy Number</label>
+                    <input type="text" class="form-control" name="insuranceCompanyAndPolicyNumber" id="field_insuranceCompanyAndPolicyNumber"
+                           formControlName="insuranceCompanyAndPolicyNumber"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.intership.isInternshipAgreement" for="field_isInternshipAgreement" [ngbTooltip]="'intershipSystemApp.intership.help.isInternshipAgreement' | translate">Is Internship Agreement</label>
+                    <input type="checkbox" class="form-control" name="isInternshipAgreement" id="field_isInternshipAgreement"
+                           formControlName="isInternshipAgreement"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.intership.annex" for="field_annex">Annex</label>
+                    <input type="text" class="form-control" name="annex" id="field_annex"
+                           formControlName="annex"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.intership.createTime" for="field_createTime">Create Time</label>
+                    <div class="d-flex">
+                        <input id="field_createTime" type="datetime-local" class="form-control" name="createTime" formControlName="createTime" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.intership.modifyTime" for="field_modifyTime">Modify Time</label>
+                    <div class="d-flex">
+                        <input id="field_modifyTime" type="datetime-local" class="form-control" name="modifyTime" formControlName="modifyTime" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.intership.stuId" for="field_stuId">Stu Id</label>
+                    <select class="form-control" id="field_stuId" name="stuId" formControlName="stuId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="studentOption.id === editForm.get('stuId').value?.id ? editForm.get('stuId').value : studentOption" *ngFor="let studentOption of students; trackBy: trackStudentById">{{studentOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

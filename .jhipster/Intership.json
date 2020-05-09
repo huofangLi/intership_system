@@ -1,0 +1,161 @@
+{
+    "name": "Intership",
+    "fields": [
+        {
+            "fieldName": "batchName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "practiceType",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "course",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "beginIntership",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "endIntership",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "tutorScore",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "masterScore",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "intershipScore",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "companyCreditCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "companyName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "internship",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "companyContactName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "companyContactJob",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "companyContactPhone",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "masterContactName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "masterContactSkill",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "masterContactPhone",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "urgentContactName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "urgentContactPhone",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "urgentContactAddress",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "accommodationType",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "accommodationAddress",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "companyAddress",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "companyDetailAddress",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "companyNature",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "scale",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "industry",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "companyProfile",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "isInsurance",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "insuranceCompanyAndPolicyNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "isInternshipAgreement",
+            "javadoc": "是否签订实习协议",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "annex",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "createTime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "modifyTime",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "student",
+            "otherEntityRelationshipName": "intership",
+            "relationshipName": "stuId",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200509080854",
+    "javadoc": "我的实习",
+    "entityTableName": "intership",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

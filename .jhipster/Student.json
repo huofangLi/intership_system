@@ -1,0 +1,91 @@
+{
+    "name": "Student",
+    "fields": [
+        {
+            "fieldName": "stuId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "gender",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "stuClass",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "stuDepartment",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "stuProfession",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "phone",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "privince",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "privinceCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "city",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "cityCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "country",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "countryCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "address",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "hobby",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "skill",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "selfEvaluation",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "skin",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "createdTime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "modifyTime",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20200509080851",
+    "entityTableName": "student",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

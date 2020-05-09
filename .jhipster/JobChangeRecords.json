@@ -1,0 +1,36 @@
+{
+    "name": "JobChangeRecords",
+    "fields": [
+        {
+            "fieldName": "unitChange",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "positionChange",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "createTime",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "intership",
+            "otherEntityRelationshipName": "jobChangeRecords",
+            "relationshipName": "interId",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200509080858",
+    "javadoc": "岗位变更记录",
+    "entityTableName": "job_change_records",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

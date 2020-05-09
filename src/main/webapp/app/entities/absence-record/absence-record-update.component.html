@@ -1,0 +1,64 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-absence-record-heading" jhiTranslate="intershipSystemApp.absenceRecord.home.createOrEditLabel">Create or edit a Absence Record</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.absenceRecord.absenceStartTime" for="field_absenceStartTime">Absence Start Time</label>
+                    <div class="d-flex">
+                        <input id="field_absenceStartTime" type="datetime-local" class="form-control" name="absenceStartTime" formControlName="absenceStartTime" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.absenceRecord.absenceEndTime" for="field_absenceEndTime">Absence End Time</label>
+                    <div class="d-flex">
+                        <input id="field_absenceEndTime" type="datetime-local" class="form-control" name="absenceEndTime" formControlName="absenceEndTime" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.absenceRecord.absenceDays" for="field_absenceDays">Absence Days</label>
+                    <input type="number" class="form-control" name="absenceDays" id="field_absenceDays"
+                           formControlName="absenceDays"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.absenceRecord.company" for="field_company">Company</label>
+                    <input type="text" class="form-control" name="company" id="field_company"
+                           formControlName="company"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.absenceRecord.remarks" for="field_remarks">Remarks</label>
+                    <input type="text" class="form-control" name="remarks" id="field_remarks"
+                           formControlName="remarks"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.absenceRecord.createdTime" for="field_createdTime">Created Time</label>
+                    <div class="d-flex">
+                        <input id="field_createdTime" type="datetime-local" class="form-control" name="createdTime" formControlName="createdTime" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.absenceRecord.stuId" for="field_stuId">Stu Id</label>
+                    <select class="form-control" id="field_stuId" name="stuId" formControlName="stuId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="studentOption.id === editForm.get('stuId').value?.id ? editForm.get('stuId').value : studentOption" *ngFor="let studentOption of students; trackBy: trackStudentById">{{studentOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

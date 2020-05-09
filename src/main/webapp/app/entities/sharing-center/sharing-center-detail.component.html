@@ -1,0 +1,57 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="sharingCenter">
+            <h2><span jhiTranslate="intershipSystemApp.sharingCenter.detail.title">Sharing Center</span> {{sharingCenter.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="intershipSystemApp.sharingCenter.fileName">File Name</span></dt>
+                <dd>
+                    <span>{{sharingCenter.fileName}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.sharingCenter.fileSize">File Size</span></dt>
+                <dd>
+                    <span>{{sharingCenter.fileSize}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.sharingCenter.uploadedBy">Uploaded By</span></dt>
+                <dd>
+                    <span>{{sharingCenter.uploadedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.sharingCenter.department">Department</span></dt>
+                <dd>
+                    <span>{{sharingCenter.department}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.sharingCenter.operating">Operating</span></dt>
+                <dd>
+                    <span>{{sharingCenter.operating}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.sharingCenter.createdTime">Created Time</span></dt>
+                <dd>
+                    <span>{{sharingCenter.createdTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.sharingCenter.modifyTime">Modify Time</span></dt>
+                <dd>
+                    <span>{{sharingCenter.modifyTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.sharingCenter.stuId">Stu Id</span></dt>
+                <dd>
+                    <div *ngIf="sharingCenter.stuId">
+                        <a [routerLink]="['/student', sharingCenter.stuId?.id, 'view']">{{sharingCenter.stuId?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/sharing-center', sharingCenter.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

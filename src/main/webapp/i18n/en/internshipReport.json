@@ -1,0 +1,31 @@
+{
+  "intershipSystemApp": {
+    "internshipReport": {
+      "home": {
+        "title": "Internship Reports",
+        "createLabel": "Create a new Internship Report",
+        "createOrEditLabel": "Create or edit a Internship Report",
+        "notFound": "No Internship Report found"
+      },
+      "created": "A new Internship Report is created with identifier {{ param }}",
+      "updated": "A Internship Report is updated with identifier {{ param }}",
+      "deleted": "A Internship Report is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Internship Report {{ id }}?"
+      },
+      "detail": {
+        "title": "Internship Report"
+      },
+      "reportType": "Report Type",
+      "projectName": "Project Name",
+      "intershipStage": "Intership Stage",
+      "annex": "Annex",
+      "reportContent": "Report Content",
+      "createTime": "Create Time",
+      "star": "Star",
+      "status": "Status",
+      "operating": "Operating",
+      "interId": "Inter Id"
+    }
+  }
+}

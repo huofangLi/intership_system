@@ -1,0 +1,41 @@
+{
+  "intershipSystemApp": {
+    "graduationProject": {
+      "home": {
+        "title": "Graduation Projects",
+        "createLabel": "创建新 Graduation Project",
+        "createOrEditLabel": "创建或编辑 Graduation Project",
+        "notFound": "No Graduation Project found"
+      },
+      "created": "Graduation Project {{ param }} 创建成功",
+      "updated": "Graduation Project {{ param }} 更新成功",
+      "deleted": "Graduation Project {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Graduation Project {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Graduation Project"
+      },
+      "graduationProjectTitle": "Graduation Project Title",
+      "source": "Source",
+      "taskBook": "Task Book",
+      "taskBookCheck": "Task Book Check",
+      "taskBookReviews": "Task Book Reviews",
+      "openingReport": "Opening Report",
+      "openingReportCheck": "Opening Report Check",
+      "openingReportReviews": "Opening Report Reviews",
+      "midTermInspection": "Mid Term Inspection",
+      "midTermInspectionCheck": "Mid Term Inspection Check",
+      "midTermInspectionReviews": "Mid Term Inspection Reviews",
+      "firstDraft": "First Draft",
+      "firstDraftCheck": "First Draft Check",
+      "firstDraftReviews": "First Draft Reviews",
+      "finalDraft": "Final Draft",
+      "finalDraftCheck": "Final Draft Check",
+      "finalDraftReviews": "Final Draft Reviews",
+      "createdTime": "Created Time",
+      "modifyTime": "Modify Time",
+      "stuId": "Stu Id"
+    }
+  }
+}

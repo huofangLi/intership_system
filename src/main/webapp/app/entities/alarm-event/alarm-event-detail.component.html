@@ -1,0 +1,45 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="alarmEvent">
+            <h2><span jhiTranslate="intershipSystemApp.alarmEvent.detail.title">Alarm Event</span> {{alarmEvent.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="intershipSystemApp.alarmEvent.title">Title</span></dt>
+                <dd>
+                    <span>{{alarmEvent.title}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.alarmEvent.content">Content</span></dt>
+                <dd>
+                    <span>{{alarmEvent.content}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.alarmEvent.remarks">Remarks</span></dt>
+                <dd>
+                    <span>{{alarmEvent.remarks}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.alarmEvent.createdTime">Created Time</span></dt>
+                <dd>
+                    <span>{{alarmEvent.createdTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.alarmEvent.stuId">Stu Id</span></dt>
+                <dd>
+                    <div *ngIf="alarmEvent.stuId">
+                        <a [routerLink]="['/student', alarmEvent.stuId?.id, 'view']">{{alarmEvent.stuId?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/alarm-event', alarmEvent.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

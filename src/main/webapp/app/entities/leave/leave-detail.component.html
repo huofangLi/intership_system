@@ -1,0 +1,57 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="leave">
+            <h2><span jhiTranslate="intershipSystemApp.leave.detail.title">Leave</span> {{leave.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="intershipSystemApp.leave.submitTime">Submit Time</span></dt>
+                <dd>
+                    <span>{{leave.submitTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.leave.leaveTime">Leave Time</span></dt>
+                <dd>
+                    <span>{{leave.leaveTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.leave.leaveDays">Leave Days</span></dt>
+                <dd>
+                    <span>{{leave.leaveDays}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.leave.company">Company</span></dt>
+                <dd>
+                    <span>{{leave.company}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.leave.leaveReason">Leave Reason</span></dt>
+                <dd>
+                    <span>{{leave.leaveReason}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.leave.status">Status</span></dt>
+                <dd>
+                    <span>{{leave.status}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.leave.createdTime">Created Time</span></dt>
+                <dd>
+                    <span>{{leave.createdTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.leave.stuId">Stu Id</span></dt>
+                <dd>
+                    <div *ngIf="leave.stuId">
+                        <a [routerLink]="['/student', leave.stuId?.id, 'view']">{{leave.stuId?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/leave', leave.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+{
+  "intershipSystemApp": {
+    "absenceRecord": {
+      "home": {
+        "title": "Absence Records",
+        "createLabel": "创建新 Absence Record",
+        "createOrEditLabel": "创建或编辑 Absence Record",
+        "notFound": "No Absence Record found"
+      },
+      "created": "Absence Record {{ param }} 创建成功",
+      "updated": "Absence Record {{ param }} 更新成功",
+      "deleted": "Absence Record {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Absence Record {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Absence Record"
+      },
+      "absenceStartTime": "Absence Start Time",
+      "absenceEndTime": "Absence End Time",
+      "absenceDays": "Absence Days",
+      "company": "Company",
+      "remarks": "Remarks",
+      "createdTime": "Created Time",
+      "stuId": "Stu Id"
+    }
+  }
+}

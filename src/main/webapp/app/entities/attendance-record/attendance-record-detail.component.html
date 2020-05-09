@@ -1,0 +1,53 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="attendanceRecord">
+            <h2><span jhiTranslate="intershipSystemApp.attendanceRecord.detail.title">Attendance Record</span> {{attendanceRecord.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="intershipSystemApp.attendanceRecord.internshipBatch">Internship Batch</span></dt>
+                <dd>
+                    <span>{{attendanceRecord.internshipBatch}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.attendanceRecord.punchTime">Punch Time</span></dt>
+                <dd>
+                    <span>{{attendanceRecord.punchTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.attendanceRecord.punchLocation">Punch Location</span></dt>
+                <dd>
+                    <span>{{attendanceRecord.punchLocation}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.attendanceRecord.attendanceStatus">Attendance Status</span></dt>
+                <dd>
+                    <span>{{attendanceRecord.attendanceStatus}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.attendanceRecord.createdTime">Created Time</span></dt>
+                <dd>
+                    <span>{{attendanceRecord.createdTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.attendanceRecord.modifyTime">Modify Time</span></dt>
+                <dd>
+                    <span>{{attendanceRecord.modifyTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.attendanceRecord.stuId">Stu Id</span></dt>
+                <dd>
+                    <div *ngIf="attendanceRecord.stuId">
+                        <a [routerLink]="['/student', attendanceRecord.stuId?.id, 'view']">{{attendanceRecord.stuId?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/attendance-record', attendanceRecord.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

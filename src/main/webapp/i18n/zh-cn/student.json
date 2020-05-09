@@ -1,0 +1,40 @@
+{
+  "intershipSystemApp": {
+    "student": {
+      "home": {
+        "title": "Students",
+        "createLabel": "创建新 Student",
+        "createOrEditLabel": "创建或编辑 Student",
+        "notFound": "No Student found"
+      },
+      "created": "Student {{ param }} 创建成功",
+      "updated": "Student {{ param }} 更新成功",
+      "deleted": "Student {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Student {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Student"
+      },
+      "stuId": "Stu Id",
+      "gender": "Gender",
+      "stuClass": "Stu Class",
+      "stuDepartment": "Stu Department",
+      "stuProfession": "Stu Profession",
+      "phone": "Phone",
+      "privince": "Privince",
+      "privinceCode": "Privince Code",
+      "city": "City",
+      "cityCode": "City Code",
+      "country": "Country",
+      "countryCode": "Country Code",
+      "address": "Address",
+      "hobby": "Hobby",
+      "skill": "Skill",
+      "selfEvaluation": "Self Evaluation",
+      "skin": "Skin",
+      "createdTime": "Created Time",
+      "modifyTime": "Modify Time"
+    }
+  }
+}

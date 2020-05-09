@@ -1,0 +1,73 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="internshipTask">
+            <h2><span jhiTranslate="intershipSystemApp.internshipTask.detail.title">Internship Task</span> {{internshipTask.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="intershipSystemApp.internshipTask.taskTitle">Task Title</span></dt>
+                <dd>
+                    <span>{{internshipTask.taskTitle}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.internshipTask.founder">Founder</span></dt>
+                <dd>
+                    <span>{{internshipTask.founder}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.internshipTask.startTime">Start Time</span></dt>
+                <dd>
+                    <span>{{internshipTask.startTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.internshipTask.endTime">End Time</span></dt>
+                <dd>
+                    <span>{{internshipTask.endTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.internshipTask.importance">Importance</span></dt>
+                <dd>
+                    <span>{{internshipTask.importance}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.internshipTask.complexity">Complexity</span></dt>
+                <dd>
+                    <span>{{internshipTask.complexity}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.internshipTask.taskAnnex">Task Annex</span></dt>
+                <dd>
+                    <span>{{internshipTask.taskAnnex}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.internshipTask.star">Star</span></dt>
+                <dd>
+                    <span>{{internshipTask.star}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.internshipTask.status">Status</span></dt>
+                <dd>
+                    <span>{{internshipTask.status}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.internshipTask.operating">Operating</span></dt>
+                <dd>
+                    <span>{{internshipTask.operating}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.internshipTask.createTime">Create Time</span></dt>
+                <dd>
+                    <span>{{internshipTask.createTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.internshipTask.interId">Inter Id</span></dt>
+                <dd>
+                    <div *ngIf="internshipTask.interId">
+                        <a [routerLink]="['/intership', internshipTask.interId?.id, 'view']">{{internshipTask.interId?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/internship-task', internshipTask.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

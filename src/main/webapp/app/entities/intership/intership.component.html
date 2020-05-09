@@ -1,0 +1,137 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="intershipSystemApp.intership.home.title">Interships</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-intership" [routerLink]="['/intership/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="intershipSystemApp.intership.home.createLabel">
+            Create new Intership
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="interships?.length === 0">
+        <span jhiTranslate="intershipSystemApp.intership.home.notFound">No interships found</span>
+    </div>
+    <div class="table-responsive" *ngIf="interships?.length > 0">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="batchName"><span jhiTranslate="intershipSystemApp.intership.batchName">Batch Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="practiceType"><span jhiTranslate="intershipSystemApp.intership.practiceType">Practice Type</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="course"><span jhiTranslate="intershipSystemApp.intership.course">Course</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="beginIntership"><span jhiTranslate="intershipSystemApp.intership.beginIntership">Begin Intership</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="endIntership"><span jhiTranslate="intershipSystemApp.intership.endIntership">End Intership</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="tutorScore"><span jhiTranslate="intershipSystemApp.intership.tutorScore">Tutor Score</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="masterScore"><span jhiTranslate="intershipSystemApp.intership.masterScore">Master Score</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="intershipScore"><span jhiTranslate="intershipSystemApp.intership.intershipScore">Intership Score</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="companyCreditCode"><span jhiTranslate="intershipSystemApp.intership.companyCreditCode">Company Credit Code</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="companyName"><span jhiTranslate="intershipSystemApp.intership.companyName">Company Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="internship"><span jhiTranslate="intershipSystemApp.intership.internship">Internship</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="companyContactName"><span jhiTranslate="intershipSystemApp.intership.companyContactName">Company Contact Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="companyContactJob"><span jhiTranslate="intershipSystemApp.intership.companyContactJob">Company Contact Job</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="companyContactPhone"><span jhiTranslate="intershipSystemApp.intership.companyContactPhone">Company Contact Phone</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="masterContactName"><span jhiTranslate="intershipSystemApp.intership.masterContactName">Master Contact Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="masterContactSkill"><span jhiTranslate="intershipSystemApp.intership.masterContactSkill">Master Contact Skill</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="masterContactPhone"><span jhiTranslate="intershipSystemApp.intership.masterContactPhone">Master Contact Phone</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="urgentContactName"><span jhiTranslate="intershipSystemApp.intership.urgentContactName">Urgent Contact Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="urgentContactPhone"><span jhiTranslate="intershipSystemApp.intership.urgentContactPhone">Urgent Contact Phone</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="urgentContactAddress"><span jhiTranslate="intershipSystemApp.intership.urgentContactAddress">Urgent Contact Address</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="accommodationType"><span jhiTranslate="intershipSystemApp.intership.accommodationType">Accommodation Type</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="accommodationAddress"><span jhiTranslate="intershipSystemApp.intership.accommodationAddress">Accommodation Address</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="companyAddress"><span jhiTranslate="intershipSystemApp.intership.companyAddress">Company Address</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="companyDetailAddress"><span jhiTranslate="intershipSystemApp.intership.companyDetailAddress">Company Detail Address</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="companyNature"><span jhiTranslate="intershipSystemApp.intership.companyNature">Company Nature</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="scale"><span jhiTranslate="intershipSystemApp.intership.scale">Scale</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="industry"><span jhiTranslate="intershipSystemApp.intership.industry">Industry</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="companyProfile"><span jhiTranslate="intershipSystemApp.intership.companyProfile">Company Profile</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="isInsurance"><span jhiTranslate="intershipSystemApp.intership.isInsurance">Is Insurance</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="insuranceCompanyAndPolicyNumber"><span jhiTranslate="intershipSystemApp.intership.insuranceCompanyAndPolicyNumber">Insurance Company And Policy Number</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="isInternshipAgreement"><span jhiTranslate="intershipSystemApp.intership.isInternshipAgreement">Is Internship Agreement</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="annex"><span jhiTranslate="intershipSystemApp.intership.annex">Annex</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="createTime"><span jhiTranslate="intershipSystemApp.intership.createTime">Create Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifyTime"><span jhiTranslate="intershipSystemApp.intership.modifyTime">Modify Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="stuId.id"><span jhiTranslate="intershipSystemApp.intership.stuId">Stu Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let intership of interships ;trackBy: trackId">
+                <td><a [routerLink]="['/intership', intership.id, 'view' ]">{{intership.id}}</a></td>
+                <td>{{intership.batchName}}</td>
+                <td>{{intership.practiceType}}</td>
+                <td>{{intership.course}}</td>
+                <td>{{intership.beginIntership | date:'medium'}}</td>
+                <td>{{intership.endIntership | date:'medium'}}</td>
+                <td>{{intership.tutorScore}}</td>
+                <td>{{intership.masterScore}}</td>
+                <td>{{intership.intershipScore}}</td>
+                <td>{{intership.companyCreditCode}}</td>
+                <td>{{intership.companyName}}</td>
+                <td>{{intership.internship}}</td>
+                <td>{{intership.companyContactName}}</td>
+                <td>{{intership.companyContactJob}}</td>
+                <td>{{intership.companyContactPhone}}</td>
+                <td>{{intership.masterContactName}}</td>
+                <td>{{intership.masterContactSkill}}</td>
+                <td>{{intership.masterContactPhone}}</td>
+                <td>{{intership.urgentContactName}}</td>
+                <td>{{intership.urgentContactPhone}}</td>
+                <td>{{intership.urgentContactAddress}}</td>
+                <td>{{intership.accommodationType}}</td>
+                <td>{{intership.accommodationAddress}}</td>
+                <td>{{intership.companyAddress}}</td>
+                <td>{{intership.companyDetailAddress}}</td>
+                <td>{{intership.companyNature}}</td>
+                <td>{{intership.scale}}</td>
+                <td>{{intership.industry}}</td>
+                <td>{{intership.companyProfile}}</td>
+                <td>{{intership.isInsurance}}</td>
+                <td>{{intership.insuranceCompanyAndPolicyNumber}}</td>
+                <td>{{intership.isInternshipAgreement}}</td>
+                <td>{{intership.annex}}</td>
+                <td>{{intership.createTime | date:'medium'}}</td>
+                <td>{{intership.modifyTime | date:'medium'}}</td>
+                <td>
+                    <div *ngIf="intership.stuId">
+                        <a [routerLink]="['../student', intership.stuId?.id, 'view' ]" >{{intership.stuId?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/intership', intership.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/intership', intership.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'intership', { outlets: { popup: intership.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div [hidden]="interships?.length === 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

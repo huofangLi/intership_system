@@ -1,0 +1,34 @@
+{
+    "name": "StuTea",
+    "fields": [
+        {
+            "fieldName": "createTime",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "student",
+            "otherEntityRelationshipName": "stuTea",
+            "relationshipName": "stuId",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "teacher",
+            "otherEntityRelationshipName": "stuTea",
+            "relationshipName": "teaId",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200509080853",
+    "entityTableName": "stu_tea",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,53 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="absenceRecord">
+            <h2><span jhiTranslate="intershipSystemApp.absenceRecord.detail.title">Absence Record</span> {{absenceRecord.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="intershipSystemApp.absenceRecord.absenceStartTime">Absence Start Time</span></dt>
+                <dd>
+                    <span>{{absenceRecord.absenceStartTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.absenceRecord.absenceEndTime">Absence End Time</span></dt>
+                <dd>
+                    <span>{{absenceRecord.absenceEndTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.absenceRecord.absenceDays">Absence Days</span></dt>
+                <dd>
+                    <span>{{absenceRecord.absenceDays}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.absenceRecord.company">Company</span></dt>
+                <dd>
+                    <span>{{absenceRecord.company}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.absenceRecord.remarks">Remarks</span></dt>
+                <dd>
+                    <span>{{absenceRecord.remarks}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.absenceRecord.createdTime">Created Time</span></dt>
+                <dd>
+                    <span>{{absenceRecord.createdTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.absenceRecord.stuId">Stu Id</span></dt>
+                <dd>
+                    <div *ngIf="absenceRecord.stuId">
+                        <a [routerLink]="['/student', absenceRecord.stuId?.id, 'view']">{{absenceRecord.stuId?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/absence-record', absenceRecord.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

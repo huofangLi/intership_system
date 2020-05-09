@@ -1,0 +1,44 @@
+{
+    "name": "Certificate",
+    "fields": [
+        {
+            "fieldName": "certificateName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "certificateType",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "certificateLevel",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "certificateAcquisitionTime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "certificatePhoto",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "createdTime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "modifyTime",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20200509080905",
+    "javadoc": "我的证书",
+    "entityTableName": "certificate",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

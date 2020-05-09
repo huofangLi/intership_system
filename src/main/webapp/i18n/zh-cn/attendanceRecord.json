@@ -1,0 +1,28 @@
+{
+  "intershipSystemApp": {
+    "attendanceRecord": {
+      "home": {
+        "title": "Attendance Records",
+        "createLabel": "创建新 Attendance Record",
+        "createOrEditLabel": "创建或编辑 Attendance Record",
+        "notFound": "No Attendance Record found"
+      },
+      "created": "Attendance Record {{ param }} 创建成功",
+      "updated": "Attendance Record {{ param }} 更新成功",
+      "deleted": "Attendance Record {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Attendance Record {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Attendance Record"
+      },
+      "internshipBatch": "Internship Batch",
+      "punchTime": "Punch Time",
+      "punchLocation": "Punch Location",
+      "attendanceStatus": "Attendance Status",
+      "createdTime": "Created Time",
+      "modifyTime": "Modify Time",
+      "stuId": "Stu Id"
+    }
+  }
+}

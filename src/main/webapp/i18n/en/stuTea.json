@@ -1,0 +1,24 @@
+{
+  "intershipSystemApp": {
+    "stuTea": {
+      "home": {
+        "title": "Stu Teas",
+        "createLabel": "Create a new Stu Tea",
+        "createOrEditLabel": "Create or edit a Stu Tea",
+        "notFound": "No Stu Tea found"
+      },
+      "created": "A new Stu Tea is created with identifier {{ param }}",
+      "updated": "A Stu Tea is updated with identifier {{ param }}",
+      "deleted": "A Stu Tea is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Stu Tea {{ id }}?"
+      },
+      "detail": {
+        "title": "Stu Tea"
+      },
+      "createTime": "Create Time",
+      "stuId": "Stu Id",
+      "teaId": "Tea Id"
+    }
+  }
+}

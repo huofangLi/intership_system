@@ -1,0 +1,33 @@
+{
+  "intershipSystemApp": {
+    "internshipTask": {
+      "home": {
+        "title": "Internship Tasks",
+        "createLabel": "Create a new Internship Task",
+        "createOrEditLabel": "Create or edit a Internship Task",
+        "notFound": "No Internship Task found"
+      },
+      "created": "A new Internship Task is created with identifier {{ param }}",
+      "updated": "A Internship Task is updated with identifier {{ param }}",
+      "deleted": "A Internship Task is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Internship Task {{ id }}?"
+      },
+      "detail": {
+        "title": "Internship Task"
+      },
+      "taskTitle": "Task Title",
+      "founder": "Founder",
+      "startTime": "Start Time",
+      "endTime": "End Time",
+      "importance": "Importance",
+      "complexity": "Complexity",
+      "taskAnnex": "Task Annex",
+      "star": "Star",
+      "status": "Status",
+      "operating": "Operating",
+      "createTime": "Create Time",
+      "interId": "Inter Id"
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+    "name": "AttendanceRecord",
+    "fields": [
+        {
+            "fieldName": "internshipBatch",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "punchTime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "punchLocation",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "attendanceStatus",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "createdTime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "modifyTime",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "student",
+            "otherEntityRelationshipName": "attendanceRecord",
+            "relationshipName": "stuId",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200509080903",
+    "javadoc": "事件管理——考勤记录",
+    "entityTableName": "attendance_record",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

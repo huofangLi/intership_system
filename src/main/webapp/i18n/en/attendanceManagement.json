@@ -1,0 +1,31 @@
+{
+  "intershipSystemApp": {
+    "attendanceManagement": {
+      "home": {
+        "title": "Attendance Managements",
+        "createLabel": "Create a new Attendance Management",
+        "createOrEditLabel": "Create or edit a Attendance Management",
+        "notFound": "No Attendance Management found"
+      },
+      "created": "A new Attendance Management is created with identifier {{ param }}",
+      "updated": "A Attendance Management is updated with identifier {{ param }}",
+      "deleted": "A Attendance Management is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Attendance Management {{ id }}?"
+      },
+      "detail": {
+        "title": "Attendance Management"
+      },
+      "signIn": "Sign In",
+      "position": "Position",
+      "coordinate": "Coordinate",
+      "company": "Company",
+      "createdTime": "Created Time",
+      "stuId": "Stu Id",
+      "help": {
+        "position": "签到位置",
+        "coordinate": "签到坐标"
+      }
+    }
+  }
+}

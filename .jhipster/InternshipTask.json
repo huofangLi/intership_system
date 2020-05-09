@@ -1,0 +1,68 @@
+{
+    "name": "InternshipTask",
+    "fields": [
+        {
+            "fieldName": "taskTitle",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "founder",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "startTime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "endTime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "importance",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "complexity",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "taskAnnex",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "star",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "operating",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "createTime",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "intership",
+            "otherEntityRelationshipName": "internshipTask",
+            "relationshipName": "interId",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200509080900",
+    "javadoc": "实习任务",
+    "entityTableName": "internship_task",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

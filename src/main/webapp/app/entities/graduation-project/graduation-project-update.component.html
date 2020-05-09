@@ -1,0 +1,128 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-graduation-project-heading" jhiTranslate="intershipSystemApp.graduationProject.home.createOrEditLabel">Create or edit a Graduation Project</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.graduationProject.graduationProjectTitle" for="field_graduationProjectTitle">Graduation Project Title</label>
+                    <input type="text" class="form-control" name="graduationProjectTitle" id="field_graduationProjectTitle"
+                           formControlName="graduationProjectTitle"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.graduationProject.source" for="field_source">Source</label>
+                    <input type="text" class="form-control" name="source" id="field_source"
+                           formControlName="source"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.graduationProject.taskBook" for="field_taskBook">Task Book</label>
+                    <input type="text" class="form-control" name="taskBook" id="field_taskBook"
+                           formControlName="taskBook"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.graduationProject.taskBookCheck" for="field_taskBookCheck">Task Book Check</label>
+                    <input type="checkbox" class="form-control" name="taskBookCheck" id="field_taskBookCheck"
+                           formControlName="taskBookCheck"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.graduationProject.taskBookReviews" for="field_taskBookReviews">Task Book Reviews</label>
+                    <input type="text" class="form-control" name="taskBookReviews" id="field_taskBookReviews"
+                           formControlName="taskBookReviews"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.graduationProject.openingReport" for="field_openingReport">Opening Report</label>
+                    <input type="text" class="form-control" name="openingReport" id="field_openingReport"
+                           formControlName="openingReport"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.graduationProject.openingReportCheck" for="field_openingReportCheck">Opening Report Check</label>
+                    <input type="checkbox" class="form-control" name="openingReportCheck" id="field_openingReportCheck"
+                           formControlName="openingReportCheck"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.graduationProject.openingReportReviews" for="field_openingReportReviews">Opening Report Reviews</label>
+                    <input type="text" class="form-control" name="openingReportReviews" id="field_openingReportReviews"
+                           formControlName="openingReportReviews"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.graduationProject.midTermInspection" for="field_midTermInspection">Mid Term Inspection</label>
+                    <input type="text" class="form-control" name="midTermInspection" id="field_midTermInspection"
+                           formControlName="midTermInspection"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.graduationProject.midTermInspectionCheck" for="field_midTermInspectionCheck">Mid Term Inspection Check</label>
+                    <input type="checkbox" class="form-control" name="midTermInspectionCheck" id="field_midTermInspectionCheck"
+                           formControlName="midTermInspectionCheck"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.graduationProject.midTermInspectionReviews" for="field_midTermInspectionReviews">Mid Term Inspection Reviews</label>
+                    <input type="text" class="form-control" name="midTermInspectionReviews" id="field_midTermInspectionReviews"
+                           formControlName="midTermInspectionReviews"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.graduationProject.firstDraft" for="field_firstDraft">First Draft</label>
+                    <input type="text" class="form-control" name="firstDraft" id="field_firstDraft"
+                           formControlName="firstDraft"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.graduationProject.firstDraftCheck" for="field_firstDraftCheck">First Draft Check</label>
+                    <input type="checkbox" class="form-control" name="firstDraftCheck" id="field_firstDraftCheck"
+                           formControlName="firstDraftCheck"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.graduationProject.firstDraftReviews" for="field_firstDraftReviews">First Draft Reviews</label>
+                    <input type="text" class="form-control" name="firstDraftReviews" id="field_firstDraftReviews"
+                           formControlName="firstDraftReviews"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.graduationProject.finalDraft" for="field_finalDraft">Final Draft</label>
+                    <input type="text" class="form-control" name="finalDraft" id="field_finalDraft"
+                           formControlName="finalDraft"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.graduationProject.finalDraftCheck" for="field_finalDraftCheck">Final Draft Check</label>
+                    <input type="checkbox" class="form-control" name="finalDraftCheck" id="field_finalDraftCheck"
+                           formControlName="finalDraftCheck"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.graduationProject.finalDraftReviews" for="field_finalDraftReviews">Final Draft Reviews</label>
+                    <input type="text" class="form-control" name="finalDraftReviews" id="field_finalDraftReviews"
+                           formControlName="finalDraftReviews"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.graduationProject.createdTime" for="field_createdTime">Created Time</label>
+                    <div class="d-flex">
+                        <input id="field_createdTime" type="datetime-local" class="form-control" name="createdTime" formControlName="createdTime" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.graduationProject.modifyTime" for="field_modifyTime">Modify Time</label>
+                    <div class="d-flex">
+                        <input id="field_modifyTime" type="datetime-local" class="form-control" name="modifyTime" formControlName="modifyTime" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.graduationProject.stuId" for="field_stuId">Stu Id</label>
+                    <select class="form-control" id="field_stuId" name="stuId" formControlName="stuId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="studentOption.id === editForm.get('stuId').value?.id ? editForm.get('stuId').value : studentOption" *ngFor="let studentOption of students; trackBy: trackStudentById">{{studentOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

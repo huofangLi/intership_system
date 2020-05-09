@@ -1,0 +1,25 @@
+{
+  "intershipSystemApp": {
+    "jobChangeRecords": {
+      "home": {
+        "title": "Job Change Records",
+        "createLabel": "Create a new Job Change Records",
+        "createOrEditLabel": "Create or edit a Job Change Records",
+        "notFound": "No Job Change Records found"
+      },
+      "created": "A new Job Change Records is created with identifier {{ param }}",
+      "updated": "A Job Change Records is updated with identifier {{ param }}",
+      "deleted": "A Job Change Records is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Job Change Records {{ id }}?"
+      },
+      "detail": {
+        "title": "Job Change Records"
+      },
+      "unitChange": "Unit Change",
+      "positionChange": "Position Change",
+      "createTime": "Create Time",
+      "interId": "Inter Id"
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "intershipSystemApp": {
+    "graduationProject": {
+      "home": {
+        "title": "Graduation Projects",
+        "createLabel": "Create a new Graduation Project",
+        "createOrEditLabel": "Create or edit a Graduation Project",
+        "notFound": "No Graduation Project found"
+      },
+      "created": "A new Graduation Project is created with identifier {{ param }}",
+      "updated": "A Graduation Project is updated with identifier {{ param }}",
+      "deleted": "A Graduation Project is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Graduation Project {{ id }}?"
+      },
+      "detail": {
+        "title": "Graduation Project"
+      },
+      "graduationProjectTitle": "Graduation Project Title",
+      "source": "Source",
+      "taskBook": "Task Book",
+      "taskBookCheck": "Task Book Check",
+      "taskBookReviews": "Task Book Reviews",
+      "openingReport": "Opening Report",
+      "openingReportCheck": "Opening Report Check",
+      "openingReportReviews": "Opening Report Reviews",
+      "midTermInspection": "Mid Term Inspection",
+      "midTermInspectionCheck": "Mid Term Inspection Check",
+      "midTermInspectionReviews": "Mid Term Inspection Reviews",
+      "firstDraft": "First Draft",
+      "firstDraftCheck": "First Draft Check",
+      "firstDraftReviews": "First Draft Reviews",
+      "finalDraft": "Final Draft",
+      "finalDraftCheck": "Final Draft Check",
+      "finalDraftReviews": "Final Draft Reviews",
+      "createdTime": "Created Time",
+      "modifyTime": "Modify Time",
+      "stuId": "Stu Id"
+    }
+  }
+}

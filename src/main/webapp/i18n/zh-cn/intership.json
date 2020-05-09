@@ -1,0 +1,59 @@
+{
+  "intershipSystemApp": {
+    "intership": {
+      "home": {
+        "title": "Interships",
+        "createLabel": "创建新 Intership",
+        "createOrEditLabel": "创建或编辑 Intership",
+        "notFound": "No Intership found"
+      },
+      "created": "Intership {{ param }} 创建成功",
+      "updated": "Intership {{ param }} 更新成功",
+      "deleted": "Intership {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Intership {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Intership"
+      },
+      "batchName": "Batch Name",
+      "practiceType": "Practice Type",
+      "course": "Course",
+      "beginIntership": "Begin Intership",
+      "endIntership": "End Intership",
+      "tutorScore": "Tutor Score",
+      "masterScore": "Master Score",
+      "intershipScore": "Intership Score",
+      "companyCreditCode": "Company Credit Code",
+      "companyName": "Company Name",
+      "internship": "Internship",
+      "companyContactName": "Company Contact Name",
+      "companyContactJob": "Company Contact Job",
+      "companyContactPhone": "Company Contact Phone",
+      "masterContactName": "Master Contact Name",
+      "masterContactSkill": "Master Contact Skill",
+      "masterContactPhone": "Master Contact Phone",
+      "urgentContactName": "Urgent Contact Name",
+      "urgentContactPhone": "Urgent Contact Phone",
+      "urgentContactAddress": "Urgent Contact Address",
+      "accommodationType": "Accommodation Type",
+      "accommodationAddress": "Accommodation Address",
+      "companyAddress": "Company Address",
+      "companyDetailAddress": "Company Detail Address",
+      "companyNature": "Company Nature",
+      "scale": "Scale",
+      "industry": "Industry",
+      "companyProfile": "Company Profile",
+      "isInsurance": "Is Insurance",
+      "insuranceCompanyAndPolicyNumber": "Insurance Company And Policy Number",
+      "isInternshipAgreement": "Is Internship Agreement",
+      "annex": "Annex",
+      "createTime": "Create Time",
+      "modifyTime": "Modify Time",
+      "stuId": "Stu Id",
+      "help": {
+        "isInternshipAgreement": "是否签订实习协议"
+      }
+    }
+  }
+}

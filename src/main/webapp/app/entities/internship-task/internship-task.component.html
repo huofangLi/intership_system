@@ -1,0 +1,91 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="intershipSystemApp.internshipTask.home.title">Internship Tasks</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-internship-task" [routerLink]="['/internship-task/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="intershipSystemApp.internshipTask.home.createLabel">
+            Create new Internship Task
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="internshipTasks?.length === 0">
+        <span jhiTranslate="intershipSystemApp.internshipTask.home.notFound">No internshipTasks found</span>
+    </div>
+    <div class="table-responsive" *ngIf="internshipTasks?.length > 0">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="taskTitle"><span jhiTranslate="intershipSystemApp.internshipTask.taskTitle">Task Title</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="founder"><span jhiTranslate="intershipSystemApp.internshipTask.founder">Founder</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="startTime"><span jhiTranslate="intershipSystemApp.internshipTask.startTime">Start Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="endTime"><span jhiTranslate="intershipSystemApp.internshipTask.endTime">End Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="importance"><span jhiTranslate="intershipSystemApp.internshipTask.importance">Importance</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="complexity"><span jhiTranslate="intershipSystemApp.internshipTask.complexity">Complexity</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="taskAnnex"><span jhiTranslate="intershipSystemApp.internshipTask.taskAnnex">Task Annex</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="star"><span jhiTranslate="intershipSystemApp.internshipTask.star">Star</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="status"><span jhiTranslate="intershipSystemApp.internshipTask.status">Status</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="operating"><span jhiTranslate="intershipSystemApp.internshipTask.operating">Operating</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="createTime"><span jhiTranslate="intershipSystemApp.internshipTask.createTime">Create Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="interId.id"><span jhiTranslate="intershipSystemApp.internshipTask.interId">Inter Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let internshipTask of internshipTasks ;trackBy: trackId">
+                <td><a [routerLink]="['/internship-task', internshipTask.id, 'view' ]">{{internshipTask.id}}</a></td>
+                <td>{{internshipTask.taskTitle}}</td>
+                <td>{{internshipTask.founder}}</td>
+                <td>{{internshipTask.startTime | date:'medium'}}</td>
+                <td>{{internshipTask.endTime | date:'medium'}}</td>
+                <td>{{internshipTask.importance}}</td>
+                <td>{{internshipTask.complexity}}</td>
+                <td>{{internshipTask.taskAnnex}}</td>
+                <td>{{internshipTask.star}}</td>
+                <td>{{internshipTask.status}}</td>
+                <td>{{internshipTask.operating}}</td>
+                <td>{{internshipTask.createTime | date:'medium'}}</td>
+                <td>
+                    <div *ngIf="internshipTask.interId">
+                        <a [routerLink]="['../intership', internshipTask.interId?.id, 'view' ]" >{{internshipTask.interId?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/internship-task', internshipTask.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/internship-task', internshipTask.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'internship-task', { outlets: { popup: internshipTask.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div [hidden]="internshipTasks?.length === 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

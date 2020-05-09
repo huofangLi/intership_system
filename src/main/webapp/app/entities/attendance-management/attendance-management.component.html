@@ -1,0 +1,79 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="intershipSystemApp.attendanceManagement.home.title">Attendance Managements</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-attendance-management" [routerLink]="['/attendance-management/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="intershipSystemApp.attendanceManagement.home.createLabel">
+            Create new Attendance Management
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="attendanceManagements?.length === 0">
+        <span jhiTranslate="intershipSystemApp.attendanceManagement.home.notFound">No attendanceManagements found</span>
+    </div>
+    <div class="table-responsive" *ngIf="attendanceManagements?.length > 0">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="signIn"><span jhiTranslate="intershipSystemApp.attendanceManagement.signIn">Sign In</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="position"><span jhiTranslate="intershipSystemApp.attendanceManagement.position">Position</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="coordinate"><span jhiTranslate="intershipSystemApp.attendanceManagement.coordinate">Coordinate</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="company"><span jhiTranslate="intershipSystemApp.attendanceManagement.company">Company</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="createdTime"><span jhiTranslate="intershipSystemApp.attendanceManagement.createdTime">Created Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="stuId.id"><span jhiTranslate="intershipSystemApp.attendanceManagement.stuId">Stu Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let attendanceManagement of attendanceManagements ;trackBy: trackId">
+                <td><a [routerLink]="['/attendance-management', attendanceManagement.id, 'view' ]">{{attendanceManagement.id}}</a></td>
+                <td>{{attendanceManagement.signIn | date:'medium'}}</td>
+                <td>{{attendanceManagement.position}}</td>
+                <td>{{attendanceManagement.coordinate}}</td>
+                <td>{{attendanceManagement.company}}</td>
+                <td>{{attendanceManagement.createdTime | date:'medium'}}</td>
+                <td>
+                    <div *ngIf="attendanceManagement.stuId">
+                        <a [routerLink]="['../student', attendanceManagement.stuId?.id, 'view' ]" >{{attendanceManagement.stuId?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/attendance-management', attendanceManagement.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/attendance-management', attendanceManagement.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'attendance-management', { outlets: { popup: attendanceManagement.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div [hidden]="attendanceManagements?.length === 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

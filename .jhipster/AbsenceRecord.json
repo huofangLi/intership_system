@@ -1,0 +1,48 @@
+{
+    "name": "AbsenceRecord",
+    "fields": [
+        {
+            "fieldName": "absenceStartTime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "absenceEndTime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "absenceDays",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "company",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "remarks",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "createdTime",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "student",
+            "otherEntityRelationshipName": "absenceRecord",
+            "relationshipName": "stuId",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200509080857",
+    "javadoc": "缺勤记录",
+    "entityTableName": "absence_record",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

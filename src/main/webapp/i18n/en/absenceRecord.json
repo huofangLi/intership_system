@@ -1,0 +1,28 @@
+{
+  "intershipSystemApp": {
+    "absenceRecord": {
+      "home": {
+        "title": "Absence Records",
+        "createLabel": "Create a new Absence Record",
+        "createOrEditLabel": "Create or edit a Absence Record",
+        "notFound": "No Absence Record found"
+      },
+      "created": "A new Absence Record is created with identifier {{ param }}",
+      "updated": "A Absence Record is updated with identifier {{ param }}",
+      "deleted": "A Absence Record is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Absence Record {{ id }}?"
+      },
+      "detail": {
+        "title": "Absence Record"
+      },
+      "absenceStartTime": "Absence Start Time",
+      "absenceEndTime": "Absence End Time",
+      "absenceDays": "Absence Days",
+      "company": "Company",
+      "remarks": "Remarks",
+      "createdTime": "Created Time",
+      "stuId": "Stu Id"
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+    "name": "Teacher",
+    "fields": [
+        {
+            "fieldName": "teaId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "teaName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "gender",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "teaDepartment",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "skin",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "createdTime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "modifyTime",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20200509080852",
+    "entityTableName": "teacher",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

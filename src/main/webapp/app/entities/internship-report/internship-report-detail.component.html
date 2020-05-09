@@ -1,0 +1,65 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="internshipReport">
+            <h2><span jhiTranslate="intershipSystemApp.internshipReport.detail.title">Internship Report</span> {{internshipReport.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="intershipSystemApp.internshipReport.reportType">Report Type</span></dt>
+                <dd>
+                    <span>{{internshipReport.reportType}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.internshipReport.projectName">Project Name</span></dt>
+                <dd>
+                    <span>{{internshipReport.projectName}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.internshipReport.intershipStage">Intership Stage</span></dt>
+                <dd>
+                    <span>{{internshipReport.intershipStage}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.internshipReport.annex">Annex</span></dt>
+                <dd>
+                    <span>{{internshipReport.annex}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.internshipReport.reportContent">Report Content</span></dt>
+                <dd>
+                    <span>{{internshipReport.reportContent}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.internshipReport.createTime">Create Time</span></dt>
+                <dd>
+                    <span>{{internshipReport.createTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.internshipReport.star">Star</span></dt>
+                <dd>
+                    <span>{{internshipReport.star}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.internshipReport.status">Status</span></dt>
+                <dd>
+                    <span>{{internshipReport.status}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.internshipReport.operating">Operating</span></dt>
+                <dd>
+                    <span>{{internshipReport.operating}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.internshipReport.interId">Inter Id</span></dt>
+                <dd>
+                    <div *ngIf="internshipReport.interId">
+                        <a [routerLink]="['/intership', internshipReport.interId?.id, 'view']">{{internshipReport.interId?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/internship-report', internshipReport.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

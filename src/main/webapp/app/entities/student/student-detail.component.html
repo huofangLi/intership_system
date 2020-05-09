@@ -1,0 +1,99 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="student">
+            <h2><span jhiTranslate="intershipSystemApp.student.detail.title">Student</span> {{student.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="intershipSystemApp.student.stuId">Stu Id</span></dt>
+                <dd>
+                    <span>{{student.stuId}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.student.gender">Gender</span></dt>
+                <dd>
+                    <span>{{student.gender}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.student.stuClass">Stu Class</span></dt>
+                <dd>
+                    <span>{{student.stuClass}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.student.stuDepartment">Stu Department</span></dt>
+                <dd>
+                    <span>{{student.stuDepartment}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.student.stuProfession">Stu Profession</span></dt>
+                <dd>
+                    <span>{{student.stuProfession}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.student.phone">Phone</span></dt>
+                <dd>
+                    <span>{{student.phone}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.student.privince">Privince</span></dt>
+                <dd>
+                    <span>{{student.privince}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.student.privinceCode">Privince Code</span></dt>
+                <dd>
+                    <span>{{student.privinceCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.student.city">City</span></dt>
+                <dd>
+                    <span>{{student.city}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.student.cityCode">City Code</span></dt>
+                <dd>
+                    <span>{{student.cityCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.student.country">Country</span></dt>
+                <dd>
+                    <span>{{student.country}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.student.countryCode">Country Code</span></dt>
+                <dd>
+                    <span>{{student.countryCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.student.address">Address</span></dt>
+                <dd>
+                    <span>{{student.address}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.student.hobby">Hobby</span></dt>
+                <dd>
+                    <span>{{student.hobby}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.student.skill">Skill</span></dt>
+                <dd>
+                    <span>{{student.skill}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.student.selfEvaluation">Self Evaluation</span></dt>
+                <dd>
+                    <span>{{student.selfEvaluation}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.student.skin">Skin</span></dt>
+                <dd>
+                    <span>{{student.skin}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.student.createdTime">Created Time</span></dt>
+                <dd>
+                    <span>{{student.createdTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.student.modifyTime">Modify Time</span></dt>
+                <dd>
+                    <span>{{student.modifyTime}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/student', student.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

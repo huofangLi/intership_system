@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+    <property name="now" value="now()" dbms="mysql"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql, mariadb"/>
+    <property name="clobType" value="clob" dbms="h2"/>
+    <property name="clobType" value="clob" dbms="mysql, oracle, mssql, mariadb, postgresql"/>
+    <property name="uuidType" value="varchar(36)" dbms="h2, mysql, mariadb"/>
+
+    <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200509080851_added_entity_Student.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200509080852_added_entity_Teacher.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200509080853_added_entity_StuTea.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200509080854_added_entity_Intership.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200509080855_added_entity_AttendanceManagement.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200509080856_added_entity_Leave.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200509080857_added_entity_AbsenceRecord.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200509080858_added_entity_JobChangeRecords.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200509080859_added_entity_InternshipReport.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200509080900_added_entity_InternshipTask.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200509080901_added_entity_GraduationProject.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200509080902_added_entity_SharingCenter.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200509080903_added_entity_AttendanceRecord.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200509080904_added_entity_AlarmEvent.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200509080905_added_entity_Certificate.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20200509080853_added_entity_constraints_StuTea.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200509080854_added_entity_constraints_Intership.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200509080855_added_entity_constraints_AttendanceManagement.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200509080856_added_entity_constraints_Leave.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200509080857_added_entity_constraints_AbsenceRecord.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200509080858_added_entity_constraints_JobChangeRecords.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200509080859_added_entity_constraints_InternshipReport.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200509080900_added_entity_constraints_InternshipTask.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200509080901_added_entity_constraints_GraduationProject.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200509080902_added_entity_constraints_SharingCenter.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200509080903_added_entity_constraints_AttendanceRecord.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200509080904_added_entity_constraints_AlarmEvent.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
+</databaseChangeLog>

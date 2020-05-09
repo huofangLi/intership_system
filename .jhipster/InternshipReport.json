@@ -1,0 +1,60 @@
+{
+    "name": "InternshipReport",
+    "fields": [
+        {
+            "fieldName": "reportType",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "projectName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "intershipStage",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "annex",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "reportContent",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "createTime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "star",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "operating",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "intership",
+            "otherEntityRelationshipName": "internshipReport",
+            "relationshipName": "interId",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200509080859",
+    "javadoc": "实习报告",
+    "entityTableName": "internship_report",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

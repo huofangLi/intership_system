@@ -1,0 +1,26 @@
+{
+  "intershipSystemApp": {
+    "alarmEvent": {
+      "home": {
+        "title": "Alarm Events",
+        "createLabel": "Create a new Alarm Event",
+        "createOrEditLabel": "Create or edit a Alarm Event",
+        "notFound": "No Alarm Event found"
+      },
+      "created": "A new Alarm Event is created with identifier {{ param }}",
+      "updated": "A Alarm Event is updated with identifier {{ param }}",
+      "deleted": "A Alarm Event is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Alarm Event {{ id }}?"
+      },
+      "detail": {
+        "title": "Alarm Event"
+      },
+      "title": "Title",
+      "content": "Content",
+      "remarks": "Remarks",
+      "createdTime": "Created Time",
+      "stuId": "Stu Id"
+    }
+  }
+}

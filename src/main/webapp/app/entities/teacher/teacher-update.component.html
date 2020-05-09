@@ -1,0 +1,61 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-teacher-heading" jhiTranslate="intershipSystemApp.teacher.home.createOrEditLabel">Create or edit a Teacher</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.teacher.teaId" for="field_teaId">Tea Id</label>
+                    <input type="number" class="form-control" name="teaId" id="field_teaId"
+                           formControlName="teaId"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.teacher.teaName" for="field_teaName">Tea Name</label>
+                    <input type="text" class="form-control" name="teaName" id="field_teaName"
+                           formControlName="teaName"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.teacher.gender" for="field_gender">Gender</label>
+                    <input type="checkbox" class="form-control" name="gender" id="field_gender"
+                           formControlName="gender"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.teacher.teaDepartment" for="field_teaDepartment">Tea Department</label>
+                    <input type="text" class="form-control" name="teaDepartment" id="field_teaDepartment"
+                           formControlName="teaDepartment"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.teacher.skin" for="field_skin">Skin</label>
+                    <input type="text" class="form-control" name="skin" id="field_skin"
+                           formControlName="skin"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.teacher.createdTime" for="field_createdTime">Created Time</label>
+                    <div class="d-flex">
+                        <input id="field_createdTime" type="datetime-local" class="form-control" name="createdTime" formControlName="createdTime" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="intershipSystemApp.teacher.modifyTime" for="field_modifyTime">Modify Time</label>
+                    <div class="d-flex">
+                        <input id="field_modifyTime" type="datetime-local" class="form-control" name="modifyTime" formControlName="modifyTime" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

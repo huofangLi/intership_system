@@ -1,0 +1,29 @@
+{
+  "intershipSystemApp": {
+    "sharingCenter": {
+      "home": {
+        "title": "Sharing Centers",
+        "createLabel": "Create a new Sharing Center",
+        "createOrEditLabel": "Create or edit a Sharing Center",
+        "notFound": "No Sharing Center found"
+      },
+      "created": "A new Sharing Center is created with identifier {{ param }}",
+      "updated": "A Sharing Center is updated with identifier {{ param }}",
+      "deleted": "A Sharing Center is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Sharing Center {{ id }}?"
+      },
+      "detail": {
+        "title": "Sharing Center"
+      },
+      "fileName": "File Name",
+      "fileSize": "File Size",
+      "uploadedBy": "Uploaded By",
+      "department": "Department",
+      "operating": "Operating",
+      "createdTime": "Created Time",
+      "modifyTime": "Modify Time",
+      "stuId": "Stu Id"
+    }
+  }
+}

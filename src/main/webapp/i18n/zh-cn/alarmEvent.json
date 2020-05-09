@@ -1,0 +1,26 @@
+{
+  "intershipSystemApp": {
+    "alarmEvent": {
+      "home": {
+        "title": "Alarm Events",
+        "createLabel": "创建新 Alarm Event",
+        "createOrEditLabel": "创建或编辑 Alarm Event",
+        "notFound": "No Alarm Event found"
+      },
+      "created": "Alarm Event {{ param }} 创建成功",
+      "updated": "Alarm Event {{ param }} 更新成功",
+      "deleted": "Alarm Event {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Alarm Event {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Alarm Event"
+      },
+      "title": "Title",
+      "content": "Content",
+      "remarks": "Remarks",
+      "createdTime": "Created Time",
+      "stuId": "Stu Id"
+    }
+  }
+}

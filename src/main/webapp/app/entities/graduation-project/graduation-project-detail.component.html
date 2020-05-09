@@ -1,0 +1,105 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="graduationProject">
+            <h2><span jhiTranslate="intershipSystemApp.graduationProject.detail.title">Graduation Project</span> {{graduationProject.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="intershipSystemApp.graduationProject.graduationProjectTitle">Graduation Project Title</span></dt>
+                <dd>
+                    <span>{{graduationProject.graduationProjectTitle}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.graduationProject.source">Source</span></dt>
+                <dd>
+                    <span>{{graduationProject.source}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.graduationProject.taskBook">Task Book</span></dt>
+                <dd>
+                    <span>{{graduationProject.taskBook}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.graduationProject.taskBookCheck">Task Book Check</span></dt>
+                <dd>
+                    <span>{{graduationProject.taskBookCheck}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.graduationProject.taskBookReviews">Task Book Reviews</span></dt>
+                <dd>
+                    <span>{{graduationProject.taskBookReviews}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.graduationProject.openingReport">Opening Report</span></dt>
+                <dd>
+                    <span>{{graduationProject.openingReport}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.graduationProject.openingReportCheck">Opening Report Check</span></dt>
+                <dd>
+                    <span>{{graduationProject.openingReportCheck}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.graduationProject.openingReportReviews">Opening Report Reviews</span></dt>
+                <dd>
+                    <span>{{graduationProject.openingReportReviews}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.graduationProject.midTermInspection">Mid Term Inspection</span></dt>
+                <dd>
+                    <span>{{graduationProject.midTermInspection}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.graduationProject.midTermInspectionCheck">Mid Term Inspection Check</span></dt>
+                <dd>
+                    <span>{{graduationProject.midTermInspectionCheck}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.graduationProject.midTermInspectionReviews">Mid Term Inspection Reviews</span></dt>
+                <dd>
+                    <span>{{graduationProject.midTermInspectionReviews}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.graduationProject.firstDraft">First Draft</span></dt>
+                <dd>
+                    <span>{{graduationProject.firstDraft}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.graduationProject.firstDraftCheck">First Draft Check</span></dt>
+                <dd>
+                    <span>{{graduationProject.firstDraftCheck}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.graduationProject.firstDraftReviews">First Draft Reviews</span></dt>
+                <dd>
+                    <span>{{graduationProject.firstDraftReviews}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.graduationProject.finalDraft">Final Draft</span></dt>
+                <dd>
+                    <span>{{graduationProject.finalDraft}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.graduationProject.finalDraftCheck">Final Draft Check</span></dt>
+                <dd>
+                    <span>{{graduationProject.finalDraftCheck}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.graduationProject.finalDraftReviews">Final Draft Reviews</span></dt>
+                <dd>
+                    <span>{{graduationProject.finalDraftReviews}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.graduationProject.createdTime">Created Time</span></dt>
+                <dd>
+                    <span>{{graduationProject.createdTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.graduationProject.modifyTime">Modify Time</span></dt>
+                <dd>
+                    <span>{{graduationProject.modifyTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="intershipSystemApp.graduationProject.stuId">Stu Id</span></dt>
+                <dd>
+                    <div *ngIf="graduationProject.stuId">
+                        <a [routerLink]="['/student', graduationProject.stuId?.id, 'view']">{{graduationProject.stuId?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/graduation-project', graduationProject.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

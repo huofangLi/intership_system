@@ -1,0 +1,52 @@
+{
+    "name": "Leave",
+    "fields": [
+        {
+            "fieldName": "submitTime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "leaveTime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "leaveDays",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "company",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "leaveReason",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "createdTime",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "student",
+            "otherEntityRelationshipName": "leave",
+            "relationshipName": "stuId",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200509080856",
+    "javadoc": "请假记录",
+    "entityTableName": "leave",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

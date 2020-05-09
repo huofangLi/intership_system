@@ -1,0 +1,28 @@
+{
+  "intershipSystemApp": {
+    "certificate": {
+      "home": {
+        "title": "Certificates",
+        "createLabel": "创建新 Certificate",
+        "createOrEditLabel": "创建或编辑 Certificate",
+        "notFound": "No Certificate found"
+      },
+      "created": "Certificate {{ param }} 创建成功",
+      "updated": "Certificate {{ param }} 更新成功",
+      "deleted": "Certificate {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Certificate {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Certificate"
+      },
+      "certificateName": "Certificate Name",
+      "certificateType": "Certificate Type",
+      "certificateLevel": "Certificate Level",
+      "certificateAcquisitionTime": "Certificate Acquisition Time",
+      "certificatePhoto": "Certificate Photo",
+      "createdTime": "Created Time",
+      "modifyTime": "Modify Time"
+    }
+  }
+}
