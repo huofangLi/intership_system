@@ -24,8 +24,8 @@
             <th jhiSortBy="department"><span jhiTranslate="intershipSystemApp.sharingCenter.department">Department</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="operating"><span jhiTranslate="intershipSystemApp.sharingCenter.operating">Operating</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="createdTime"><span jhiTranslate="intershipSystemApp.sharingCenter.createdTime">Created Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="modifyTime"><span jhiTranslate="intershipSystemApp.sharingCenter.modifyTime">Modify Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="stuId.id"><span jhiTranslate="intershipSystemApp.sharingCenter.stuId">Stu Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+<!--            <th jhiSortBy="modifyTime"><span jhiTranslate="intershipSystemApp.sharingCenter.modifyTime">Modify Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>-->
+<!--            <th jhiSortBy="stuId.id"><span jhiTranslate="intershipSystemApp.sharingCenter.stuId">Stu Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>-->
             <th></th>
             </tr>
             </thead>
@@ -38,12 +38,12 @@
                 <td>{{sharingCenter.department}}</td>
                 <td>{{sharingCenter.operating}}</td>
                 <td>{{sharingCenter.createdTime | date:'medium'}}</td>
-                <td>{{sharingCenter.modifyTime | date:'medium'}}</td>
-                <td>
-                    <div *ngIf="sharingCenter.stuId">
-                        <a [routerLink]="['../student', sharingCenter.stuId?.id, 'view' ]" >{{sharingCenter.stuId?.id}}</a>
-                    </div>
-                </td>
+<!--                <td>{{sharingCenter.modifyTime | date:'medium'}}</td>-->
+<!--                <td>-->
+<!--                    <div *ngIf="sharingCenter.stuId">-->
+<!--                        <a [routerLink]="['../student', sharingCenter.stuId?.id, 'view' ]" >{{sharingCenter.stuId?.id}}</a>-->
+<!--                    </div>-->
+<!--                </td>-->
                 <td class="text-right">
                     <div class="btn-group">
                         <button type="submit"

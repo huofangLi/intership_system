@@ -2,39 +2,39 @@
   "intershipSystemApp": {
     "student": {
       "home": {
-        "title": "Students",
-        "createLabel": "创建新 Student",
-        "createOrEditLabel": "创建或编辑 Student",
-        "notFound": "No Student found"
+        "title": "学生信息",
+        "createLabel": "创建新 学生信息",
+        "createOrEditLabel": "创建或编辑 学生信息",
+        "notFound": "无信息"
       },
-      "created": "Student {{ param }} 创建成功",
-      "updated": "Student {{ param }} 更新成功",
-      "deleted": "Student {{ param }} 删除成功",
+      "created": "学生信息 {{ param }} 创建成功",
+      "updated": "学生信息 {{ param }} 更新成功",
+      "deleted": "学生信息 {{ param }} 删除成功",
       "delete": {
-        "question": "你确定要删除 Student {{ id }} 吗？"
+        "question": "你确定要删除 学生信息 {{ id }} 吗？"
       },
       "detail": {
-        "title": "Student"
+        "title": "学生信息"
       },
-      "stuId": "Stu Id",
-      "gender": "Gender",
-      "stuClass": "Stu Class",
-      "stuDepartment": "Stu Department",
-      "stuProfession": "Stu Profession",
-      "phone": "Phone",
-      "privince": "Privince",
-      "privinceCode": "Privince Code",
-      "city": "City",
-      "cityCode": "City Code",
-      "country": "Country",
-      "countryCode": "Country Code",
-      "address": "Address",
-      "hobby": "Hobby",
-      "skill": "Skill",
-      "selfEvaluation": "Self Evaluation",
-      "skin": "Skin",
-      "createdTime": "Created Time",
-      "modifyTime": "Modify Time"
+      "stuId": "学号",
+      "gender": "性别",
+      "stuClass": "班级",
+      "stuDepartment": "院系",
+      "stuProfession": "专业",
+      "phone": "电话",
+      "privince": "省",
+      "privinceCode": "省code",
+      "city": "市",
+      "cityCode": "市code",
+      "country": "县",
+      "countryCode": "县code",
+      "address": "详细地址",
+      "hobby": "兴趣爱好",
+      "skill": "技能",
+      "selfEvaluation": "自我评价",
+      "skin": "换肤",
+      "createdTime": "创建时间",
+      "modifyTime": "修改时间"
     }
   }
 }

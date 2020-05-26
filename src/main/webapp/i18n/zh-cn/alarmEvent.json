@@ -2,25 +2,25 @@
   "intershipSystemApp": {
     "alarmEvent": {
       "home": {
-        "title": "Alarm Events",
-        "createLabel": "创建新 Alarm Event",
-        "createOrEditLabel": "创建或编辑 Alarm Event",
-        "notFound": "No Alarm Event found"
+        "title": "告警事件",
+        "createLabel": "创建新 告警事件",
+        "createOrEditLabel": "创建或编辑 告警事件",
+        "notFound": "无信息"
       },
-      "created": "Alarm Event {{ param }} 创建成功",
-      "updated": "Alarm Event {{ param }} 更新成功",
-      "deleted": "Alarm Event {{ param }} 删除成功",
+      "created": "告警事件 {{ param }} 创建成功",
+      "updated": "告警事件 {{ param }} 更新成功",
+      "deleted": "告警事件 {{ param }} 删除成功",
       "delete": {
-        "question": "你确定要删除 Alarm Event {{ id }} 吗？"
+        "question": "你确定要删除 告警事件 {{ id }} 吗？"
       },
       "detail": {
-        "title": "Alarm Event"
+        "title": "告警事件"
       },
-      "title": "Title",
-      "content": "Content",
-      "remarks": "Remarks",
-      "createdTime": "Created Time",
-      "stuId": "Stu Id"
+      "title": "标题",
+      "content": "内容",
+      "remarks": "备注",
+      "createdTime": "创建时间",
+      "stuId": "学生ID"
     }
   }
 }

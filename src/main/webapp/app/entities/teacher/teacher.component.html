@@ -18,26 +18,26 @@
             <thead>
             <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
             <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="teaId"><span jhiTranslate="intershipSystemApp.teacher.teaId">Tea Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+<!--            <th jhiSortBy="teaId"><span jhiTranslate="intershipSystemApp.teacher.teaId">Tea Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>-->
             <th jhiSortBy="teaName"><span jhiTranslate="intershipSystemApp.teacher.teaName">Tea Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="gender"><span jhiTranslate="intershipSystemApp.teacher.gender">Gender</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="teaDepartment"><span jhiTranslate="intershipSystemApp.teacher.teaDepartment">Tea Department</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="skin"><span jhiTranslate="intershipSystemApp.teacher.skin">Skin</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+<!--            <th jhiSortBy="skin"><span jhiTranslate="intershipSystemApp.teacher.skin">Skin</span> <fa-icon [icon]="'sort'"></fa-icon></th>-->
             <th jhiSortBy="createdTime"><span jhiTranslate="intershipSystemApp.teacher.createdTime">Created Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="modifyTime"><span jhiTranslate="intershipSystemApp.teacher.modifyTime">Modify Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+<!--            <th jhiSortBy="modifyTime"><span jhiTranslate="intershipSystemApp.teacher.modifyTime">Modify Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>-->
             <th></th>
             </tr>
             </thead>
             <tbody>
             <tr *ngFor="let teacher of teachers ;trackBy: trackId">
                 <td><a [routerLink]="['/teacher', teacher.id, 'view' ]">{{teacher.id}}</a></td>
-                <td>{{teacher.teaId}}</td>
+<!--                <td>{{teacher.teaId}}</td>-->
                 <td>{{teacher.teaName}}</td>
                 <td>{{teacher.gender}}</td>
                 <td>{{teacher.teaDepartment}}</td>
-                <td>{{teacher.skin}}</td>
+<!--                <td>{{teacher.skin}}</td>-->
                 <td>{{teacher.createdTime | date:'medium'}}</td>
-                <td>{{teacher.modifyTime | date:'medium'}}</td>
+<!--                <td>{{teacher.modifyTime | date:'medium'}}</td>-->
                 <td class="text-right">
                     <div class="btn-group">
                         <button type="submit"

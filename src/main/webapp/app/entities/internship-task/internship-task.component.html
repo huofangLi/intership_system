@@ -29,7 +29,7 @@
             <th jhiSortBy="status"><span jhiTranslate="intershipSystemApp.internshipTask.status">Status</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="operating"><span jhiTranslate="intershipSystemApp.internshipTask.operating">Operating</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="createTime"><span jhiTranslate="intershipSystemApp.internshipTask.createTime">Create Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="interId.id"><span jhiTranslate="intershipSystemApp.internshipTask.interId">Inter Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+<!--            <th jhiSortBy="interId.id"><span jhiTranslate="intershipSystemApp.internshipTask.interId">Inter Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>-->
             <th></th>
             </tr>
             </thead>
@@ -47,11 +47,11 @@
                 <td>{{internshipTask.status}}</td>
                 <td>{{internshipTask.operating}}</td>
                 <td>{{internshipTask.createTime | date:'medium'}}</td>
-                <td>
-                    <div *ngIf="internshipTask.interId">
-                        <a [routerLink]="['../intership', internshipTask.interId?.id, 'view' ]" >{{internshipTask.interId?.id}}</a>
-                    </div>
-                </td>
+<!--                <td>-->
+<!--                    <div *ngIf="internshipTask.interId">-->
+<!--                        <a [routerLink]="['../intership', internshipTask.interId?.id, 'view' ]" >{{internshipTask.interId?.id}}</a>-->
+<!--                    </div>-->
+<!--                </td>-->
                 <td class="text-right">
                     <div class="btn-group">
                         <button type="submit"

@@ -24,7 +24,7 @@
             <th jhiSortBy="attendanceStatus"><span jhiTranslate="intershipSystemApp.attendanceRecord.attendanceStatus">Attendance Status</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="createdTime"><span jhiTranslate="intershipSystemApp.attendanceRecord.createdTime">Created Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="modifyTime"><span jhiTranslate="intershipSystemApp.attendanceRecord.modifyTime">Modify Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="stuId.id"><span jhiTranslate="intershipSystemApp.attendanceRecord.stuId">Stu Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+<!--            <th jhiSortBy="stuId.id"><span jhiTranslate="intershipSystemApp.attendanceRecord.stuId">Stu Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>-->
             <th></th>
             </tr>
             </thead>
@@ -36,12 +36,12 @@
                 <td>{{attendanceRecord.punchLocation}}</td>
                 <td>{{attendanceRecord.attendanceStatus}}</td>
                 <td>{{attendanceRecord.createdTime | date:'medium'}}</td>
-                <td>{{attendanceRecord.modifyTime | date:'medium'}}</td>
-                <td>
-                    <div *ngIf="attendanceRecord.stuId">
-                        <a [routerLink]="['../student', attendanceRecord.stuId?.id, 'view' ]" >{{attendanceRecord.stuId?.id}}</a>
-                    </div>
-                </td>
+<!--                <td>{{attendanceRecord.modifyTime | date:'medium'}}</td>-->
+<!--                <td>-->
+<!--                    <div *ngIf="attendanceRecord.stuId">-->
+<!--                        <a [routerLink]="['../student', attendanceRecord.stuId?.id, 'view' ]" >{{attendanceRecord.stuId?.id}}</a>-->
+<!--                    </div>-->
+<!--                </td>-->
                 <td class="text-right">
                     <div class="btn-group">
                         <button type="submit"

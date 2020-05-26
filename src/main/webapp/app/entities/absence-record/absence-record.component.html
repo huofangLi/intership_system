@@ -24,7 +24,7 @@
             <th jhiSortBy="company"><span jhiTranslate="intershipSystemApp.absenceRecord.company">Company</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="remarks"><span jhiTranslate="intershipSystemApp.absenceRecord.remarks">Remarks</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="createdTime"><span jhiTranslate="intershipSystemApp.absenceRecord.createdTime">Created Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="stuId.id"><span jhiTranslate="intershipSystemApp.absenceRecord.stuId">Stu Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+<!--            <th jhiSortBy="stuId.id"><span jhiTranslate="intershipSystemApp.absenceRecord.stuId">Stu Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>-->
             <th></th>
             </tr>
             </thead>
@@ -37,11 +37,11 @@
                 <td>{{absenceRecord.company}}</td>
                 <td>{{absenceRecord.remarks}}</td>
                 <td>{{absenceRecord.createdTime | date:'medium'}}</td>
-                <td>
-                    <div *ngIf="absenceRecord.stuId">
-                        <a [routerLink]="['../student', absenceRecord.stuId?.id, 'view' ]" >{{absenceRecord.stuId?.id}}</a>
-                    </div>
-                </td>
+<!--                <td>-->
+<!--                    <div *ngIf="absenceRecord.stuId">-->
+<!--                        <a [routerLink]="['../student', absenceRecord.stuId?.id, 'view' ]" >{{absenceRecord.stuId?.id}}</a>-->
+<!--                    </div>-->
+<!--                </td>-->
                 <td class="text-right">
                     <div class="btn-group">
                         <button type="submit"

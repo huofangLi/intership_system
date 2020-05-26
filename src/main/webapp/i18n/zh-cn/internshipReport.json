@@ -2,30 +2,30 @@
   "intershipSystemApp": {
     "internshipReport": {
       "home": {
-        "title": "Internship Reports",
-        "createLabel": "创建新 Internship Report",
-        "createOrEditLabel": "创建或编辑 Internship Report",
-        "notFound": "No Internship Report found"
+        "title": "实习报告",
+        "createLabel": "创建新 实习报告",
+        "createOrEditLabel": "创建或编辑 实习报告",
+        "notFound": "No 实习报告 found"
       },
-      "created": "Internship Report {{ param }} 创建成功",
-      "updated": "Internship Report {{ param }} 更新成功",
-      "deleted": "Internship Report {{ param }} 删除成功",
+      "created": "实习报告 {{ param }} 创建成功",
+      "updated": "实习报告 {{ param }} 更新成功",
+      "deleted": "实习报告 {{ param }} 删除成功",
       "delete": {
-        "question": "你确定要删除 Internship Report {{ id }} 吗？"
+        "question": "你确定要删除 实习报告 {{ id }} 吗？"
       },
       "detail": {
-        "title": "Internship Report"
+        "title": "实习报告"
       },
-      "reportType": "Report Type",
-      "projectName": "Project Name",
-      "intershipStage": "Intership Stage",
-      "annex": "Annex",
-      "reportContent": "Report Content",
-      "createTime": "Create Time",
-      "star": "Star",
-      "status": "Status",
-      "operating": "Operating",
-      "interId": "Inter Id"
+      "reportType": "报告类型",
+      "projectName": "项目名称",
+      "intershipStage": "实习阶段",
+      "annex": "上传附件",
+      "reportContent": "报告内容",
+      "createTime": "创建时间",
+      "star": "综合评价星级",
+      "status": "状态",
+      "operating": "操作",
+      "interId": "学生ID"
     }
   }
 }

@@ -1,27 +1,27 @@
 {
   "global": {
-    "title": "Intership_system",
+    "title": "职业院校顶岗实习后台管理系统",
     "browsehappy": "您目前使用<strong>过于老旧</strong>的浏览器, 建议您<a href=\"http://browsehappy.com/?locale=en\">升级浏览器</a>让您有更佳的上网体验.",
     "menu": {
       "home": "首页",
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "数据",
-        "student": "Student",
-        "teacher": "Teacher",
-        "stuTea": "Stu Tea",
-        "intership": "Intership",
-        "attendanceManagement": "Attendance Management",
-        "leave": "Leave",
-        "absenceRecord": "Absence Record",
-        "jobChangeRecords": "Job Change Records",
-        "internshipReport": "Internship Report",
-        "internshipTask": "Internship Task",
-        "graduationProject": "Graduation Project",
-        "sharingCenter": "Sharing Center",
-        "attendanceRecord": "Attendance Record",
-        "alarmEvent": "Alarm Event",
-        "certificate": "Certificate",
+        "student": "学生信息",
+        "teacher": "教师信息",
+        "stuTea": "学生教师关系信息",
+        "intership": "学生实习",
+        "attendanceManagement": "实习签到记录",
+        "leave": "实习请假申请",
+        "absenceRecord": "实习缺勤记录",
+        "jobChangeRecords": "实习岗位变更记录",
+        "internshipReport": "实习报告",
+        "internshipTask": "实习任务",
+        "graduationProject": "毕业设计",
+        "sharingCenter": "共享中心",
+        "attendanceRecord": "考勤记录",
+        "alarmEvent": "告警事件",
+        "certificate": "我的证书",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {
@@ -65,7 +65,7 @@
         "authenticated": {
           "prefix": "如果您要",
           "link": "登录",
-          "suffix": ", 您可以使用默认账号:<br/>- 管理员 (账号=\"admin\"和密码=\"admin\") <br/>- 普通用户 (账号=\"user\"和密码=\"user\")."
+          "suffix": ""
         },
         "register": {
           "noaccount": "您还没有账号",
@@ -146,5 +146,5 @@
     "idexists": "新建的 {{entityName}} 不能包含ID",
     "idnull": "Invalid ID"
   },
-  "footer": "这里是页脚"
+  "footer": "SouthSpirits"
 }

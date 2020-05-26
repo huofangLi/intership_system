@@ -2,40 +2,40 @@
   "intershipSystemApp": {
     "graduationProject": {
       "home": {
-        "title": "Graduation Projects",
-        "createLabel": "创建新 Graduation Project",
-        "createOrEditLabel": "创建或编辑 Graduation Project",
-        "notFound": "No Graduation Project found"
+        "title": "毕业设计",
+        "createLabel": "创建新 毕业设计",
+        "createOrEditLabel": "创建或编辑 毕业设计",
+        "notFound": "No 毕业设计 found"
       },
-      "created": "Graduation Project {{ param }} 创建成功",
-      "updated": "Graduation Project {{ param }} 更新成功",
-      "deleted": "Graduation Project {{ param }} 删除成功",
+      "created": "毕业设计 {{ param }} 创建成功",
+      "updated": "毕业设计 {{ param }} 更新成功",
+      "deleted": "毕业设计 {{ param }} 删除成功",
       "delete": {
-        "question": "你确定要删除 Graduation Project {{ id }} 吗？"
+        "question": "你确定要删除 毕业设计 {{ id }} 吗？"
       },
       "detail": {
-        "title": "Graduation Project"
+        "title": "毕业设计"
       },
-      "graduationProjectTitle": "Graduation Project Title",
-      "source": "Source",
-      "taskBook": "Task Book",
-      "taskBookCheck": "Task Book Check",
-      "taskBookReviews": "Task Book Reviews",
-      "openingReport": "Opening Report",
-      "openingReportCheck": "Opening Report Check",
-      "openingReportReviews": "Opening Report Reviews",
-      "midTermInspection": "Mid Term Inspection",
-      "midTermInspectionCheck": "Mid Term Inspection Check",
-      "midTermInspectionReviews": "Mid Term Inspection Reviews",
-      "firstDraft": "First Draft",
-      "firstDraftCheck": "First Draft Check",
-      "firstDraftReviews": "First Draft Reviews",
-      "finalDraft": "Final Draft",
-      "finalDraftCheck": "Final Draft Check",
-      "finalDraftReviews": "Final Draft Reviews",
-      "createdTime": "Created Time",
-      "modifyTime": "Modify Time",
-      "stuId": "Stu Id"
+      "graduationProjectTitle": "毕业设计标题",
+      "source": "题目来源",
+      "taskBook": "任务书",
+      "taskBookCheck": "导师是否查询",
+      "taskBookReviews": "导师评语",
+      "openingReport": "开题报告",
+      "openingReportCheck": "导师是否查询",
+      "openingReportReviews": "导师评语",
+      "midTermInspection": "中期检查",
+      "midTermInspectionCheck": "导师是否查询",
+      "midTermInspectionReviews": "导师评语",
+      "firstDraft": "毕设初稿",
+      "firstDraftCheck": "导师是否查询",
+      "firstDraftReviews": "导师评语",
+      "finalDraft": "毕设终稿",
+      "finalDraftCheck": "导师是否查询",
+      "finalDraftReviews": "导师评语",
+      "createdTime": "创建时间",
+      "modifyTime": "修改时间",
+      "stuId": "学生ID"
     }
   }
 }

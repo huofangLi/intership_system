@@ -2,28 +2,28 @@
   "intershipSystemApp": {
     "sharingCenter": {
       "home": {
-        "title": "Sharing Centers",
-        "createLabel": "创建新 Sharing Center",
-        "createOrEditLabel": "创建或编辑 Sharing Center",
-        "notFound": "No Sharing Center found"
+        "title": "共享中心",
+        "createLabel": "创建新 共享中心",
+        "createOrEditLabel": "创建或编辑 共享中心",
+        "notFound": "无信息"
       },
-      "created": "Sharing Center {{ param }} 创建成功",
-      "updated": "Sharing Center {{ param }} 更新成功",
-      "deleted": "Sharing Center {{ param }} 删除成功",
+      "created": "共享中心 {{ param }} 创建成功",
+      "updated": "共享中心 {{ param }} 更新成功",
+      "deleted": "共享中心 {{ param }} 删除成功",
       "delete": {
-        "question": "你确定要删除 Sharing Center {{ id }} 吗？"
+        "question": "你确定要删除 共享中心 {{ id }} 吗？"
       },
       "detail": {
-        "title": "Sharing Center"
+        "title": "共享中心"
       },
-      "fileName": "File Name",
-      "fileSize": "File Size",
-      "uploadedBy": "Uploaded By",
-      "department": "Department",
-      "operating": "Operating",
-      "createdTime": "Created Time",
-      "modifyTime": "Modify Time",
-      "stuId": "Stu Id"
+      "fileName": "文件名称",
+      "fileSize": "文件大小",
+      "uploadedBy": "上传者",
+      "department": "院系名称",
+      "operating": "操作",
+      "createdTime": "创建时间",
+      "modifyTime": "修改时间",
+      "stuId": "学生ID"
     }
   }
 }

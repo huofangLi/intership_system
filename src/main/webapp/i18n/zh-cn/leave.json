@@ -2,28 +2,28 @@
   "intershipSystemApp": {
     "leave": {
       "home": {
-        "title": "Leaves",
-        "createLabel": "创建新 Leave",
-        "createOrEditLabel": "创建或编辑 Leave",
-        "notFound": "No Leave found"
+        "title": "请假",
+        "createLabel": "创建新 请假",
+        "createOrEditLabel": "创建或编辑 请假",
+        "notFound": "无信息"
       },
-      "created": "Leave {{ param }} 创建成功",
-      "updated": "Leave {{ param }} 更新成功",
-      "deleted": "Leave {{ param }} 删除成功",
+      "created": "请假 {{ param }} 创建成功",
+      "updated": "请假 {{ param }} 更新成功",
+      "deleted": "请假 {{ param }} 删除成功",
       "delete": {
-        "question": "你确定要删除 Leave {{ id }} 吗？"
+        "question": "你确定要删除 请假 {{ id }} 吗？"
       },
       "detail": {
-        "title": "Leave"
+        "title": "请假"
       },
-      "submitTime": "Submit Time",
-      "leaveTime": "Leave Time",
-      "leaveDays": "Leave Days",
-      "company": "Company",
-      "leaveReason": "Leave Reason",
-      "status": "Status",
-      "createdTime": "Created Time",
-      "stuId": "Stu Id"
+      "submitTime": "请假提交时间",
+      "leaveTime": "请假时间",
+      "leaveDays": "请假天数",
+      "company": "所在公司",
+      "leaveReason": "请假原因",
+      "status": "审核状态",
+      "createdTime": "创建时间",
+      "stuId": "学生ID"
     }
   }
 }

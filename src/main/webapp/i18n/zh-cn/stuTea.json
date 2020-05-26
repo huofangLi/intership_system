@@ -2,23 +2,23 @@
   "intershipSystemApp": {
     "stuTea": {
       "home": {
-        "title": "Stu Teas",
-        "createLabel": "创建新 Stu Tea",
-        "createOrEditLabel": "创建或编辑 Stu Tea",
-        "notFound": "No Stu Tea found"
+        "title": "学生信息关系表",
+        "createLabel": "创建新 学生信息关系表",
+        "createOrEditLabel": "创建或编辑 学生信息关系表",
+        "notFound": "No 学生信息关系表 found"
       },
-      "created": "Stu Tea {{ param }} 创建成功",
-      "updated": "Stu Tea {{ param }} 更新成功",
-      "deleted": "Stu Tea {{ param }} 删除成功",
+      "created": "学生信息关系表 {{ param }} 创建成功",
+      "updated": "学生信息关系表 {{ param }} 更新成功",
+      "deleted": "学生信息关系表 {{ param }} 删除成功",
       "delete": {
-        "question": "你确定要删除 Stu Tea {{ id }} 吗？"
+        "question": "你确定要删除 学生信息关系表 {{ id }} 吗？"
       },
       "detail": {
-        "title": "Stu Tea"
+        "title": "学生信息关系表"
       },
-      "createTime": "Create Time",
-      "stuId": "Stu Id",
-      "teaId": "Tea Id"
+      "createTime": "创建时间",
+      "stuId": "学生号",
+      "teaId": "教工号"
     }
   }
 }

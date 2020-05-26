@@ -2,27 +2,27 @@
   "intershipSystemApp": {
     "attendanceRecord": {
       "home": {
-        "title": "Attendance Records",
-        "createLabel": "创建新 Attendance Record",
-        "createOrEditLabel": "创建或编辑 Attendance Record",
-        "notFound": "No Attendance Record found"
+        "title": "考勤记录",
+        "createLabel": "创建新 考勤记录",
+        "createOrEditLabel": "创建或编辑 考勤记录",
+        "notFound": "无信息"
       },
-      "created": "Attendance Record {{ param }} 创建成功",
-      "updated": "Attendance Record {{ param }} 更新成功",
-      "deleted": "Attendance Record {{ param }} 删除成功",
+      "created": "考勤记录 {{ param }} 创建成功",
+      "updated": "考勤记录 {{ param }} 更新成功",
+      "deleted": "考勤记录 {{ param }} 删除成功",
       "delete": {
-        "question": "你确定要删除 Attendance Record {{ id }} 吗？"
+        "question": "你确定要删除 考勤记录 {{ id }} 吗？"
       },
       "detail": {
-        "title": "Attendance Record"
+        "title": "考勤记录"
       },
-      "internshipBatch": "Internship Batch",
-      "punchTime": "Punch Time",
-      "punchLocation": "Punch Location",
-      "attendanceStatus": "Attendance Status",
-      "createdTime": "Created Time",
-      "modifyTime": "Modify Time",
-      "stuId": "Stu Id"
+      "internshipBatch": "实习批次",
+      "punchTime": "打卡时间",
+      "punchLocation": "打卡地点",
+      "attendanceStatus": "考勤状态",
+      "createdTime": "创建时间",
+      "modifyTime": "修改时间",
+      "stuId": "学生ID"
     }
   }
 }

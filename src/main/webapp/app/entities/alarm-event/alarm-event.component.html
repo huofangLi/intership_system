@@ -22,7 +22,7 @@
             <th jhiSortBy="content"><span jhiTranslate="intershipSystemApp.alarmEvent.content">Content</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="remarks"><span jhiTranslate="intershipSystemApp.alarmEvent.remarks">Remarks</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="createdTime"><span jhiTranslate="intershipSystemApp.alarmEvent.createdTime">Created Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="stuId.id"><span jhiTranslate="intershipSystemApp.alarmEvent.stuId">Stu Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+<!--            <th jhiSortBy="stuId.id"><span jhiTranslate="intershipSystemApp.alarmEvent.stuId">Stu Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>-->
             <th></th>
             </tr>
             </thead>
@@ -33,11 +33,11 @@
                 <td>{{alarmEvent.content}}</td>
                 <td>{{alarmEvent.remarks}}</td>
                 <td>{{alarmEvent.createdTime | date:'medium'}}</td>
-                <td>
-                    <div *ngIf="alarmEvent.stuId">
-                        <a [routerLink]="['../student', alarmEvent.stuId?.id, 'view' ]" >{{alarmEvent.stuId?.id}}</a>
-                    </div>
-                </td>
+<!--                <td>-->
+<!--                    <div *ngIf="alarmEvent.stuId">-->
+<!--                        <a [routerLink]="['../student', alarmEvent.stuId?.id, 'view' ]" >{{alarmEvent.stuId?.id}}</a>-->
+<!--                    </div>-->
+<!--                </td>-->
                 <td class="text-right">
                     <div class="btn-group">
                         <button type="submit"

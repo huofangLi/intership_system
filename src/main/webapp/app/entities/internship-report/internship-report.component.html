@@ -1,9 +1,10 @@
 <div>
     <h2 id="page-heading">
         <span jhiTranslate="intershipSystemApp.internshipReport.home.title">Internship Reports</span>
-        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-internship-report" [routerLink]="['/internship-report/new']">
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-internship-report"
+                [routerLink]="['/internship-report/new']">
             <fa-icon [icon]="'plus'"></fa-icon>
-            <span  jhiTranslate="intershipSystemApp.internshipReport.home.createLabel">
+            <span jhiTranslate="intershipSystemApp.internshipReport.home.createLabel">
             Create new Internship Report
             </span>
         </button>
@@ -17,37 +18,60 @@
         <table class="table table-striped">
             <thead>
             <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
-            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="reportType"><span jhiTranslate="intershipSystemApp.internshipReport.reportType">Report Type</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="projectName"><span jhiTranslate="intershipSystemApp.internshipReport.projectName">Project Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="intershipStage"><span jhiTranslate="intershipSystemApp.internshipReport.intershipStage">Intership Stage</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="annex"><span jhiTranslate="intershipSystemApp.internshipReport.annex">Annex</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="reportContent"><span jhiTranslate="intershipSystemApp.internshipReport.reportContent">Report Content</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="createTime"><span jhiTranslate="intershipSystemApp.internshipReport.createTime">Create Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="star"><span jhiTranslate="intershipSystemApp.internshipReport.star">Star</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="status"><span jhiTranslate="intershipSystemApp.internshipReport.status">Status</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="operating"><span jhiTranslate="intershipSystemApp.internshipReport.operating">Operating</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="interId.id"><span jhiTranslate="intershipSystemApp.internshipReport.interId">Inter Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th></th>
+                <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span>
+                    <fa-icon [icon]="'sort'"></fa-icon>
+                </th>
+                <th jhiSortBy="reportType"><span jhiTranslate="intershipSystemApp.internshipReport.reportType">Report Type</span>
+                    <fa-icon [icon]="'sort'"></fa-icon>
+                </th>
+                <th jhiSortBy="projectName"><span jhiTranslate="intershipSystemApp.internshipReport.projectName">Project Name</span>
+                    <fa-icon [icon]="'sort'"></fa-icon>
+                </th>
+                <th jhiSortBy="intershipStage"><span jhiTranslate="intershipSystemApp.internshipReport.intershipStage">Intership Stage</span>
+                    <fa-icon [icon]="'sort'"></fa-icon>
+                </th>
+                <th jhiSortBy="annex"><span jhiTranslate="intershipSystemApp.internshipReport.annex">Annex</span>
+                    <fa-icon [icon]="'sort'"></fa-icon>
+                </th>
+                <th jhiSortBy="reportContent"><span jhiTranslate="intershipSystemApp.internshipReport.reportContent">Report Content</span>
+                    <fa-icon [icon]="'sort'"></fa-icon>
+                </th>
+                <th jhiSortBy="star"><span jhiTranslate="intershipSystemApp.internshipReport.star">Star</span>
+                    <fa-icon [icon]="'sort'"></fa-icon>
+                </th>
+                <th jhiSortBy="status"><span jhiTranslate="intershipSystemApp.internshipReport.status">Status</span>
+                    <fa-icon [icon]="'sort'"></fa-icon>
+                </th>
+                <th jhiSortBy="operating"><span
+                    jhiTranslate="intershipSystemApp.internshipReport.operating">Operating</span>
+                    <fa-icon [icon]="'sort'"></fa-icon>
+                </th>
+                <th jhiSortBy="createTime"><span jhiTranslate="intershipSystemApp.internshipReport.createTime">Create Time</span>
+                    <fa-icon [icon]="'sort'"></fa-icon>
+                </th>
+
+                <!--            <th jhiSortBy="interId.id"><span jhiTranslate="intershipSystemApp.internshipReport.interId">Inter Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>-->
+                <th></th>
             </tr>
             </thead>
             <tbody>
             <tr *ngFor="let internshipReport of internshipReports ;trackBy: trackId">
-                <td><a [routerLink]="['/internship-report', internshipReport.id, 'view' ]">{{internshipReport.id}}</a></td>
+                <td><a [routerLink]="['/internship-report', internshipReport.id, 'view' ]">{{internshipReport.id}}</a>
+                </td>
                 <td>{{internshipReport.reportType}}</td>
                 <td>{{internshipReport.projectName}}</td>
                 <td>{{internshipReport.intershipStage}}</td>
                 <td>{{internshipReport.annex}}</td>
                 <td>{{internshipReport.reportContent}}</td>
-                <td>{{internshipReport.createTime | date:'medium'}}</td>
                 <td>{{internshipReport.star}}</td>
                 <td>{{internshipReport.status}}</td>
                 <td>{{internshipReport.operating}}</td>
-                <td>
-                    <div *ngIf="internshipReport.interId">
-                        <a [routerLink]="['../intership', internshipReport.interId?.id, 'view' ]" >{{internshipReport.interId?.id}}</a>
-                    </div>
-                </td>
+                <td>{{internshipReport.createTime | date:'medium'}}</td>
+                <!--                <td>-->
+<!--                    <div *ngIf="internshipReport.interId">-->
+<!--                        <a [routerLink]="['../intership', internshipReport.interId?.id, 'view' ]">{{internshipReport.interId?.id}}</a>-->
+<!--                    </div>-->
+<!--                </td>-->
                 <td class="text-right">
                     <div class="btn-group">
                         <button type="submit"
@@ -78,10 +102,12 @@
     </div>
     <div [hidden]="internshipReports?.length === 0">
         <div class="row justify-content-center">
-            <jhi-item-count [page]="page" [total]="totalItems" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+            <jhi-item-count [page]="page" [total]="totalItems" [maxSize]="5"
+                            [itemsPerPage]="itemsPerPage"></jhi-item-count>
         </div>
         <div class="row justify-content-center">
-            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5"
+                            [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
         </div>
     </div>
 </div>

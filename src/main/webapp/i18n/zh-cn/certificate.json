@@ -2,27 +2,27 @@
   "intershipSystemApp": {
     "certificate": {
       "home": {
-        "title": "Certificates",
-        "createLabel": "创建新 Certificate",
-        "createOrEditLabel": "创建或编辑 Certificate",
-        "notFound": "No Certificate found"
+        "title": "我的证书",
+        "createLabel": "创建新 我的证书",
+        "createOrEditLabel": "创建或编辑 我的证书",
+        "notFound": "无信息"
       },
-      "created": "Certificate {{ param }} 创建成功",
-      "updated": "Certificate {{ param }} 更新成功",
-      "deleted": "Certificate {{ param }} 删除成功",
+      "created": "我的证书 {{ param }} 创建成功",
+      "updated": "我的证书 {{ param }} 更新成功",
+      "deleted": "我的证书 {{ param }} 删除成功",
       "delete": {
-        "question": "你确定要删除 Certificate {{ id }} 吗？"
+        "question": "你确定要删除 我的证书 {{ id }} 吗？"
       },
       "detail": {
-        "title": "Certificate"
+        "title": "我的证书"
       },
-      "certificateName": "Certificate Name",
-      "certificateType": "Certificate Type",
-      "certificateLevel": "Certificate Level",
-      "certificateAcquisitionTime": "Certificate Acquisition Time",
-      "certificatePhoto": "Certificate Photo",
-      "createdTime": "Created Time",
-      "modifyTime": "Modify Time"
+      "certificateName": "证书名称",
+      "certificateType": "证书类型",
+      "certificateLevel": "证书级别",
+      "certificateAcquisitionTime": "证书获得时间",
+      "certificatePhoto": "证书照片",
+      "createdTime": "创建时间",
+      "modifyTime": "修改时间"
     }
   }
 }

@@ -2,32 +2,32 @@
   "intershipSystemApp": {
     "internshipTask": {
       "home": {
-        "title": "Internship Tasks",
-        "createLabel": "创建新 Internship Task",
-        "createOrEditLabel": "创建或编辑 Internship Task",
-        "notFound": "No Internship Task found"
+        "title": "实习任务",
+        "createLabel": "创建新 实习任务",
+        "createOrEditLabel": "创建或编辑 实习任务",
+        "notFound": "无信息"
       },
-      "created": "Internship Task {{ param }} 创建成功",
-      "updated": "Internship Task {{ param }} 更新成功",
-      "deleted": "Internship Task {{ param }} 删除成功",
+      "created": "实习任务 {{ param }} 创建成功",
+      "updated": "实习任务 {{ param }} 更新成功",
+      "deleted": "实习任务 {{ param }} 删除成功",
       "delete": {
-        "question": "你确定要删除 Internship Task {{ id }} 吗？"
+        "question": "你确定要删除 实习任务 {{ id }} 吗？"
       },
       "detail": {
-        "title": "Internship Task"
+        "title": "实习任务"
       },
-      "taskTitle": "Task Title",
-      "founder": "Founder",
-      "startTime": "Start Time",
-      "endTime": "End Time",
-      "importance": "Importance",
-      "complexity": "Complexity",
-      "taskAnnex": "Task Annex",
-      "star": "Star",
-      "status": "Status",
-      "operating": "Operating",
-      "createTime": "Create Time",
-      "interId": "Inter Id"
+      "taskTitle": "实习标题",
+      "founder": "创建人",
+      "startTime": "开始时间",
+      "endTime": "结束时间",
+      "importance": "重要程度",
+      "complexity": "复杂度",
+      "taskAnnex": "任务书附件",
+      "star": "综合评价星级",
+      "status": "状态",
+      "operating": "操作",
+      "createTime": "创建时间",
+      "interId": "学生ID"
     }
   }
 }

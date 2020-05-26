@@ -2,24 +2,24 @@
   "intershipSystemApp": {
     "jobChangeRecords": {
       "home": {
-        "title": "Job Change Records",
-        "createLabel": "创建新 Job Change Records",
-        "createOrEditLabel": "创建或编辑 Job Change Records",
-        "notFound": "No Job Change Records found"
+        "title": "岗位变更记录",
+        "createLabel": "创建新 岗位变更记录",
+        "createOrEditLabel": "创建或编辑 岗位变更记录",
+        "notFound": "无信息"
       },
-      "created": "Job Change Records {{ param }} 创建成功",
-      "updated": "Job Change Records {{ param }} 更新成功",
-      "deleted": "Job Change Records {{ param }} 删除成功",
+      "created": "岗位变更记录 {{ param }} 创建成功",
+      "updated": "岗位变更记录 {{ param }} 更新成功",
+      "deleted": "岗位变更记录 {{ param }} 删除成功",
       "delete": {
-        "question": "你确定要删除 Job Change Records {{ id }} 吗？"
+        "question": "你确定要删除 岗位变更记录 {{ id }} 吗？"
       },
       "detail": {
-        "title": "Job Change Records"
+        "title": "岗位变更记录"
       },
-      "unitChange": "Unit Change",
-      "positionChange": "Position Change",
-      "createTime": "Create Time",
-      "interId": "Inter Id"
+      "unitChange": "变更单位名称",
+      "positionChange": "变更岗位名称",
+      "createTime": "创建时间",
+      "interId": "学生ID"
     }
   }
 }

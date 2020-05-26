@@ -25,7 +25,7 @@
             <th jhiSortBy="leaveReason"><span jhiTranslate="intershipSystemApp.leave.leaveReason">Leave Reason</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="status"><span jhiTranslate="intershipSystemApp.leave.status">Status</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="createdTime"><span jhiTranslate="intershipSystemApp.leave.createdTime">Created Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="stuId.id"><span jhiTranslate="intershipSystemApp.leave.stuId">Stu Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+<!--            <th jhiSortBy="stuId.id"><span jhiTranslate="intershipSystemApp.leave.stuId">Stu Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>-->
             <th></th>
             </tr>
             </thead>
@@ -39,11 +39,11 @@
                 <td>{{leave.leaveReason}}</td>
                 <td>{{leave.status}}</td>
                 <td>{{leave.createdTime | date:'medium'}}</td>
-                <td>
-                    <div *ngIf="leave.stuId">
-                        <a [routerLink]="['../student', leave.stuId?.id, 'view' ]" >{{leave.stuId?.id}}</a>
-                    </div>
-                </td>
+<!--                <td>-->
+<!--                    <div *ngIf="leave.stuId">-->
+<!--                        <a [routerLink]="['../student', leave.stuId?.id, 'view' ]" >{{leave.stuId?.id}}</a>-->
+<!--                    </div>-->
+<!--                </td>-->
                 <td class="text-right">
                     <div class="btn-group">
                         <button type="submit"

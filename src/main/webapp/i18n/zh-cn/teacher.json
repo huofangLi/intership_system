@@ -2,27 +2,27 @@
   "intershipSystemApp": {
     "teacher": {
       "home": {
-        "title": "Teachers",
-        "createLabel": "创建新 Teacher",
-        "createOrEditLabel": "创建或编辑 Teacher",
-        "notFound": "No Teacher found"
+        "title": "教师信息",
+        "createLabel": "创建新 教师信息",
+        "createOrEditLabel": "创建或编辑 教师信息",
+        "notFound": "No 教师信息 found"
       },
-      "created": "Teacher {{ param }} 创建成功",
-      "updated": "Teacher {{ param }} 更新成功",
-      "deleted": "Teacher {{ param }} 删除成功",
+      "created": "教师信息 {{ param }} 创建成功",
+      "updated": "教师信息 {{ param }} 更新成功",
+      "deleted": "教师信息 {{ param }} 删除成功",
       "delete": {
-        "question": "你确定要删除 Teacher {{ id }} 吗？"
+        "question": "你确定要删除 教师信息 {{ id }} 吗？"
       },
       "detail": {
-        "title": "Teacher"
+        "title": "教师信息"
       },
-      "teaId": "Tea Id",
-      "teaName": "Tea Name",
-      "gender": "Gender",
-      "teaDepartment": "Tea Department",
-      "skin": "Skin",
-      "createdTime": "Created Time",
-      "modifyTime": "Modify Time"
+      "teaId": "教工号",
+      "teaName": "教师姓名",
+      "gender": "性别",
+      "teaDepartment": "院系",
+      "skin": "皮肤",
+      "createdTime": "创建时间",
+      "modifyTime": "修改时间"
     }
   }
 }

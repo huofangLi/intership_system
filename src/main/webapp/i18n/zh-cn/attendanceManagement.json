@@ -2,26 +2,26 @@
   "intershipSystemApp": {
     "attendanceManagement": {
       "home": {
-        "title": "Attendance Managements",
-        "createLabel": "创建新 Attendance Management",
-        "createOrEditLabel": "创建或编辑 Attendance Management",
-        "notFound": "No Attendance Management found"
+        "title": "签到记录",
+        "createLabel": "创建新 签到记录",
+        "createOrEditLabel": "创建或编辑 签到记录",
+        "notFound": "无信息"
       },
-      "created": "Attendance Management {{ param }} 创建成功",
-      "updated": "Attendance Management {{ param }} 更新成功",
-      "deleted": "Attendance Management {{ param }} 删除成功",
+      "created": "签到记录 {{ param }} 创建成功",
+      "updated": "签到记录 {{ param }} 更新成功",
+      "deleted": "签到记录 {{ param }} 删除成功",
       "delete": {
-        "question": "你确定要删除 Attendance Management {{ id }} 吗？"
+        "question": "你确定要删除 签到记录 {{ id }} 吗？"
       },
       "detail": {
-        "title": "Attendance Management"
+        "title": "签到记录"
       },
-      "signIn": "Sign In",
-      "position": "Position",
-      "coordinate": "Coordinate",
-      "company": "Company",
-      "createdTime": "Created Time",
-      "stuId": "Stu Id",
+      "signIn": "签到时间",
+      "position": "签到位置",
+      "coordinate": "签到坐标",
+      "company": "所在公司",
+      "createdTime":  "创建时间",
+      "stuId": "学生ID",
       "help": {
         "position": "签到位置",
         "coordinate": "签到坐标"
