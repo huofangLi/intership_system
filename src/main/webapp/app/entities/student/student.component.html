@@ -71,7 +71,7 @@
             <tr *ngFor="let student of students ;trackBy: trackId">
                 <td><a [routerLink]="['/student', student.id, 'view' ]">{{student.id}}</a></td>
                 <!--                <td>{{student.stuId}}</td>-->
-                <td>{{student.gender}}</td>
+                <td>{{student.gender ? "男" : "女"}}</td>
                 <td>{{student.stuClass}}</td>
                 <td>{{student.stuDepartment}}</td>
                 <td>{{student.stuProfession}}</td>

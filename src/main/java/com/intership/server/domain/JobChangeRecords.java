@@ -1,4 +1,5 @@
 package com.intership.server.domain;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import io.swagger.annotations.ApiModel;
 import org.hibernate.annotations.Cache;
@@ -31,6 +32,7 @@ public class JobChangeRecords implements Serializable {
     private String positionChange;
 
     @Column(name = "create_time")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
     private ZonedDateTime createTime;
 
     @ManyToOne

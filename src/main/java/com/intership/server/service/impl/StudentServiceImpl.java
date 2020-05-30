@@ -8,9 +8,12 @@ import org.slf4j.LoggerFactory;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 /**
@@ -24,8 +27,11 @@ public class StudentServiceImpl implements StudentService {
 
     private final StudentRepository studentRepository;
 
-    public StudentServiceImpl(StudentRepository studentRepository) {
+    private final JdbcTemplate jdbcTemplate;
+
+    public StudentServiceImpl(StudentRepository studentRepository, JdbcTemplate jdbcTemplate) {
         this.studentRepository = studentRepository;
+        this.jdbcTemplate = jdbcTemplate;
     }
 
     /**
@@ -65,6 +71,13 @@ public class StudentServiceImpl implements StudentService {
     public Optional<Student> findOne(Long id) {
         log.debug("Request to get Student : {}", id);
         return studentRepository.findById(id);
+    }
+
+    @Override
+    public List<Map<String, Object>> findByStuId(Long stuId) {
+        String sql = "SELECT * FROM `student` WHERE stu_id = " + stuId;
+        List<Map<String, Object>> student = jdbcTemplate.queryForList(sql);
+        return student;
     }
 
     /**

@@ -1,4 +1,5 @@
 package com.intership.server.domain;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -26,6 +27,7 @@ public class AttendanceManagement implements Serializable {
     private Long id;
 
     @Column(name = "sign_in")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
     private ZonedDateTime signIn;
 
     /**
@@ -46,6 +48,7 @@ public class AttendanceManagement implements Serializable {
     private String company;
 
     @Column(name = "created_time")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
     private ZonedDateTime createdTime;
 
     @ManyToOne

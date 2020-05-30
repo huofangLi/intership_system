@@ -1,4 +1,5 @@
 package com.intership.server.domain;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
@@ -37,9 +38,11 @@ public class Teacher implements Serializable {
     private String skin;
 
     @Column(name = "created_time")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
     private ZonedDateTime createdTime;
 
     @Column(name = "modify_time")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
     private ZonedDateTime modifyTime;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove

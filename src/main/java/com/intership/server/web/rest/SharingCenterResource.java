@@ -88,17 +88,29 @@ public class SharingCenterResource {
     /**
      * {@code GET  /sharing-centers} : get all the sharingCenters.
      *
-     * @param pageable the pagination information.
+     * @param pageable    the pagination information.
      * @param queryParams a {@link MultiValueMap} query parameters.
-     * @param uriBuilder a {@link UriComponentsBuilder} URI builder.
+     * @param uriBuilder  a {@link UriComponentsBuilder} URI builder.
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of sharingCenters in body.
      */
     @GetMapping("/sharing-centers")
-    public ResponseEntity<List<SharingCenter>> getAllSharingCenters(Pageable pageable, @RequestParam MultiValueMap<String, String> queryParams, UriComponentsBuilder uriBuilder) {
-        log.debug("REST request to get a page of SharingCenters");
+    public ResponseEntity<List<SharingCenter>> getAllSharingCenters(
+        Pageable pageable, @RequestParam MultiValueMap<String, String> queryParams, UriComponentsBuilder uriBuilder) {
         Page<SharingCenter> page = sharingCenterService.findAll(pageable);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(uriBuilder.queryParams(queryParams), page);
         return ResponseEntity.ok().headers(headers).body(page.getContent());
+    }
+
+    @GetMapping("/sharing-center")
+    public ResponseEntity<Page<SharingCenter>> getSharingCentersByUploadAndDep(
+        Pageable pageable, @RequestParam(required = false) String upload, @RequestParam(required = false) String dep) {
+        Page<SharingCenter> page = null;
+        if (upload != null || dep != null) {
+            page = sharingCenterService.findByUploadAndDep(pageable, upload, dep);
+        } else {
+            page = sharingCenterService.findAll(pageable);
+        }
+        return ResponseEntity.ok(page);
     }
 
     /**

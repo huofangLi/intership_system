@@ -1,4 +1,5 @@
 package com.intership.server.domain;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModel;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
@@ -33,15 +34,18 @@ public class Certificate implements Serializable {
     private String certificateLevel;
 
     @Column(name = "certificate_acquisition_time")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
     private ZonedDateTime certificateAcquisitionTime;
 
     @Column(name = "certificate_photo")
     private String certificatePhoto;
 
     @Column(name = "created_time")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
     private ZonedDateTime createdTime;
 
     @Column(name = "modify_time")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
     private ZonedDateTime modifyTime;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove

@@ -1,8 +1,11 @@
 package com.intership.server.domain;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import io.swagger.annotations.ApiModel;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
+import springfox.documentation.spring.web.json.Json;
 
 import javax.persistence.*;
 
@@ -25,9 +28,11 @@ public class AbsenceRecord implements Serializable {
     private Long id;
 
     @Column(name = "absence_start_time")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
     private ZonedDateTime absenceStartTime;
 
     @Column(name = "absence_end_time")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
     private ZonedDateTime absenceEndTime;
 
     @Column(name = "absence_days")
@@ -40,6 +45,7 @@ public class AbsenceRecord implements Serializable {
     private String remarks;
 
     @Column(name = "created_time")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
     private ZonedDateTime createdTime;
 
     @ManyToOne

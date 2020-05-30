@@ -23,6 +23,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 /**
@@ -88,9 +89,9 @@ public class StudentResource {
     /**
      * {@code GET  /students} : get all the students.
      *
-     * @param pageable the pagination information.
+     * @param pageable    the pagination information.
      * @param queryParams a {@link MultiValueMap} query parameters.
-     * @param uriBuilder a {@link UriComponentsBuilder} URI builder.
+     * @param uriBuilder  a {@link UriComponentsBuilder} URI builder.
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of students in body.
      */
     @GetMapping("/students")
@@ -112,6 +113,12 @@ public class StudentResource {
         log.debug("REST request to get Student : {}", id);
         Optional<Student> student = studentService.findOne(id);
         return ResponseUtil.wrapOrNotFound(student);
+    }
+
+    @GetMapping("/student/{stuId}")
+    public ResponseEntity<List<Map<String, Object>>> getStudentByStuId(@PathVariable Long stuId) {
+        List<Map<String, Object>> student = studentService.findByStuId(stuId);
+        return ResponseEntity.ok(student);
     }
 
     /**

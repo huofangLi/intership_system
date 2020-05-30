@@ -1,4 +1,5 @@
 package com.intership.server.domain;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -35,9 +36,11 @@ public class Intership implements Serializable {
     private String course;
 
     @Column(name = "begin_intership")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
     private ZonedDateTime beginIntership;
 
     @Column(name = "end_intership")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
     private ZonedDateTime endIntership;
 
     @Column(name = "tutor_score")

@@ -88,9 +88,9 @@ public class AlarmEventResource {
     /**
      * {@code GET  /alarm-events} : get all the alarmEvents.
      *
-     * @param pageable the pagination information.
+     * @param pageable    the pagination information.
      * @param queryParams a {@link MultiValueMap} query parameters.
-     * @param uriBuilder a {@link UriComponentsBuilder} URI builder.
+     * @param uriBuilder  a {@link UriComponentsBuilder} URI builder.
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of alarmEvents in body.
      */
     @GetMapping("/alarm-events")
@@ -112,6 +112,12 @@ public class AlarmEventResource {
         log.debug("REST request to get AlarmEvent : {}", id);
         Optional<AlarmEvent> alarmEvent = alarmEventService.findOne(id);
         return ResponseUtil.wrapOrNotFound(alarmEvent);
+    }
+
+    @GetMapping("/alarm-event/{stuId}")
+    public ResponseEntity<List<AlarmEvent>> getAlarmEventsByStuId(@PathVariable Long stuId) {
+        List<AlarmEvent> list = alarmEventService.findByStuId(stuId);
+        return ResponseEntity.ok(list);
     }
 
     /**

@@ -5,6 +5,7 @@ import com.intership.server.domain.AlarmEvent;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -36,6 +37,8 @@ public interface AlarmEventService {
      * @return the entity.
      */
     Optional<AlarmEvent> findOne(Long id);
+
+    List<AlarmEvent> findByStuId(Long stuId);
 
     /**
      * Delete the "id" alarmEvent.

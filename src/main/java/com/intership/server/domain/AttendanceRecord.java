@@ -1,4 +1,5 @@
 package com.intership.server.domain;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import io.swagger.annotations.ApiModel;
 import org.hibernate.annotations.Cache;
@@ -28,6 +29,7 @@ public class AttendanceRecord implements Serializable {
     private String internshipBatch;
 
     @Column(name = "punch_time")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
     private ZonedDateTime punchTime;
 
     @Column(name = "punch_location")
@@ -37,9 +39,11 @@ public class AttendanceRecord implements Serializable {
     private String attendanceStatus;
 
     @Column(name = "created_time")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
     private ZonedDateTime createdTime;
 
     @Column(name = "modify_time")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
     private ZonedDateTime modifyTime;
 
     @ManyToOne

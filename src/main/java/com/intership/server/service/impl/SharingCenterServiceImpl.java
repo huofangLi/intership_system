@@ -8,9 +8,13 @@ import org.slf4j.LoggerFactory;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import sun.misc.SharedSecrets;
 
+import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 /**
@@ -24,8 +28,11 @@ public class SharingCenterServiceImpl implements SharingCenterService {
 
     private final SharingCenterRepository sharingCenterRepository;
 
-    public SharingCenterServiceImpl(SharingCenterRepository sharingCenterRepository) {
+    private final JdbcTemplate jdbcTemplate;
+
+    public SharingCenterServiceImpl(SharingCenterRepository sharingCenterRepository, JdbcTemplate jdbcTemplate) {
         this.sharingCenterRepository = sharingCenterRepository;
+        this.jdbcTemplate = jdbcTemplate;
     }
 
     /**
@@ -53,7 +60,6 @@ public class SharingCenterServiceImpl implements SharingCenterService {
         return sharingCenterRepository.findAll(pageable);
     }
 
-
     /**
      * Get one sharingCenter by id.
      *
@@ -65,6 +71,15 @@ public class SharingCenterServiceImpl implements SharingCenterService {
     public Optional<SharingCenter> findOne(Long id) {
         log.debug("Request to get SharingCenter : {}", id);
         return sharingCenterRepository.findById(id);
+    }
+
+    @Override
+    public Page<SharingCenter> findByUploadAndDep(Pageable pageable, String upload, String dep) {
+//        String sql = "SELECT * FROM `sharing_center `";
+//        }
+        Page<SharingCenter> page = sharingCenterRepository.findByUploadedByOrDepartment(upload, dep, pageable);
+//        List<Map<String, Object>> list = jdbcTemplate.queryForList(sql);
+        return page;
     }
 
     /**

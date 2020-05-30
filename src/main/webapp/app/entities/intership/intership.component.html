@@ -20,7 +20,7 @@
             <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="batchName"><span jhiTranslate="intershipSystemApp.intership.batchName">Batch Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="practiceType"><span jhiTranslate="intershipSystemApp.intership.practiceType">Practice Type</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="course"><span jhiTranslate="intershipSystemApp.intership.course">Course</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+<!--            <th jhiSortBy="course"><span jhiTranslate="intershipSystemApp.intership.course">Course</span> <fa-icon [icon]="'sort'"></fa-icon></th>-->
             <th jhiSortBy="beginIntership"><span jhiTranslate="intershipSystemApp.intership.beginIntership">Begin Intership</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="endIntership"><span jhiTranslate="intershipSystemApp.intership.endIntership">End Intership</span> <fa-icon [icon]="'sort'"></fa-icon></th>
 <!--            <th jhiSortBy="tutorScore"><span jhiTranslate="intershipSystemApp.intership.tutorScore">Tutor Score</span> <fa-icon [icon]="'sort'"></fa-icon></th>-->
@@ -61,7 +61,7 @@
                 <td><a [routerLink]="['/intership', intership.id, 'view' ]">{{intership.id}}</a></td>
                 <td>{{intership.batchName}}</td>
                 <td>{{intership.practiceType}}</td>
-                <td>{{intership.course}}</td>
+<!--                <td>{{intership.course}}</td>-->
                 <td>{{intership.beginIntership | date:'medium'}}</td>
                 <td>{{intership.endIntership | date:'medium'}}</td>
 <!--                <td>{{intership.tutorScore}}</td>-->

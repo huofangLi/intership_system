@@ -11,6 +11,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -65,6 +66,11 @@ public class AlarmEventServiceImpl implements AlarmEventService {
     public Optional<AlarmEvent> findOne(Long id) {
         log.debug("Request to get AlarmEvent : {}", id);
         return alarmEventRepository.findById(id);
+    }
+
+    @Override
+    public List<AlarmEvent> findByStuId(Long stuId) {
+        return alarmEventRepository.findByStuIdId(stuId);
     }
 
     /**
