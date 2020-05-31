@@ -11,6 +11,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -76,5 +77,15 @@ public class CertificateServiceImpl implements CertificateService {
     public void delete(Long id) {
         log.debug("Request to delete Certificate : {}", id);
         certificateRepository.deleteById(id);
+    }
+
+    /**
+     * 通过学生 ID 查找证书
+     * @param stuId
+     * @return
+     */
+    @Override
+    public List<Certificate> findByStuId(Long stuId) {
+        return certificateRepository.findByStuIdId(stuId);
     }
 }

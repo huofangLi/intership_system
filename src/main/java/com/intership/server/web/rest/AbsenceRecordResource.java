@@ -126,4 +126,17 @@ public class AbsenceRecordResource {
         absenceRecordService.delete(id);
         return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, true, ENTITY_NAME, id.toString())).build();
     }
+
+    /**
+     * 根据学生 ID 查询 实习缺勤记录
+     * @param stuId
+     * @return
+     */
+    @GetMapping("/absence-record/{stuId}")
+    public  ResponseEntity<List<AbsenceRecord>> getCAbsenceRecordByStuId(@PathVariable Long stuId){
+        List<AbsenceRecord> list =  absenceRecordService.findByStuId(stuId);
+        return ResponseEntity.ok(list);
+    }
+
+
 }

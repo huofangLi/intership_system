@@ -126,4 +126,15 @@ public class LeaveResource {
         leaveService.delete(id);
         return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, true, ENTITY_NAME, id.toString())).build();
     }
+
+    /**
+     * 根据学生 ID 查询实习请假记录
+     * @param stuId
+     * @return
+     */
+    @GetMapping("/leave/{stuId}")
+    public  ResponseEntity<List<Leave>> getLeaveByStuId(@PathVariable Long stuId){
+        List<Leave> list = leaveService.findByStuId(stuId);
+        return ResponseEntity.ok(list);
+    }
 }

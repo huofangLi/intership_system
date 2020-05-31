@@ -5,6 +5,7 @@ import com.intership.server.domain.Certificate;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -43,4 +44,11 @@ public interface CertificateService {
      * @param id the id of the entity.
      */
     void delete(Long id);
+
+    /**
+     * 通过学生 ID 查找证书
+     * @param stuId
+     * @return
+     */
+    List<Certificate> findByStuId(Long stuId);
 }

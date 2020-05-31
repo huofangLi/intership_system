@@ -11,6 +11,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -77,4 +78,16 @@ public class AttendanceManagementServiceImpl implements AttendanceManagementServ
         log.debug("Request to delete AttendanceManagement : {}", id);
         attendanceManagementRepository.deleteById(id);
     }
+
+    /**
+     * 根据学生 ID 查询实习签到
+     * @param stuId
+     * @return
+     */
+    @Override
+    public List<AttendanceManagement> findByStuId(Long stuId) {
+        return attendanceManagementRepository.findByStuIdId(stuId);
+    }
+
+
 }

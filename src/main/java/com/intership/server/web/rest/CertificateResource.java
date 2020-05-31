@@ -126,4 +126,16 @@ public class CertificateResource {
         certificateService.delete(id);
         return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, true, ENTITY_NAME, id.toString())).build();
     }
+
+    /**
+     *通过学生 ID 查找证书
+     * @param stuId
+     * @return
+     */
+    @GetMapping("/certificate/{stuId}")
+    public  ResponseEntity<List<Certificate>> getCertificateByStuId(@PathVariable Long stuId){
+        List<Certificate> list = certificateService.findByStuId(stuId);
+        return ResponseEntity.ok(list);
+    }
+
 }

@@ -5,6 +5,7 @@ import com.intership.server.domain.AbsenceRecord;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -43,4 +44,12 @@ public interface AbsenceRecordService {
      * @param id the id of the entity.
      */
     void delete(Long id);
+
+    /**
+     * 根据学生 ID 查询 实习缺勤记录
+     * @param stuId
+     * @return
+     */
+    List<AbsenceRecord> findByStuId(Long stuId);
+
 }

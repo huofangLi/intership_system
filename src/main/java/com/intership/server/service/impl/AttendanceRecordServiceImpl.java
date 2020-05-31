@@ -1,5 +1,6 @@
 package com.intership.server.service.impl;
 
+import com.intership.server.domain.AbsenceRecord;
 import com.intership.server.service.AttendanceRecordService;
 import com.intership.server.domain.AttendanceRecord;
 import com.intership.server.repository.AttendanceRecordRepository;
@@ -11,6 +12,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -77,4 +79,16 @@ public class AttendanceRecordServiceImpl implements AttendanceRecordService {
         log.debug("Request to delete AttendanceRecord : {}", id);
         attendanceRecordRepository.deleteById(id);
     }
+
+    /**
+     * 通过学生 ID 查找考勤记录
+     * @param stuId
+     * @return
+     */
+    @Override
+    public List<AttendanceRecord> findByStuId(Long stuId) {
+        return attendanceRecordRepository.findByStuIdId(stuId);
+    }
+
+
 }

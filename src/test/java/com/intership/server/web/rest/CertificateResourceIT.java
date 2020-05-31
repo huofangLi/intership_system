@@ -2,6 +2,7 @@ package com.intership.server.web.rest;
 
 import com.intership.server.IntershipSystemApp;
 import com.intership.server.domain.Certificate;
+import com.intership.server.domain.Student;
 import com.intership.server.repository.CertificateRepository;
 import com.intership.server.service.CertificateService;
 import com.intership.server.web.rest.errors.ExceptionTranslator;
@@ -200,7 +201,7 @@ public class CertificateResourceIT {
             .andExpect(jsonPath("$.[*].createdTime").value(hasItem(sameInstant(DEFAULT_CREATED_TIME))))
             .andExpect(jsonPath("$.[*].modifyTime").value(hasItem(sameInstant(DEFAULT_MODIFY_TIME))));
     }
-    
+
     @Test
     @Transactional
     public void getCertificate() throws Exception {
@@ -315,7 +316,7 @@ public class CertificateResourceIT {
         assertThat(certificate1).isEqualTo(certificate2);
         certificate2.setId(2L);
         assertThat(certificate1).isNotEqualTo(certificate2);
-        certificate1.setId(null);
+        certificate1.setId((Student) null);
         assertThat(certificate1).isNotEqualTo(certificate2);
     }
 }

@@ -126,4 +126,15 @@ public class AttendanceManagementResource {
         attendanceManagementService.delete(id);
         return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, true, ENTITY_NAME, id.toString())).build();
     }
+
+    /**
+     * 根据学生 ID 查询实习签到
+     * @param stuId
+     * @return
+     */
+    @GetMapping("/attendance-management/{stuId}")
+    public  ResponseEntity<List<AttendanceManagement>> getAttendanceManagementByStuId(@PathVariable Long stuId){
+        List<AttendanceManagement> list = attendanceManagementService.findByStuId(stuId);
+        return ResponseEntity.ok(list);
+    }
 }

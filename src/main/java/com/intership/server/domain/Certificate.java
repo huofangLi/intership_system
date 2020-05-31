@@ -1,5 +1,6 @@
 package com.intership.server.domain;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import io.swagger.annotations.ApiModel;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
@@ -47,6 +48,10 @@ public class Certificate implements Serializable {
     @Column(name = "modify_time")
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
     private ZonedDateTime modifyTime;
+
+    @ManyToOne
+    @JsonIgnoreProperties("certificates")
+    private Student stuId;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -141,6 +146,15 @@ public class Certificate implements Serializable {
 
     public Certificate modifyTime(ZonedDateTime modifyTime) {
         this.modifyTime = modifyTime;
+        return this;
+    }
+
+    public Student getGetStuId(){
+        return stuId;
+    }
+
+    public Certificate setId(Student student){
+        this.stuId = student;
         return this;
     }
 

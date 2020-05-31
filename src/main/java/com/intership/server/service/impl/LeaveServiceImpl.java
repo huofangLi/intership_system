@@ -11,6 +11,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -76,5 +77,15 @@ public class LeaveServiceImpl implements LeaveService {
     public void delete(Long id) {
         log.debug("Request to delete Leave : {}", id);
         leaveRepository.deleteById(id);
+    }
+
+    /**
+     * 根据学生 ID 查询实习请假记录
+     * @param stuId
+     * @return
+     */
+    @Override
+    public List<Leave> findByStuId(Long stuId) {
+        return leaveRepository.findByStuIdId(stuId);
     }
 }

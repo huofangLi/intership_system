@@ -11,6 +11,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -77,4 +78,15 @@ public class AbsenceRecordServiceImpl implements AbsenceRecordService {
         log.debug("Request to delete AbsenceRecord : {}", id);
         absenceRecordRepository.deleteById(id);
     }
+
+    /**
+     * 根据学生 ID 查询 实习缺勤记录
+     * @param stuId
+     * @return
+     */
+    @Override
+    public List<AbsenceRecord> findByStuId(Long stuId) {
+        return absenceRecordRepository.findByStuIdId(stuId);
+    }
+
 }

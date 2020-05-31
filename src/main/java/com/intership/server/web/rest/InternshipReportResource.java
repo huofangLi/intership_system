@@ -126,4 +126,15 @@ public class InternshipReportResource {
         internshipReportService.delete(id);
         return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, true, ENTITY_NAME, id.toString())).build();
     }
+
+    /**
+     * 根据实习表 ID 查询实习报告
+     * @param interId
+     * @return
+     */
+    @GetMapping("/internship-report/{interId}")
+    public  ResponseEntity<List<InternshipReport>> getInternshipReportByInterId(@PathVariable Long interId){
+        List<InternshipReport> list = internshipReportService.findByInterId(interId);
+        return ResponseEntity.ok(list);
+    }
 }

@@ -11,6 +11,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -76,5 +77,15 @@ public class InternshipTaskServiceImpl implements InternshipTaskService {
     public void delete(Long id) {
         log.debug("Request to delete InternshipTask : {}", id);
         internshipTaskRepository.deleteById(id);
+    }
+
+    /**
+     * 根据实习表 ID 查询实习任务
+     * @param interId
+     * @return
+     */
+    @Override
+    public List<InternshipTask> findByInterId(Long interId) {
+        return internshipTaskRepository.findByInterIdId(interId);
     }
 }

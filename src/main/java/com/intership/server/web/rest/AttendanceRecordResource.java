@@ -1,5 +1,6 @@
 package com.intership.server.web.rest;
 
+import com.intership.server.domain.AbsenceRecord;
 import com.intership.server.domain.AttendanceRecord;
 import com.intership.server.service.AttendanceRecordService;
 import com.intership.server.web.rest.errors.BadRequestAlertException;
@@ -126,4 +127,16 @@ public class AttendanceRecordResource {
         attendanceRecordService.delete(id);
         return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, true, ENTITY_NAME, id.toString())).build();
     }
+
+    /**
+     * 通过学生 ID 查找考勤记录
+     * @param stuId
+     * @return
+     */
+    @GetMapping("/attendance-record/{stuId}")
+    public ResponseEntity<List<AttendanceRecord>> getAttendanceRecordByStuId(@PathVariable Long stuId){
+        List<AttendanceRecord> list = attendanceRecordService.findByStuId(stuId);
+        return ResponseEntity.ok(list);
+    }
+
 }

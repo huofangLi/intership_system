@@ -1,10 +1,12 @@
 package com.intership.server.service;
 
+import com.intership.server.domain.AbsenceRecord;
 import com.intership.server.domain.AttendanceRecord;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -43,4 +45,11 @@ public interface AttendanceRecordService {
      * @param id the id of the entity.
      */
     void delete(Long id);
+
+    /**
+     * 通过学生 ID 查找考勤记录
+     * @param stuId
+     * @return
+     */
+    List<AttendanceRecord> findByStuId(Long stuId);
 }
