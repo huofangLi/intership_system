@@ -5,6 +5,7 @@ import com.intership.server.domain.JobChangeRecords;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -43,4 +44,11 @@ public interface JobChangeRecordsService {
      * @param id the id of the entity.
      */
     void delete(Long id);
+
+    /**
+     * 根据实习表 ID 查询变更记录
+     * @param interId
+     * @return
+     */
+    List<JobChangeRecords> findByInterId(Long interId);
 }

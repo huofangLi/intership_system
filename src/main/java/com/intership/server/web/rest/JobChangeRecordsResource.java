@@ -126,4 +126,15 @@ public class JobChangeRecordsResource {
         jobChangeRecordsService.delete(id);
         return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, true, ENTITY_NAME, id.toString())).build();
     }
+
+    /**
+     * 根据实习表 ID 查询变更记录
+     * @param interId
+     * @return
+     */
+    @GetMapping("/job-change-record/{interId}")
+    public ResponseEntity<List<JobChangeRecords>> getInternshipTaskByInterId(@PathVariable Long interId) {
+        List<JobChangeRecords> list = jobChangeRecordsService.findByInterId(interId);
+        return ResponseEntity.ok(list);
+    }
 }
