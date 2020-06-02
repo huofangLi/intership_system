@@ -23,6 +23,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 /**
@@ -89,5 +90,27 @@ public class IntershipResource {
         log.debug("REST request to delete Intership : {}", id);
         intershipService.delete(id);
         return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, true, ENTITY_NAME, id.toString())).build();
+    }
+
+    /**
+     * 根据学生 ID 查询实习
+     * @param stuId
+     * @return
+     */
+    @GetMapping("/intership/{stuId}")
+    public  ResponseEntity<List<Intership>> getIntershipByStuId(@PathVariable Long stuId){
+        List<Intership> list= intershipService.findByStuId(stuId);
+        return ResponseEntity.ok(list);
+    }
+
+    /**
+     * 根据学生 ID 查询实习成绩
+     * @param stuId
+     * @return
+     */
+    @GetMapping("/grade/{stuId}")
+    public ResponseEntity<List<Map<String, Object>>> getGradeByStuId(@PathVariable Long stuId) {
+        List<Map<String, Object>> grade = intershipService.findGradeByStuId(stuId);
+        return ResponseEntity.ok(grade);
     }
 }

@@ -5,6 +5,8 @@ import com.intership.server.domain.Intership;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
+import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 /**
@@ -43,4 +45,18 @@ public interface IntershipService {
      * @param id the id of the entity.
      */
     void delete(Long id);
+
+    /**
+     * 根据学生 ID 查询实习成绩
+     * @param stuId
+     * @return
+     */
+    List<Map<String, Object>> findGradeByStuId(Long stuId);
+
+    /**
+     * 根据学生 ID 查询实习
+     * @param stuId
+     * @return
+     */
+    List<Intership> findByStuId(Long stuId);
 }

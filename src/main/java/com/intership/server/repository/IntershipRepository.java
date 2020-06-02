@@ -14,5 +14,12 @@ import java.util.List;
 @Repository
 public interface IntershipRepository extends JpaRepository<Intership, Long> {
 
+    /**
+     * 根据学生 ID 查询实习
+     * @param stuId
+     * @return
+     */
+    List<Intership> findByStuIdId(Long stuId);
+
 
 }
