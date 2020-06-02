@@ -45,13 +45,6 @@ public class InternshipReportResource {
         this.internshipReportService = internshipReportService;
     }
 
-    /**
-     * {@code POST  /internship-reports} : Create a new internshipReport.
-     *
-     * @param internshipReport the internshipReport to create.
-     * @return the {@link ResponseEntity} with status {@code 201 (Created)} and with body the new internshipReport, or with status {@code 400 (Bad Request)} if the internshipReport has already an ID.
-     * @throws URISyntaxException if the Location URI syntax is incorrect.
-     */
     @PostMapping("/internship-reports")
     public ResponseEntity<InternshipReport> createInternshipReport(@RequestBody InternshipReport internshipReport) throws URISyntaxException {
         log.debug("REST request to save InternshipReport : {}", internshipReport);
@@ -64,15 +57,6 @@ public class InternshipReportResource {
             .body(result);
     }
 
-    /**
-     * {@code PUT  /internship-reports} : Updates an existing internshipReport.
-     *
-     * @param internshipReport the internshipReport to update.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the updated internshipReport,
-     * or with status {@code 400 (Bad Request)} if the internshipReport is not valid,
-     * or with status {@code 500 (Internal Server Error)} if the internshipReport couldn't be updated.
-     * @throws URISyntaxException if the Location URI syntax is incorrect.
-     */
     @PutMapping("/internship-reports")
     public ResponseEntity<InternshipReport> updateInternshipReport(@RequestBody InternshipReport internshipReport) throws URISyntaxException {
         log.debug("REST request to update InternshipReport : {}", internshipReport);
@@ -85,14 +69,6 @@ public class InternshipReportResource {
             .body(result);
     }
 
-    /**
-     * {@code GET  /internship-reports} : get all the internshipReports.
-     *
-     * @param pageable the pagination information.
-     * @param queryParams a {@link MultiValueMap} query parameters.
-     * @param uriBuilder a {@link UriComponentsBuilder} URI builder.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of internshipReports in body.
-     */
     @GetMapping("/internship-reports")
     public ResponseEntity<List<InternshipReport>> getAllInternshipReports(Pageable pageable, @RequestParam MultiValueMap<String, String> queryParams, UriComponentsBuilder uriBuilder) {
         log.debug("REST request to get a page of InternshipReports");
@@ -101,12 +77,6 @@ public class InternshipReportResource {
         return ResponseEntity.ok().headers(headers).body(page.getContent());
     }
 
-    /**
-     * {@code GET  /internship-reports/:id} : get the "id" internshipReport.
-     *
-     * @param id the id of the internshipReport to retrieve.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the internshipReport, or with status {@code 404 (Not Found)}.
-     */
     @GetMapping("/internship-reports/{id}")
     public ResponseEntity<InternshipReport> getInternshipReport(@PathVariable Long id) {
         log.debug("REST request to get InternshipReport : {}", id);
@@ -114,12 +84,6 @@ public class InternshipReportResource {
         return ResponseUtil.wrapOrNotFound(internshipReport);
     }
 
-    /**
-     * {@code DELETE  /internship-reports/:id} : delete the "id" internshipReport.
-     *
-     * @param id the id of the internshipReport to delete.
-     * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
-     */
     @DeleteMapping("/internship-reports/{id}")
     public ResponseEntity<Void> deleteInternshipReport(@PathVariable Long id) {
         log.debug("REST request to delete InternshipReport : {}", id);
@@ -127,11 +91,6 @@ public class InternshipReportResource {
         return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, true, ENTITY_NAME, id.toString())).build();
     }
 
-    /**
-     * 根据实习表 ID 查询实习报告
-     * @param interId
-     * @return
-     */
     @GetMapping("/internship-report/{interId}")
     public  ResponseEntity<List<InternshipReport>> getInternshipReportByInterId(@PathVariable Long interId){
         List<InternshipReport> list = internshipReportService.findByInterId(interId);

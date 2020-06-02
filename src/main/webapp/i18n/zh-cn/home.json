@@ -1,15 +1,15 @@
 {
   "home": {
-    "title": "职业院校顶岗实习后台管理系统",
+    "title": "职业院校顶岗实习管理系统",
     "subtitle": "欢迎使用职业院校顶岗实习后台管理系统",
     "logged": {
       "message": "您目前是以 \"{{username}}\" 账号登录."
     },
-    "question": "如果您有任何有关 JHipster 的问题, 可以查阅下列资源:",
+    "question": "如果您有有关顶岗实习的问题, 可以查阅下列资源:",
     "link": {
-      "homepage": "JHipster 首頁",
-      "stackoverflow": "Stack Overflow 上关于 JHipster 的讨论",
-      "bugtracker": "JHipster 的缺陷追踪",
+      "bugtracker": "校企实习服务平台",
+      "homepage": "顶岗实习",
+      "stackoverflow": "什么是顶岗实习？",
       "chat": "JHipster public chat room",
       "follow": "在 Twitter 上联络 @java_hipster"
     },

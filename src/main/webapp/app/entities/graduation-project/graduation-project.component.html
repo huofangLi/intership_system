@@ -1,12 +1,13 @@
 <div>
     <h2 id="page-heading">
         <span jhiTranslate="intershipSystemApp.graduationProject.home.title">Graduation Projects</span>
-        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-graduation-project" [routerLink]="['/graduation-project/new']">
-            <fa-icon [icon]="'plus'"></fa-icon>
-            <span  jhiTranslate="intershipSystemApp.graduationProject.home.createLabel">
-            Create new Graduation Project
-            </span>
-        </button>
+<!--        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-graduation-project"-->
+<!--                [routerLink]="['/graduation-project/new']">-->
+<!--            <fa-icon [icon]="'plus'"></fa-icon>-->
+<!--            <span jhiTranslate="intershipSystemApp.graduationProject.home.createLabel">-->
+<!--            Create new Graduation Project-->
+<!--            </span>-->
+<!--        </button>-->
     </h2>
     <jhi-alert></jhi-alert>
     <br/>
@@ -17,55 +18,86 @@
         <table class="table table-striped">
             <thead>
             <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
-            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="graduationProjectTitle"><span jhiTranslate="intershipSystemApp.graduationProject.graduationProjectTitle">Graduation Project Title</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="source"><span jhiTranslate="intershipSystemApp.graduationProject.source">Source</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="taskBook"><span jhiTranslate="intershipSystemApp.graduationProject.taskBook">Task Book</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-<!--            <th jhiSortBy="taskBookCheck"><span jhiTranslate="intershipSystemApp.graduationProject.taskBookCheck">Task Book Check</span> <fa-icon [icon]="'sort'"></fa-icon></th>-->
-<!--            <th jhiSortBy="taskBookReviews"><span jhiTranslate="intershipSystemApp.graduationProject.taskBookReviews">Task Book Reviews</span> <fa-icon [icon]="'sort'"></fa-icon></th>-->
-            <th jhiSortBy="openingReport"><span jhiTranslate="intershipSystemApp.graduationProject.openingReport">Opening Report</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-<!--            <th jhiSortBy="openingReportCheck"><span jhiTranslate="intershipSystemApp.graduationProject.openingReportCheck">Opening Report Check</span> <fa-icon [icon]="'sort'"></fa-icon></th>-->
-<!--            <th jhiSortBy="openingReportReviews"><span jhiTranslate="intershipSystemApp.graduationProject.openingReportReviews">Opening Report Reviews</span> <fa-icon [icon]="'sort'"></fa-icon></th>-->
-            <th jhiSortBy="midTermInspection"><span jhiTranslate="intershipSystemApp.graduationProject.midTermInspection">Mid Term Inspection</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-<!--            <th jhiSortBy="midTermInspectionCheck"><span jhiTranslate="intershipSystemApp.graduationProject.midTermInspectionCheck">Mid Term Inspection Check</span> <fa-icon [icon]="'sort'"></fa-icon></th>-->
-<!--            <th jhiSortBy="midTermInspectionReviews"><span jhiTranslate="intershipSystemApp.graduationProject.midTermInspectionReviews">Mid Term Inspection Reviews</span> <fa-icon [icon]="'sort'"></fa-icon></th>-->
-            <th jhiSortBy="firstDraft"><span jhiTranslate="intershipSystemApp.graduationProject.firstDraft">First Draft</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-<!--            <th jhiSortBy="firstDraftCheck"><span jhiTranslate="intershipSystemApp.graduationProject.firstDraftCheck">First Draft Check</span> <fa-icon [icon]="'sort'"></fa-icon></th>-->
-<!--            <th jhiSortBy="firstDraftReviews"><span jhiTranslate="intershipSystemApp.graduationProject.firstDraftReviews">First Draft Reviews</span> <fa-icon [icon]="'sort'"></fa-icon></th>-->
-            <th jhiSortBy="finalDraft"><span jhiTranslate="intershipSystemApp.graduationProject.finalDraft">Final Draft</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-<!--            <th jhiSortBy="finalDraftCheck"><span jhiTranslate="intershipSystemApp.graduationProject.finalDraftCheck">Final Draft Check</span> <fa-icon [icon]="'sort'"></fa-icon></th>-->
-<!--            <th jhiSortBy="finalDraftReviews"><span jhiTranslate="intershipSystemApp.graduationProject.finalDraftReviews">Final Draft Reviews</span> <fa-icon [icon]="'sort'"></fa-icon></th>-->
-            <th jhiSortBy="createdTime"><span jhiTranslate="intershipSystemApp.graduationProject.createdTime">Created Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-<!--            <th jhiSortBy="modifyTime"><span jhiTranslate="intershipSystemApp.graduationProject.modifyTime">Modify Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>-->
-<!--            <th jhiSortBy="stuId.id"><span jhiTranslate="intershipSystemApp.graduationProject.stuId">Stu Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>-->
-            <th></th>
+                <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span>
+                    <fa-icon [icon]="'sort'"></fa-icon>
+                </th>
+                <th jhiSortBy="graduationProjectTitle"><span
+                    jhiTranslate="intershipSystemApp.graduationProject.graduationProjectTitle">Graduation Project Title</span>
+                    <fa-icon [icon]="'sort'"></fa-icon>
+                </th>
+                <th jhiSortBy="source"><span jhiTranslate="intershipSystemApp.graduationProject.source">Source</span>
+                    <fa-icon [icon]="'sort'"></fa-icon>
+                </th>
+                <th jhiSortBy="taskBook"><span
+                    jhiTranslate="intershipSystemApp.graduationProject.taskBook">Task Book</span>
+                    <fa-icon [icon]="'sort'"></fa-icon>
+                </th>
+                <!--            <th jhiSortBy="taskBookCheck"><span jhiTranslate="intershipSystemApp.graduationProject.taskBookCheck">Task Book Check</span> <fa-icon [icon]="'sort'"></fa-icon></th>-->
+                <!--            <th jhiSortBy="taskBookReviews"><span jhiTranslate="intershipSystemApp.graduationProject.taskBookReviews">Task Book Reviews</span> <fa-icon [icon]="'sort'"></fa-icon></th>-->
+                <th jhiSortBy="openingReport"><span jhiTranslate="intershipSystemApp.graduationProject.openingReport">Opening Report</span>
+                    <fa-icon [icon]="'sort'"></fa-icon>
+                </th>
+                <!--            <th jhiSortBy="openingReportCheck"><span jhiTranslate="intershipSystemApp.graduationProject.openingReportCheck">Opening Report Check</span> <fa-icon [icon]="'sort'"></fa-icon></th>-->
+                <!--            <th jhiSortBy="openingReportReviews"><span jhiTranslate="intershipSystemApp.graduationProject.openingReportReviews">Opening Report Reviews</span> <fa-icon [icon]="'sort'"></fa-icon></th>-->
+                <th jhiSortBy="midTermInspection"><span
+                    jhiTranslate="intershipSystemApp.graduationProject.midTermInspection">Mid Term Inspection</span>
+                    <fa-icon [icon]="'sort'"></fa-icon>
+                </th>
+                <!--            <th jhiSortBy="midTermInspectionCheck"><span jhiTranslate="intershipSystemApp.graduationProject.midTermInspectionCheck">Mid Term Inspection Check</span> <fa-icon [icon]="'sort'"></fa-icon></th>-->
+                <!--            <th jhiSortBy="midTermInspectionReviews"><span jhiTranslate="intershipSystemApp.graduationProject.midTermInspectionReviews">Mid Term Inspection Reviews</span> <fa-icon [icon]="'sort'"></fa-icon></th>-->
+                <th jhiSortBy="firstDraft"><span jhiTranslate="intershipSystemApp.graduationProject.firstDraft">First Draft</span>
+                    <fa-icon [icon]="'sort'"></fa-icon>
+                </th>
+                <!--            <th jhiSortBy="firstDraftCheck"><span jhiTranslate="intershipSystemApp.graduationProject.firstDraftCheck">First Draft Check</span> <fa-icon [icon]="'sort'"></fa-icon></th>-->
+                <!--            <th jhiSortBy="firstDraftReviews"><span jhiTranslate="intershipSystemApp.graduationProject.firstDraftReviews">First Draft Reviews</span> <fa-icon [icon]="'sort'"></fa-icon></th>-->
+                <th jhiSortBy="finalDraft"><span jhiTranslate="intershipSystemApp.graduationProject.finalDraft">Final Draft</span>
+                    <fa-icon [icon]="'sort'"></fa-icon>
+                </th>
+                <!--            <th jhiSortBy="finalDraftCheck"><span jhiTranslate="intershipSystemApp.graduationProject.finalDraftCheck">Final Draft Check</span> <fa-icon [icon]="'sort'"></fa-icon></th>-->
+                <!--            <th jhiSortBy="finalDraftReviews"><span jhiTranslate="intershipSystemApp.graduationProject.finalDraftReviews">Final Draft Reviews</span> <fa-icon [icon]="'sort'"></fa-icon></th>-->
+                <th jhiSortBy="createdTime"><span jhiTranslate="intershipSystemApp.graduationProject.createdTime">Created Time</span>
+                    <fa-icon [icon]="'sort'"></fa-icon>
+                </th>
+                <!--            <th jhiSortBy="modifyTime"><span jhiTranslate="intershipSystemApp.graduationProject.modifyTime">Modify Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>-->
+                <!--            <th jhiSortBy="stuId.id"><span jhiTranslate="intershipSystemApp.graduationProject.stuId">Stu Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>-->
+                <th></th>
             </tr>
             </thead>
             <tbody>
             <tr *ngFor="let graduationProject of graduationProjects ;trackBy: trackId">
-                <td><a [routerLink]="['/graduation-project', graduationProject.id, 'view' ]">{{graduationProject.id}}</a></td>
+                <td><a
+                    [routerLink]="['/graduation-project', graduationProject.id, 'view' ]">{{graduationProject.id}}</a>
+                </td>
                 <td>{{graduationProject.graduationProjectTitle}}</td>
                 <td>{{graduationProject.source}}</td>
-                <td>{{graduationProject.taskBook}}</td>
-<!--                <td>{{graduationProject.taskBookCheck}}</td>-->
-<!--                <td>{{graduationProject.taskBookReviews}}</td>-->
+                <td>
+                    {{graduationProject.taskBook}}
+                    <button nz-button *ngFor="let i of fileTypes" class="mr-sm"
+                            down-file
+                            file-name="文件">{{i}}</button>
+                </td>
+
+                <!--                <button nz-button *ngFor="let i of fileTypes" class="mr-sm"-->
+                <!--                        down-file file-name="demo中文">{{i}}</button>-->
+                <!--                <td>{{graduationProject.taskBookCheck}}</td>-->
+                <!--                <td>{{graduationProject.taskBookReviews}}</td>-->
                 <td>{{graduationProject.openingReport}}</td>
-<!--                <td>{{graduationProject.openingReportCheck}}</td>-->
-<!--                <td>{{graduationProject.openingReportReviews}}</td>-->
+                <!--                <td>{{graduationProject.openingReportCheck}}</td>-->
+                <!--                <td>{{graduationProject.openingReportReviews}}</td>-->
                 <td>{{graduationProject.midTermInspection}}</td>
-<!--                <td>{{graduationProject.midTermInspectionCheck}}</td>-->
-<!--                <td>{{graduationProject.midTermInspectionReviews}}</td>-->
+                <!--                <td>{{graduationProject.midTermInspectionCheck}}</td>-->
+                <!--                <td>{{graduationProject.midTermInspectionReviews}}</td>-->
                 <td>{{graduationProject.firstDraft}}</td>
-<!--                <td>{{graduationProject.firstDraftCheck}}</td>-->
-<!--                <td>{{graduationProject.firstDraftReviews}}</td>-->
+                <!--                <td>{{graduationProject.firstDraftCheck}}</td>-->
+                <!--                <td>{{graduationProject.firstDraftReviews}}</td>-->
                 <td>{{graduationProject.finalDraft}}</td>
-<!--                <td>{{graduationProject.finalDraftCheck}}</td>-->
-<!--                <td>{{graduationProject.finalDraftReviews}}</td>-->
+                <!--                <td>{{graduationProject.finalDraftCheck}}</td>-->
+                <!--                <td>{{graduationProject.finalDraftReviews}}</td>-->
                 <td>{{graduationProject.createdTime | date:'medium'}}</td>
-<!--                <td>{{graduationProject.modifyTime | date:'medium'}}</td>-->
+                <!--                <td>{{graduationProject.modifyTime | date:'medium'}}</td>-->
                 <td>
                     <div *ngIf="graduationProject.stuId">
-                        <a [routerLink]="['../student', graduationProject.stuId?.id, 'view' ]" >{{graduationProject.stuId?.id}}</a>
+                        <a [routerLink]="['../student', graduationProject.stuId?.id, 'view' ]">{{graduationProject.stuId?.id}}</a>
                     </div>
                 </td>
                 <td class="text-right">
@@ -98,10 +130,12 @@
     </div>
     <div [hidden]="graduationProjects?.length === 0">
         <div class="row justify-content-center">
-            <jhi-item-count [page]="page" [total]="totalItems" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+            <jhi-item-count [page]="page" [total]="totalItems" [maxSize]="5"
+                            [itemsPerPage]="itemsPerPage"></jhi-item-count>
         </div>
         <div class="row justify-content-center">
-            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5"
+                            [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
         </div>
     </div>
 </div>

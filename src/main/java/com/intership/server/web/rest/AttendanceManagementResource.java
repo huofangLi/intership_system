@@ -45,13 +45,6 @@ public class AttendanceManagementResource {
         this.attendanceManagementService = attendanceManagementService;
     }
 
-    /**
-     * {@code POST  /attendance-managements} : Create a new attendanceManagement.
-     *
-     * @param attendanceManagement the attendanceManagement to create.
-     * @return the {@link ResponseEntity} with status {@code 201 (Created)} and with body the new attendanceManagement, or with status {@code 400 (Bad Request)} if the attendanceManagement has already an ID.
-     * @throws URISyntaxException if the Location URI syntax is incorrect.
-     */
     @PostMapping("/attendance-managements")
     public ResponseEntity<AttendanceManagement> createAttendanceManagement(@RequestBody AttendanceManagement attendanceManagement) throws URISyntaxException {
         log.debug("REST request to save AttendanceManagement : {}", attendanceManagement);
@@ -64,15 +57,6 @@ public class AttendanceManagementResource {
             .body(result);
     }
 
-    /**
-     * {@code PUT  /attendance-managements} : Updates an existing attendanceManagement.
-     *
-     * @param attendanceManagement the attendanceManagement to update.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the updated attendanceManagement,
-     * or with status {@code 400 (Bad Request)} if the attendanceManagement is not valid,
-     * or with status {@code 500 (Internal Server Error)} if the attendanceManagement couldn't be updated.
-     * @throws URISyntaxException if the Location URI syntax is incorrect.
-     */
     @PutMapping("/attendance-managements")
     public ResponseEntity<AttendanceManagement> updateAttendanceManagement(@RequestBody AttendanceManagement attendanceManagement) throws URISyntaxException {
         log.debug("REST request to update AttendanceManagement : {}", attendanceManagement);
@@ -85,14 +69,6 @@ public class AttendanceManagementResource {
             .body(result);
     }
 
-    /**
-     * {@code GET  /attendance-managements} : get all the attendanceManagements.
-     *
-     * @param pageable the pagination information.
-     * @param queryParams a {@link MultiValueMap} query parameters.
-     * @param uriBuilder a {@link UriComponentsBuilder} URI builder.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of attendanceManagements in body.
-     */
     @GetMapping("/attendance-managements")
     public ResponseEntity<List<AttendanceManagement>> getAllAttendanceManagements(Pageable pageable, @RequestParam MultiValueMap<String, String> queryParams, UriComponentsBuilder uriBuilder) {
         log.debug("REST request to get a page of AttendanceManagements");
@@ -101,12 +77,6 @@ public class AttendanceManagementResource {
         return ResponseEntity.ok().headers(headers).body(page.getContent());
     }
 
-    /**
-     * {@code GET  /attendance-managements/:id} : get the "id" attendanceManagement.
-     *
-     * @param id the id of the attendanceManagement to retrieve.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the attendanceManagement, or with status {@code 404 (Not Found)}.
-     */
     @GetMapping("/attendance-managements/{id}")
     public ResponseEntity<AttendanceManagement> getAttendanceManagement(@PathVariable Long id) {
         log.debug("REST request to get AttendanceManagement : {}", id);
@@ -114,12 +84,6 @@ public class AttendanceManagementResource {
         return ResponseUtil.wrapOrNotFound(attendanceManagement);
     }
 
-    /**
-     * {@code DELETE  /attendance-managements/:id} : delete the "id" attendanceManagement.
-     *
-     * @param id the id of the attendanceManagement to delete.
-     * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
-     */
     @DeleteMapping("/attendance-managements/{id}")
     public ResponseEntity<Void> deleteAttendanceManagement(@PathVariable Long id) {
         log.debug("REST request to delete AttendanceManagement : {}", id);
@@ -127,11 +91,6 @@ public class AttendanceManagementResource {
         return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, true, ENTITY_NAME, id.toString())).build();
     }
 
-    /**
-     * 根据学生 ID 查询实习签到
-     * @param stuId
-     * @return
-     */
     @GetMapping("/attendance-management/{stuId}")
     public  ResponseEntity<List<AttendanceManagement>> getAttendanceManagementByStuId(@PathVariable Long stuId){
         List<AttendanceManagement> list = attendanceManagementService.findByStuId(stuId);

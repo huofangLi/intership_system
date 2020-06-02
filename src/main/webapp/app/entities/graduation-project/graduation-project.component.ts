@@ -2,7 +2,6 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { HttpErrorResponse, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { filter, map } from 'rxjs/operators';
 import { JhiEventManager, JhiParseLinks, JhiAlertService } from 'ng-jhipster';
 
 import { IGraduationProject } from 'app/shared/model/graduation-project.model';
@@ -29,6 +28,11 @@ export class GraduationProjectComponent implements OnInit, OnDestroy {
   predicate: any;
   previousPage: any;
   reverse: any;
+  fileTypes = ['下载'];
+  data = {
+    otherdata: 1,
+    time: new Date()
+  };
 
   constructor(
     protected graduationProjectService: GraduationProjectService,

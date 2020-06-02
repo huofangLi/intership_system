@@ -46,13 +46,6 @@ public class AttendanceRecordResource {
         this.attendanceRecordService = attendanceRecordService;
     }
 
-    /**
-     * {@code POST  /attendance-records} : Create a new attendanceRecord.
-     *
-     * @param attendanceRecord the attendanceRecord to create.
-     * @return the {@link ResponseEntity} with status {@code 201 (Created)} and with body the new attendanceRecord, or with status {@code 400 (Bad Request)} if the attendanceRecord has already an ID.
-     * @throws URISyntaxException if the Location URI syntax is incorrect.
-     */
     @PostMapping("/attendance-records")
     public ResponseEntity<AttendanceRecord> createAttendanceRecord(@RequestBody AttendanceRecord attendanceRecord) throws URISyntaxException {
         log.debug("REST request to save AttendanceRecord : {}", attendanceRecord);
@@ -65,15 +58,6 @@ public class AttendanceRecordResource {
             .body(result);
     }
 
-    /**
-     * {@code PUT  /attendance-records} : Updates an existing attendanceRecord.
-     *
-     * @param attendanceRecord the attendanceRecord to update.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the updated attendanceRecord,
-     * or with status {@code 400 (Bad Request)} if the attendanceRecord is not valid,
-     * or with status {@code 500 (Internal Server Error)} if the attendanceRecord couldn't be updated.
-     * @throws URISyntaxException if the Location URI syntax is incorrect.
-     */
     @PutMapping("/attendance-records")
     public ResponseEntity<AttendanceRecord> updateAttendanceRecord(@RequestBody AttendanceRecord attendanceRecord) throws URISyntaxException {
         log.debug("REST request to update AttendanceRecord : {}", attendanceRecord);
@@ -86,14 +70,6 @@ public class AttendanceRecordResource {
             .body(result);
     }
 
-    /**
-     * {@code GET  /attendance-records} : get all the attendanceRecords.
-     *
-     * @param pageable the pagination information.
-     * @param queryParams a {@link MultiValueMap} query parameters.
-     * @param uriBuilder a {@link UriComponentsBuilder} URI builder.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of attendanceRecords in body.
-     */
     @GetMapping("/attendance-records")
     public ResponseEntity<List<AttendanceRecord>> getAllAttendanceRecords(Pageable pageable, @RequestParam MultiValueMap<String, String> queryParams, UriComponentsBuilder uriBuilder) {
         log.debug("REST request to get a page of AttendanceRecords");
@@ -102,12 +78,6 @@ public class AttendanceRecordResource {
         return ResponseEntity.ok().headers(headers).body(page.getContent());
     }
 
-    /**
-     * {@code GET  /attendance-records/:id} : get the "id" attendanceRecord.
-     *
-     * @param id the id of the attendanceRecord to retrieve.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the attendanceRecord, or with status {@code 404 (Not Found)}.
-     */
     @GetMapping("/attendance-records/{id}")
     public ResponseEntity<AttendanceRecord> getAttendanceRecord(@PathVariable Long id) {
         log.debug("REST request to get AttendanceRecord : {}", id);
@@ -115,12 +85,6 @@ public class AttendanceRecordResource {
         return ResponseUtil.wrapOrNotFound(attendanceRecord);
     }
 
-    /**
-     * {@code DELETE  /attendance-records/:id} : delete the "id" attendanceRecord.
-     *
-     * @param id the id of the attendanceRecord to delete.
-     * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
-     */
     @DeleteMapping("/attendance-records/{id}")
     public ResponseEntity<Void> deleteAttendanceRecord(@PathVariable Long id) {
         log.debug("REST request to delete AttendanceRecord : {}", id);
@@ -128,11 +92,6 @@ public class AttendanceRecordResource {
         return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, true, ENTITY_NAME, id.toString())).build();
     }
 
-    /**
-     * 通过学生 ID 查找考勤记录
-     * @param stuId
-     * @return
-     */
     @GetMapping("/attendance-record/{stuId}")
     public ResponseEntity<List<AttendanceRecord>> getAttendanceRecordByStuId(@PathVariable Long stuId){
         List<AttendanceRecord> list = attendanceRecordService.findByStuId(stuId);

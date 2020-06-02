@@ -45,13 +45,6 @@ public class AbsenceRecordResource {
         this.absenceRecordService = absenceRecordService;
     }
 
-    /**
-     * {@code POST  /absence-records} : Create a new absenceRecord.
-     *
-     * @param absenceRecord the absenceRecord to create.
-     * @return the {@link ResponseEntity} with status {@code 201 (Created)} and with body the new absenceRecord, or with status {@code 400 (Bad Request)} if the absenceRecord has already an ID.
-     * @throws URISyntaxException if the Location URI syntax is incorrect.
-     */
     @PostMapping("/absence-records")
     public ResponseEntity<AbsenceRecord> createAbsenceRecord(@RequestBody AbsenceRecord absenceRecord) throws URISyntaxException {
         log.debug("REST request to save AbsenceRecord : {}", absenceRecord);
@@ -64,15 +57,6 @@ public class AbsenceRecordResource {
             .body(result);
     }
 
-    /**
-     * {@code PUT  /absence-records} : Updates an existing absenceRecord.
-     *
-     * @param absenceRecord the absenceRecord to update.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the updated absenceRecord,
-     * or with status {@code 400 (Bad Request)} if the absenceRecord is not valid,
-     * or with status {@code 500 (Internal Server Error)} if the absenceRecord couldn't be updated.
-     * @throws URISyntaxException if the Location URI syntax is incorrect.
-     */
     @PutMapping("/absence-records")
     public ResponseEntity<AbsenceRecord> updateAbsenceRecord(@RequestBody AbsenceRecord absenceRecord) throws URISyntaxException {
         log.debug("REST request to update AbsenceRecord : {}", absenceRecord);
@@ -85,14 +69,6 @@ public class AbsenceRecordResource {
             .body(result);
     }
 
-    /**
-     * {@code GET  /absence-records} : get all the absenceRecords.
-     *
-     * @param pageable the pagination information.
-     * @param queryParams a {@link MultiValueMap} query parameters.
-     * @param uriBuilder a {@link UriComponentsBuilder} URI builder.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of absenceRecords in body.
-     */
     @GetMapping("/absence-records")
     public ResponseEntity<List<AbsenceRecord>> getAllAbsenceRecords(Pageable pageable, @RequestParam MultiValueMap<String, String> queryParams, UriComponentsBuilder uriBuilder) {
         log.debug("REST request to get a page of AbsenceRecords");
@@ -101,12 +77,6 @@ public class AbsenceRecordResource {
         return ResponseEntity.ok().headers(headers).body(page.getContent());
     }
 
-    /**
-     * {@code GET  /absence-records/:id} : get the "id" absenceRecord.
-     *
-     * @param id the id of the absenceRecord to retrieve.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the absenceRecord, or with status {@code 404 (Not Found)}.
-     */
     @GetMapping("/absence-records/{id}")
     public ResponseEntity<AbsenceRecord> getAbsenceRecord(@PathVariable Long id) {
         log.debug("REST request to get AbsenceRecord : {}", id);
@@ -114,12 +84,6 @@ public class AbsenceRecordResource {
         return ResponseUtil.wrapOrNotFound(absenceRecord);
     }
 
-    /**
-     * {@code DELETE  /absence-records/:id} : delete the "id" absenceRecord.
-     *
-     * @param id the id of the absenceRecord to delete.
-     * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
-     */
     @DeleteMapping("/absence-records/{id}")
     public ResponseEntity<Void> deleteAbsenceRecord(@PathVariable Long id) {
         log.debug("REST request to delete AbsenceRecord : {}", id);
@@ -127,11 +91,7 @@ public class AbsenceRecordResource {
         return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, true, ENTITY_NAME, id.toString())).build();
     }
 
-    /**
-     * 根据学生 ID 查询 实习缺勤记录
-     * @param stuId
-     * @return
-     */
+
     @GetMapping("/absence-record/{stuId}")
     public  ResponseEntity<List<AbsenceRecord>> getCAbsenceRecordByStuId(@PathVariable Long stuId){
         List<AbsenceRecord> list =  absenceRecordService.findByStuId(stuId);

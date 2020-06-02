@@ -45,13 +45,6 @@ public class InternshipTaskResource {
         this.internshipTaskService = internshipTaskService;
     }
 
-    /**
-     * {@code POST  /internship-tasks} : Create a new internshipTask.
-     *
-     * @param internshipTask the internshipTask to create.
-     * @return the {@link ResponseEntity} with status {@code 201 (Created)} and with body the new internshipTask, or with status {@code 400 (Bad Request)} if the internshipTask has already an ID.
-     * @throws URISyntaxException if the Location URI syntax is incorrect.
-     */
     @PostMapping("/internship-tasks")
     public ResponseEntity<InternshipTask> createInternshipTask(@RequestBody InternshipTask internshipTask) throws URISyntaxException {
         log.debug("REST request to save InternshipTask : {}", internshipTask);
@@ -64,15 +57,6 @@ public class InternshipTaskResource {
             .body(result);
     }
 
-    /**
-     * {@code PUT  /internship-tasks} : Updates an existing internshipTask.
-     *
-     * @param internshipTask the internshipTask to update.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the updated internshipTask,
-     * or with status {@code 400 (Bad Request)} if the internshipTask is not valid,
-     * or with status {@code 500 (Internal Server Error)} if the internshipTask couldn't be updated.
-     * @throws URISyntaxException if the Location URI syntax is incorrect.
-     */
     @PutMapping("/internship-tasks")
     public ResponseEntity<InternshipTask> updateInternshipTask(@RequestBody InternshipTask internshipTask) throws URISyntaxException {
         log.debug("REST request to update InternshipTask : {}", internshipTask);
@@ -85,14 +69,6 @@ public class InternshipTaskResource {
             .body(result);
     }
 
-    /**
-     * {@code GET  /internship-tasks} : get all the internshipTasks.
-     *
-     * @param pageable the pagination information.
-     * @param queryParams a {@link MultiValueMap} query parameters.
-     * @param uriBuilder a {@link UriComponentsBuilder} URI builder.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of internshipTasks in body.
-     */
     @GetMapping("/internship-tasks")
     public ResponseEntity<List<InternshipTask>> getAllInternshipTasks(Pageable pageable, @RequestParam MultiValueMap<String, String> queryParams, UriComponentsBuilder uriBuilder) {
         log.debug("REST request to get a page of InternshipTasks");
@@ -101,12 +77,6 @@ public class InternshipTaskResource {
         return ResponseEntity.ok().headers(headers).body(page.getContent());
     }
 
-    /**
-     * {@code GET  /internship-tasks/:id} : get the "id" internshipTask.
-     *
-     * @param id the id of the internshipTask to retrieve.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the internshipTask, or with status {@code 404 (Not Found)}.
-     */
     @GetMapping("/internship-tasks/{id}")
     public ResponseEntity<InternshipTask> getInternshipTask(@PathVariable Long id) {
         log.debug("REST request to get InternshipTask : {}", id);
@@ -114,12 +84,6 @@ public class InternshipTaskResource {
         return ResponseUtil.wrapOrNotFound(internshipTask);
     }
 
-    /**
-     * {@code DELETE  /internship-tasks/:id} : delete the "id" internshipTask.
-     *
-     * @param id the id of the internshipTask to delete.
-     * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
-     */
     @DeleteMapping("/internship-tasks/{id}")
     public ResponseEntity<Void> deleteInternshipTask(@PathVariable Long id) {
         log.debug("REST request to delete InternshipTask : {}", id);
@@ -127,11 +91,6 @@ public class InternshipTaskResource {
         return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, true, ENTITY_NAME, id.toString())).build();
     }
 
-    /**
-     * 根据实习表 ID 查询实习任务
-     * @param interId
-     * @return
-     */
     @GetMapping("/internship-task/{interId}")
     public ResponseEntity<List<InternshipTask>> getInternshipTaskByInterId(@PathVariable Long interId) {
         List<InternshipTask> list = internshipTaskService.findByInterId(interId);

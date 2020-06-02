@@ -46,13 +46,6 @@ public class StudentResource {
         this.studentService = studentService;
     }
 
-    /**
-     * {@code POST  /students} : Create a new student.
-     *
-     * @param student the student to create.
-     * @return the {@link ResponseEntity} with status {@code 201 (Created)} and with body the new student, or with status {@code 400 (Bad Request)} if the student has already an ID.
-     * @throws URISyntaxException if the Location URI syntax is incorrect.
-     */
     @PostMapping("/students")
     public ResponseEntity<Student> createStudent(@RequestBody Student student) throws URISyntaxException {
         log.debug("REST request to save Student : {}", student);
@@ -65,15 +58,6 @@ public class StudentResource {
             .body(result);
     }
 
-    /**
-     * {@code PUT  /students} : Updates an existing student.
-     *
-     * @param student the student to update.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the updated student,
-     * or with status {@code 400 (Bad Request)} if the student is not valid,
-     * or with status {@code 500 (Internal Server Error)} if the student couldn't be updated.
-     * @throws URISyntaxException if the Location URI syntax is incorrect.
-     */
     @PutMapping("/students")
     public ResponseEntity<Student> updateStudent(@RequestBody Student student) throws URISyntaxException {
         log.debug("REST request to update Student : {}", student);
@@ -86,14 +70,6 @@ public class StudentResource {
             .body(result);
     }
 
-    /**
-     * {@code GET  /students} : get all the students.
-     *
-     * @param pageable    the pagination information.
-     * @param queryParams a {@link MultiValueMap} query parameters.
-     * @param uriBuilder  a {@link UriComponentsBuilder} URI builder.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of students in body.
-     */
     @GetMapping("/students")
     public ResponseEntity<List<Student>> getAllStudents(Pageable pageable, @RequestParam MultiValueMap<String, String> queryParams, UriComponentsBuilder uriBuilder) {
         log.debug("REST request to get a page of Students");
@@ -102,12 +78,6 @@ public class StudentResource {
         return ResponseEntity.ok().headers(headers).body(page.getContent());
     }
 
-    /**
-     * {@code GET  /students/:id} : get the "id" student.
-     *
-     * @param id the id of the student to retrieve.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the student, or with status {@code 404 (Not Found)}.
-     */
     @GetMapping("/students/{id}")
     public ResponseEntity<Student> getStudent(@PathVariable Long id) {
         log.debug("REST request to get Student : {}", id);
@@ -121,12 +91,6 @@ public class StudentResource {
         return ResponseEntity.ok(student);
     }
 
-    /**
-     * {@code DELETE  /students/:id} : delete the "id" student.
-     *
-     * @param id the id of the student to delete.
-     * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
-     */
     @DeleteMapping("/students/{id}")
     public ResponseEntity<Void> deleteStudent(@PathVariable Long id) {
         log.debug("REST request to delete Student : {}", id);

@@ -45,13 +45,6 @@ public class CertificateResource {
         this.certificateService = certificateService;
     }
 
-    /**
-     * {@code POST  /certificates} : Create a new certificate.
-     *
-     * @param certificate the certificate to create.
-     * @return the {@link ResponseEntity} with status {@code 201 (Created)} and with body the new certificate, or with status {@code 400 (Bad Request)} if the certificate has already an ID.
-     * @throws URISyntaxException if the Location URI syntax is incorrect.
-     */
     @PostMapping("/certificates")
     public ResponseEntity<Certificate> createCertificate(@RequestBody Certificate certificate) throws URISyntaxException {
         log.debug("REST request to save Certificate : {}", certificate);
@@ -64,15 +57,6 @@ public class CertificateResource {
             .body(result);
     }
 
-    /**
-     * {@code PUT  /certificates} : Updates an existing certificate.
-     *
-     * @param certificate the certificate to update.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the updated certificate,
-     * or with status {@code 400 (Bad Request)} if the certificate is not valid,
-     * or with status {@code 500 (Internal Server Error)} if the certificate couldn't be updated.
-     * @throws URISyntaxException if the Location URI syntax is incorrect.
-     */
     @PutMapping("/certificates")
     public ResponseEntity<Certificate> updateCertificate(@RequestBody Certificate certificate) throws URISyntaxException {
         log.debug("REST request to update Certificate : {}", certificate);
@@ -85,14 +69,7 @@ public class CertificateResource {
             .body(result);
     }
 
-    /**
-     * {@code GET  /certificates} : get all the certificates.
-     *
-     * @param pageable the pagination information.
-     * @param queryParams a {@link MultiValueMap} query parameters.
-     * @param uriBuilder a {@link UriComponentsBuilder} URI builder.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of certificates in body.
-     */
+
     @GetMapping("/certificates")
     public ResponseEntity<List<Certificate>> getAllCertificates(Pageable pageable, @RequestParam MultiValueMap<String, String> queryParams, UriComponentsBuilder uriBuilder) {
         log.debug("REST request to get a page of Certificates");
@@ -101,12 +78,6 @@ public class CertificateResource {
         return ResponseEntity.ok().headers(headers).body(page.getContent());
     }
 
-    /**
-     * {@code GET  /certificates/:id} : get the "id" certificate.
-     *
-     * @param id the id of the certificate to retrieve.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the certificate, or with status {@code 404 (Not Found)}.
-     */
     @GetMapping("/certificates/{id}")
     public ResponseEntity<Certificate> getCertificate(@PathVariable Long id) {
         log.debug("REST request to get Certificate : {}", id);
@@ -114,12 +85,6 @@ public class CertificateResource {
         return ResponseUtil.wrapOrNotFound(certificate);
     }
 
-    /**
-     * {@code DELETE  /certificates/:id} : delete the "id" certificate.
-     *
-     * @param id the id of the certificate to delete.
-     * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
-     */
     @DeleteMapping("/certificates/{id}")
     public ResponseEntity<Void> deleteCertificate(@PathVariable Long id) {
         log.debug("REST request to delete Certificate : {}", id);
@@ -127,11 +92,6 @@ public class CertificateResource {
         return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, true, ENTITY_NAME, id.toString())).build();
     }
 
-    /**
-     *通过学生 ID 查找证书
-     * @param stuId
-     * @return
-     */
     @GetMapping("/certificate/{stuId}")
     public  ResponseEntity<List<Certificate>> getCertificateByStuId(@PathVariable Long stuId){
         List<Certificate> list = certificateService.findByStuId(stuId);

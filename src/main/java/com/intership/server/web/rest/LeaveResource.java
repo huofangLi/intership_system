@@ -45,13 +45,6 @@ public class LeaveResource {
         this.leaveService = leaveService;
     }
 
-    /**
-     * {@code POST  /leaves} : Create a new leave.
-     *
-     * @param leave the leave to create.
-     * @return the {@link ResponseEntity} with status {@code 201 (Created)} and with body the new leave, or with status {@code 400 (Bad Request)} if the leave has already an ID.
-     * @throws URISyntaxException if the Location URI syntax is incorrect.
-     */
     @PostMapping("/leaves")
     public ResponseEntity<Leave> createLeave(@RequestBody Leave leave) throws URISyntaxException {
         log.debug("REST request to save Leave : {}", leave);
@@ -64,15 +57,6 @@ public class LeaveResource {
             .body(result);
     }
 
-    /**
-     * {@code PUT  /leaves} : Updates an existing leave.
-     *
-     * @param leave the leave to update.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the updated leave,
-     * or with status {@code 400 (Bad Request)} if the leave is not valid,
-     * or with status {@code 500 (Internal Server Error)} if the leave couldn't be updated.
-     * @throws URISyntaxException if the Location URI syntax is incorrect.
-     */
     @PutMapping("/leaves")
     public ResponseEntity<Leave> updateLeave(@RequestBody Leave leave) throws URISyntaxException {
         log.debug("REST request to update Leave : {}", leave);
@@ -85,14 +69,6 @@ public class LeaveResource {
             .body(result);
     }
 
-    /**
-     * {@code GET  /leaves} : get all the leaves.
-     *
-     * @param pageable the pagination information.
-     * @param queryParams a {@link MultiValueMap} query parameters.
-     * @param uriBuilder a {@link UriComponentsBuilder} URI builder.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of leaves in body.
-     */
     @GetMapping("/leaves")
     public ResponseEntity<List<Leave>> getAllLeaves(Pageable pageable, @RequestParam MultiValueMap<String, String> queryParams, UriComponentsBuilder uriBuilder) {
         log.debug("REST request to get a page of Leaves");
@@ -101,12 +77,6 @@ public class LeaveResource {
         return ResponseEntity.ok().headers(headers).body(page.getContent());
     }
 
-    /**
-     * {@code GET  /leaves/:id} : get the "id" leave.
-     *
-     * @param id the id of the leave to retrieve.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the leave, or with status {@code 404 (Not Found)}.
-     */
     @GetMapping("/leaves/{id}")
     public ResponseEntity<Leave> getLeave(@PathVariable Long id) {
         log.debug("REST request to get Leave : {}", id);
@@ -114,12 +84,6 @@ public class LeaveResource {
         return ResponseUtil.wrapOrNotFound(leave);
     }
 
-    /**
-     * {@code DELETE  /leaves/:id} : delete the "id" leave.
-     *
-     * @param id the id of the leave to delete.
-     * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
-     */
     @DeleteMapping("/leaves/{id}")
     public ResponseEntity<Void> deleteLeave(@PathVariable Long id) {
         log.debug("REST request to delete Leave : {}", id);
@@ -127,11 +91,6 @@ public class LeaveResource {
         return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, true, ENTITY_NAME, id.toString())).build();
     }
 
-    /**
-     * 根据学生 ID 查询实习请假记录
-     * @param stuId
-     * @return
-     */
     @GetMapping("/leave/{stuId}")
     public  ResponseEntity<List<Leave>> getLeaveByStuId(@PathVariable Long stuId){
         List<Leave> list = leaveService.findByStuId(stuId);

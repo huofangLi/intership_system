@@ -45,13 +45,6 @@ public class IntershipResource {
         this.intershipService = intershipService;
     }
 
-    /**
-     * {@code POST  /interships} : Create a new intership.
-     *
-     * @param intership the intership to create.
-     * @return the {@link ResponseEntity} with status {@code 201 (Created)} and with body the new intership, or with status {@code 400 (Bad Request)} if the intership has already an ID.
-     * @throws URISyntaxException if the Location URI syntax is incorrect.
-     */
     @PostMapping("/interships")
     public ResponseEntity<Intership> createIntership(@RequestBody Intership intership) throws URISyntaxException {
         log.debug("REST request to save Intership : {}", intership);
@@ -64,15 +57,6 @@ public class IntershipResource {
             .body(result);
     }
 
-    /**
-     * {@code PUT  /interships} : Updates an existing intership.
-     *
-     * @param intership the intership to update.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the updated intership,
-     * or with status {@code 400 (Bad Request)} if the intership is not valid,
-     * or with status {@code 500 (Internal Server Error)} if the intership couldn't be updated.
-     * @throws URISyntaxException if the Location URI syntax is incorrect.
-     */
     @PutMapping("/interships")
     public ResponseEntity<Intership> updateIntership(@RequestBody Intership intership) throws URISyntaxException {
         log.debug("REST request to update Intership : {}", intership);
@@ -85,14 +69,6 @@ public class IntershipResource {
             .body(result);
     }
 
-    /**
-     * {@code GET  /interships} : get all the interships.
-     *
-     * @param pageable the pagination information.
-     * @param queryParams a {@link MultiValueMap} query parameters.
-     * @param uriBuilder a {@link UriComponentsBuilder} URI builder.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of interships in body.
-     */
     @GetMapping("/interships")
     public ResponseEntity<List<Intership>> getAllInterships(Pageable pageable, @RequestParam MultiValueMap<String, String> queryParams, UriComponentsBuilder uriBuilder) {
         log.debug("REST request to get a page of Interships");
@@ -101,12 +77,6 @@ public class IntershipResource {
         return ResponseEntity.ok().headers(headers).body(page.getContent());
     }
 
-    /**
-     * {@code GET  /interships/:id} : get the "id" intership.
-     *
-     * @param id the id of the intership to retrieve.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the intership, or with status {@code 404 (Not Found)}.
-     */
     @GetMapping("/interships/{id}")
     public ResponseEntity<Intership> getIntership(@PathVariable Long id) {
         log.debug("REST request to get Intership : {}", id);
@@ -114,12 +84,6 @@ public class IntershipResource {
         return ResponseUtil.wrapOrNotFound(intership);
     }
 
-    /**
-     * {@code DELETE  /interships/:id} : delete the "id" intership.
-     *
-     * @param id the id of the intership to delete.
-     * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
-     */
     @DeleteMapping("/interships/{id}")
     public ResponseEntity<Void> deleteIntership(@PathVariable Long id) {
         log.debug("REST request to delete Intership : {}", id);

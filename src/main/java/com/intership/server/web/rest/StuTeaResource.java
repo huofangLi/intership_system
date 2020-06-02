@@ -45,13 +45,6 @@ public class StuTeaResource {
         this.stuTeaService = stuTeaService;
     }
 
-    /**
-     * {@code POST  /stu-teas} : Create a new stuTea.
-     *
-     * @param stuTea the stuTea to create.
-     * @return the {@link ResponseEntity} with status {@code 201 (Created)} and with body the new stuTea, or with status {@code 400 (Bad Request)} if the stuTea has already an ID.
-     * @throws URISyntaxException if the Location URI syntax is incorrect.
-     */
     @PostMapping("/stu-teas")
     public ResponseEntity<StuTea> createStuTea(@RequestBody StuTea stuTea) throws URISyntaxException {
         log.debug("REST request to save StuTea : {}", stuTea);
@@ -64,15 +57,6 @@ public class StuTeaResource {
             .body(result);
     }
 
-    /**
-     * {@code PUT  /stu-teas} : Updates an existing stuTea.
-     *
-     * @param stuTea the stuTea to update.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the updated stuTea,
-     * or with status {@code 400 (Bad Request)} if the stuTea is not valid,
-     * or with status {@code 500 (Internal Server Error)} if the stuTea couldn't be updated.
-     * @throws URISyntaxException if the Location URI syntax is incorrect.
-     */
     @PutMapping("/stu-teas")
     public ResponseEntity<StuTea> updateStuTea(@RequestBody StuTea stuTea) throws URISyntaxException {
         log.debug("REST request to update StuTea : {}", stuTea);
@@ -85,14 +69,6 @@ public class StuTeaResource {
             .body(result);
     }
 
-    /**
-     * {@code GET  /stu-teas} : get all the stuTeas.
-     *
-     * @param pageable the pagination information.
-     * @param queryParams a {@link MultiValueMap} query parameters.
-     * @param uriBuilder a {@link UriComponentsBuilder} URI builder.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of stuTeas in body.
-     */
     @GetMapping("/stu-teas")
     public ResponseEntity<List<StuTea>> getAllStuTeas(Pageable pageable, @RequestParam MultiValueMap<String, String> queryParams, UriComponentsBuilder uriBuilder) {
         log.debug("REST request to get a page of StuTeas");
@@ -101,12 +77,6 @@ public class StuTeaResource {
         return ResponseEntity.ok().headers(headers).body(page.getContent());
     }
 
-    /**
-     * {@code GET  /stu-teas/:id} : get the "id" stuTea.
-     *
-     * @param id the id of the stuTea to retrieve.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the stuTea, or with status {@code 404 (Not Found)}.
-     */
     @GetMapping("/stu-teas/{id}")
     public ResponseEntity<StuTea> getStuTea(@PathVariable Long id) {
         log.debug("REST request to get StuTea : {}", id);
@@ -114,12 +84,6 @@ public class StuTeaResource {
         return ResponseUtil.wrapOrNotFound(stuTea);
     }
 
-    /**
-     * {@code DELETE  /stu-teas/:id} : delete the "id" stuTea.
-     *
-     * @param id the id of the stuTea to delete.
-     * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
-     */
     @DeleteMapping("/stu-teas/{id}")
     public ResponseEntity<Void> deleteStuTea(@PathVariable Long id) {
         log.debug("REST request to delete StuTea : {}", id);

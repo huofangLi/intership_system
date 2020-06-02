@@ -45,13 +45,6 @@ public class SharingCenterResource {
         this.sharingCenterService = sharingCenterService;
     }
 
-    /**
-     * {@code POST  /sharing-centers} : Create a new sharingCenter.
-     *
-     * @param sharingCenter the sharingCenter to create.
-     * @return the {@link ResponseEntity} with status {@code 201 (Created)} and with body the new sharingCenter, or with status {@code 400 (Bad Request)} if the sharingCenter has already an ID.
-     * @throws URISyntaxException if the Location URI syntax is incorrect.
-     */
     @PostMapping("/sharing-centers")
     public ResponseEntity<SharingCenter> createSharingCenter(@RequestBody SharingCenter sharingCenter) throws URISyntaxException {
         log.debug("REST request to save SharingCenter : {}", sharingCenter);
@@ -64,15 +57,6 @@ public class SharingCenterResource {
             .body(result);
     }
 
-    /**
-     * {@code PUT  /sharing-centers} : Updates an existing sharingCenter.
-     *
-     * @param sharingCenter the sharingCenter to update.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the updated sharingCenter,
-     * or with status {@code 400 (Bad Request)} if the sharingCenter is not valid,
-     * or with status {@code 500 (Internal Server Error)} if the sharingCenter couldn't be updated.
-     * @throws URISyntaxException if the Location URI syntax is incorrect.
-     */
     @PutMapping("/sharing-centers")
     public ResponseEntity<SharingCenter> updateSharingCenter(@RequestBody SharingCenter sharingCenter) throws URISyntaxException {
         log.debug("REST request to update SharingCenter : {}", sharingCenter);
@@ -85,14 +69,6 @@ public class SharingCenterResource {
             .body(result);
     }
 
-    /**
-     * {@code GET  /sharing-centers} : get all the sharingCenters.
-     *
-     * @param pageable    the pagination information.
-     * @param queryParams a {@link MultiValueMap} query parameters.
-     * @param uriBuilder  a {@link UriComponentsBuilder} URI builder.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of sharingCenters in body.
-     */
     @GetMapping("/sharing-centers")
     public ResponseEntity<List<SharingCenter>> getAllSharingCenters(
         Pageable pageable, @RequestParam MultiValueMap<String, String> queryParams, UriComponentsBuilder uriBuilder) {
@@ -113,12 +89,6 @@ public class SharingCenterResource {
         return ResponseEntity.ok(page);
     }
 
-    /**
-     * {@code GET  /sharing-centers/:id} : get the "id" sharingCenter.
-     *
-     * @param id the id of the sharingCenter to retrieve.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the sharingCenter, or with status {@code 404 (Not Found)}.
-     */
     @GetMapping("/sharing-centers/{id}")
     public ResponseEntity<SharingCenter> getSharingCenter(@PathVariable Long id) {
         log.debug("REST request to get SharingCenter : {}", id);
@@ -126,12 +96,6 @@ public class SharingCenterResource {
         return ResponseUtil.wrapOrNotFound(sharingCenter);
     }
 
-    /**
-     * {@code DELETE  /sharing-centers/:id} : delete the "id" sharingCenter.
-     *
-     * @param id the id of the sharingCenter to delete.
-     * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
-     */
     @DeleteMapping("/sharing-centers/{id}")
     public ResponseEntity<Void> deleteSharingCenter(@PathVariable Long id) {
         log.debug("REST request to delete SharingCenter : {}", id);

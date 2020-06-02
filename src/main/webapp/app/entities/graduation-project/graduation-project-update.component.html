@@ -4,11 +4,11 @@
             <h2 id="jhi-graduation-project-heading" jhiTranslate="intershipSystemApp.graduationProject.home.createOrEditLabel">Create or edit a Graduation Project</h2>
             <div>
                 <jhi-alert-error></jhi-alert-error>
-                <div class="form-group" [hidden]="!editForm.get('id').value">
-                    <label for="id" jhiTranslate="global.field.id">ID</label>
-                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
-                        readonly />
-                </div>
+<!--                <div class="form-group" [hidden]="!editForm.get('id').value">-->
+<!--                    <label for="id" jhiTranslate="global.field.id">ID</label>-->
+<!--                    <input type="text" class="form-control" id="id" name="id" formControlName="id"-->
+<!--                        readonly />-->
+<!--                </div>-->
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="intershipSystemApp.graduationProject.graduationProjectTitle" for="field_graduationProjectTitle">Graduation Project Title</label>
                     <input type="text" class="form-control" name="graduationProjectTitle" id="field_graduationProjectTitle"
@@ -25,11 +25,6 @@
                            formControlName="taskBook"/>
                 </div>
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="intershipSystemApp.graduationProject.taskBookCheck" for="field_taskBookCheck">Task Book Check</label>
-                    <input type="checkbox" class="form-control" name="taskBookCheck" id="field_taskBookCheck"
-                           formControlName="taskBookCheck"/>
-                </div>
-                <div class="form-group">
                     <label class="form-control-label" jhiTranslate="intershipSystemApp.graduationProject.taskBookReviews" for="field_taskBookReviews">Task Book Reviews</label>
                     <input type="text" class="form-control" name="taskBookReviews" id="field_taskBookReviews"
                            formControlName="taskBookReviews"/>
@@ -38,11 +33,6 @@
                     <label class="form-control-label" jhiTranslate="intershipSystemApp.graduationProject.openingReport" for="field_openingReport">Opening Report</label>
                     <input type="text" class="form-control" name="openingReport" id="field_openingReport"
                            formControlName="openingReport"/>
-                </div>
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="intershipSystemApp.graduationProject.openingReportCheck" for="field_openingReportCheck">Opening Report Check</label>
-                    <input type="checkbox" class="form-control" name="openingReportCheck" id="field_openingReportCheck"
-                           formControlName="openingReportCheck"/>
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="intershipSystemApp.graduationProject.openingReportReviews" for="field_openingReportReviews">Opening Report Reviews</label>
@@ -55,11 +45,6 @@
                            formControlName="midTermInspection"/>
                 </div>
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="intershipSystemApp.graduationProject.midTermInspectionCheck" for="field_midTermInspectionCheck">Mid Term Inspection Check</label>
-                    <input type="checkbox" class="form-control" name="midTermInspectionCheck" id="field_midTermInspectionCheck"
-                           formControlName="midTermInspectionCheck"/>
-                </div>
-                <div class="form-group">
                     <label class="form-control-label" jhiTranslate="intershipSystemApp.graduationProject.midTermInspectionReviews" for="field_midTermInspectionReviews">Mid Term Inspection Reviews</label>
                     <input type="text" class="form-control" name="midTermInspectionReviews" id="field_midTermInspectionReviews"
                            formControlName="midTermInspectionReviews"/>
@@ -70,11 +55,6 @@
                            formControlName="firstDraft"/>
                 </div>
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="intershipSystemApp.graduationProject.firstDraftCheck" for="field_firstDraftCheck">First Draft Check</label>
-                    <input type="checkbox" class="form-control" name="firstDraftCheck" id="field_firstDraftCheck"
-                           formControlName="firstDraftCheck"/>
-                </div>
-                <div class="form-group">
                     <label class="form-control-label" jhiTranslate="intershipSystemApp.graduationProject.firstDraftReviews" for="field_firstDraftReviews">First Draft Reviews</label>
                     <input type="text" class="form-control" name="firstDraftReviews" id="field_firstDraftReviews"
                            formControlName="firstDraftReviews"/>
@@ -83,11 +63,6 @@
                     <label class="form-control-label" jhiTranslate="intershipSystemApp.graduationProject.finalDraft" for="field_finalDraft">Final Draft</label>
                     <input type="text" class="form-control" name="finalDraft" id="field_finalDraft"
                            formControlName="finalDraft"/>
-                </div>
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="intershipSystemApp.graduationProject.finalDraftCheck" for="field_finalDraftCheck">Final Draft Check</label>
-                    <input type="checkbox" class="form-control" name="finalDraftCheck" id="field_finalDraftCheck"
-                           formControlName="finalDraftCheck"/>
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="intershipSystemApp.graduationProject.finalDraftReviews" for="field_finalDraftReviews">Final Draft Reviews</label>

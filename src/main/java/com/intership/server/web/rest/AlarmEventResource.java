@@ -45,13 +45,6 @@ public class AlarmEventResource {
         this.alarmEventService = alarmEventService;
     }
 
-    /**
-     * {@code POST  /alarm-events} : Create a new alarmEvent.
-     *
-     * @param alarmEvent the alarmEvent to create.
-     * @return the {@link ResponseEntity} with status {@code 201 (Created)} and with body the new alarmEvent, or with status {@code 400 (Bad Request)} if the alarmEvent has already an ID.
-     * @throws URISyntaxException if the Location URI syntax is incorrect.
-     */
     @PostMapping("/alarm-events")
     public ResponseEntity<AlarmEvent> createAlarmEvent(@RequestBody AlarmEvent alarmEvent) throws URISyntaxException {
         log.debug("REST request to save AlarmEvent : {}", alarmEvent);
@@ -64,15 +57,6 @@ public class AlarmEventResource {
             .body(result);
     }
 
-    /**
-     * {@code PUT  /alarm-events} : Updates an existing alarmEvent.
-     *
-     * @param alarmEvent the alarmEvent to update.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the updated alarmEvent,
-     * or with status {@code 400 (Bad Request)} if the alarmEvent is not valid,
-     * or with status {@code 500 (Internal Server Error)} if the alarmEvent couldn't be updated.
-     * @throws URISyntaxException if the Location URI syntax is incorrect.
-     */
     @PutMapping("/alarm-events")
     public ResponseEntity<AlarmEvent> updateAlarmEvent(@RequestBody AlarmEvent alarmEvent) throws URISyntaxException {
         log.debug("REST request to update AlarmEvent : {}", alarmEvent);
@@ -85,14 +69,6 @@ public class AlarmEventResource {
             .body(result);
     }
 
-    /**
-     * {@code GET  /alarm-events} : get all the alarmEvents.
-     *
-     * @param pageable    the pagination information.
-     * @param queryParams a {@link MultiValueMap} query parameters.
-     * @param uriBuilder  a {@link UriComponentsBuilder} URI builder.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of alarmEvents in body.
-     */
     @GetMapping("/alarm-events")
     public ResponseEntity<List<AlarmEvent>> getAllAlarmEvents(Pageable pageable, @RequestParam MultiValueMap<String, String> queryParams, UriComponentsBuilder uriBuilder) {
         log.debug("REST request to get a page of AlarmEvents");
@@ -101,12 +77,6 @@ public class AlarmEventResource {
         return ResponseEntity.ok().headers(headers).body(page.getContent());
     }
 
-    /**
-     * {@code GET  /alarm-events/:id} : get the "id" alarmEvent.
-     *
-     * @param id the id of the alarmEvent to retrieve.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the alarmEvent, or with status {@code 404 (Not Found)}.
-     */
     @GetMapping("/alarm-events/{id}")
     public ResponseEntity<AlarmEvent> getAlarmEvent(@PathVariable Long id) {
         log.debug("REST request to get AlarmEvent : {}", id);
@@ -120,12 +90,6 @@ public class AlarmEventResource {
         return ResponseEntity.ok(list);
     }
 
-    /**
-     * {@code DELETE  /alarm-events/:id} : delete the "id" alarmEvent.
-     *
-     * @param id the id of the alarmEvent to delete.
-     * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
-     */
     @DeleteMapping("/alarm-events/{id}")
     public ResponseEntity<Void> deleteAlarmEvent(@PathVariable Long id) {
         log.debug("REST request to delete AlarmEvent : {}", id);

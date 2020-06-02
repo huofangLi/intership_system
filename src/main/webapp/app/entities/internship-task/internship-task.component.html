@@ -17,16 +17,16 @@
         <table class="table table-striped">
             <thead>
             <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
-            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+<!--            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>-->
             <th jhiSortBy="taskTitle"><span jhiTranslate="intershipSystemApp.internshipTask.taskTitle">Task Title</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="founder"><span jhiTranslate="intershipSystemApp.internshipTask.founder">Founder</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+<!--            <th jhiSortBy="founder"><span jhiTranslate="intershipSystemApp.internshipTask.founder">Founder</span> <fa-icon [icon]="'sort'"></fa-icon></th>-->
             <th jhiSortBy="startTime"><span jhiTranslate="intershipSystemApp.internshipTask.startTime">Start Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="endTime"><span jhiTranslate="intershipSystemApp.internshipTask.endTime">End Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="importance"><span jhiTranslate="intershipSystemApp.internshipTask.importance">Importance</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="complexity"><span jhiTranslate="intershipSystemApp.internshipTask.complexity">Complexity</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="taskAnnex"><span jhiTranslate="intershipSystemApp.internshipTask.taskAnnex">Task Annex</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="star"><span jhiTranslate="intershipSystemApp.internshipTask.star">Star</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="status"><span jhiTranslate="intershipSystemApp.internshipTask.status">Status</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+<!--            <th jhiSortBy="star"><span jhiTranslate="intershipSystemApp.internshipTask.star">Star</span> <fa-icon [icon]="'sort'"></fa-icon></th>-->
+<!--            <th jhiSortBy="status"><span jhiTranslate="intershipSystemApp.internshipTask.status">Status</span> <fa-icon [icon]="'sort'"></fa-icon></th>-->
             <th jhiSortBy="operating"><span jhiTranslate="intershipSystemApp.internshipTask.operating">Operating</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="createTime"><span jhiTranslate="intershipSystemApp.internshipTask.createTime">Create Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
 <!--            <th jhiSortBy="interId.id"><span jhiTranslate="intershipSystemApp.internshipTask.interId">Inter Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>-->
@@ -35,16 +35,16 @@
             </thead>
             <tbody>
             <tr *ngFor="let internshipTask of internshipTasks ;trackBy: trackId">
-                <td><a [routerLink]="['/internship-task', internshipTask.id, 'view' ]">{{internshipTask.id}}</a></td>
+<!--                <td><a [routerLink]="['/internship-task', internshipTask.id, 'view' ]">{{internshipTask.id}}</a></td>-->
                 <td>{{internshipTask.taskTitle}}</td>
-                <td>{{internshipTask.founder}}</td>
+<!--                <td>{{internshipTask.founder}}</td>-->
                 <td>{{internshipTask.startTime | date:'medium'}}</td>
                 <td>{{internshipTask.endTime | date:'medium'}}</td>
                 <td>{{internshipTask.importance}}</td>
                 <td>{{internshipTask.complexity}}</td>
                 <td>{{internshipTask.taskAnnex}}</td>
-                <td>{{internshipTask.star}}</td>
-                <td>{{internshipTask.status}}</td>
+<!--                <td>{{internshipTask.star}}</td>-->
+<!--                <td>{{internshipTask.status}}</td>-->
                 <td>{{internshipTask.operating}}</td>
                 <td>{{internshipTask.createTime | date:'medium'}}</td>
 <!--                <td>-->

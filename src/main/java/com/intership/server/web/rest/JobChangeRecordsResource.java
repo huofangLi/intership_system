@@ -45,13 +45,6 @@ public class JobChangeRecordsResource {
         this.jobChangeRecordsService = jobChangeRecordsService;
     }
 
-    /**
-     * {@code POST  /job-change-records} : Create a new jobChangeRecords.
-     *
-     * @param jobChangeRecords the jobChangeRecords to create.
-     * @return the {@link ResponseEntity} with status {@code 201 (Created)} and with body the new jobChangeRecords, or with status {@code 400 (Bad Request)} if the jobChangeRecords has already an ID.
-     * @throws URISyntaxException if the Location URI syntax is incorrect.
-     */
     @PostMapping("/job-change-records")
     public ResponseEntity<JobChangeRecords> createJobChangeRecords(@RequestBody JobChangeRecords jobChangeRecords) throws URISyntaxException {
         log.debug("REST request to save JobChangeRecords : {}", jobChangeRecords);
@@ -64,15 +57,6 @@ public class JobChangeRecordsResource {
             .body(result);
     }
 
-    /**
-     * {@code PUT  /job-change-records} : Updates an existing jobChangeRecords.
-     *
-     * @param jobChangeRecords the jobChangeRecords to update.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the updated jobChangeRecords,
-     * or with status {@code 400 (Bad Request)} if the jobChangeRecords is not valid,
-     * or with status {@code 500 (Internal Server Error)} if the jobChangeRecords couldn't be updated.
-     * @throws URISyntaxException if the Location URI syntax is incorrect.
-     */
     @PutMapping("/job-change-records")
     public ResponseEntity<JobChangeRecords> updateJobChangeRecords(@RequestBody JobChangeRecords jobChangeRecords) throws URISyntaxException {
         log.debug("REST request to update JobChangeRecords : {}", jobChangeRecords);
@@ -85,14 +69,6 @@ public class JobChangeRecordsResource {
             .body(result);
     }
 
-    /**
-     * {@code GET  /job-change-records} : get all the jobChangeRecords.
-     *
-     * @param pageable the pagination information.
-     * @param queryParams a {@link MultiValueMap} query parameters.
-     * @param uriBuilder a {@link UriComponentsBuilder} URI builder.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of jobChangeRecords in body.
-     */
     @GetMapping("/job-change-records")
     public ResponseEntity<List<JobChangeRecords>> getAllJobChangeRecords(Pageable pageable, @RequestParam MultiValueMap<String, String> queryParams, UriComponentsBuilder uriBuilder) {
         log.debug("REST request to get a page of JobChangeRecords");
@@ -101,12 +77,6 @@ public class JobChangeRecordsResource {
         return ResponseEntity.ok().headers(headers).body(page.getContent());
     }
 
-    /**
-     * {@code GET  /job-change-records/:id} : get the "id" jobChangeRecords.
-     *
-     * @param id the id of the jobChangeRecords to retrieve.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the jobChangeRecords, or with status {@code 404 (Not Found)}.
-     */
     @GetMapping("/job-change-records/{id}")
     public ResponseEntity<JobChangeRecords> getJobChangeRecords(@PathVariable Long id) {
         log.debug("REST request to get JobChangeRecords : {}", id);
@@ -114,12 +84,6 @@ public class JobChangeRecordsResource {
         return ResponseUtil.wrapOrNotFound(jobChangeRecords);
     }
 
-    /**
-     * {@code DELETE  /job-change-records/:id} : delete the "id" jobChangeRecords.
-     *
-     * @param id the id of the jobChangeRecords to delete.
-     * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
-     */
     @DeleteMapping("/job-change-records/{id}")
     public ResponseEntity<Void> deleteJobChangeRecords(@PathVariable Long id) {
         log.debug("REST request to delete JobChangeRecords : {}", id);

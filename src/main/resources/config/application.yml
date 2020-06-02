@@ -150,10 +150,13 @@ jhipster:
 # ===================================================================
 
 # application:
+security:
+  basic:
+    enabled: false
 
 application:
   file-local:
-    path: D:\JHipsterStudy\uploadFile\
+    path: D:\VueStudy\intership-client\intership-client\src\assets\file\
     prefix: http://127.0.0.1:8080/files/
   oss:
     key: LTAI4FrPSC7xVVHVXvdLFinG

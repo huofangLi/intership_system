@@ -45,13 +45,6 @@ public class GraduationProjectResource {
         this.graduationProjectService = graduationProjectService;
     }
 
-    /**
-     * {@code POST  /graduation-projects} : Create a new graduationProject.
-     *
-     * @param graduationProject the graduationProject to create.
-     * @return the {@link ResponseEntity} with status {@code 201 (Created)} and with body the new graduationProject, or with status {@code 400 (Bad Request)} if the graduationProject has already an ID.
-     * @throws URISyntaxException if the Location URI syntax is incorrect.
-     */
     @PostMapping("/graduation-projects")
     public ResponseEntity<GraduationProject> createGraduationProject(@RequestBody GraduationProject graduationProject) throws URISyntaxException {
         log.debug("REST request to save GraduationProject : {}", graduationProject);
@@ -64,15 +57,6 @@ public class GraduationProjectResource {
             .body(result);
     }
 
-    /**
-     * {@code PUT  /graduation-projects} : Updates an existing graduationProject.
-     *
-     * @param graduationProject the graduationProject to update.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the updated graduationProject,
-     * or with status {@code 400 (Bad Request)} if the graduationProject is not valid,
-     * or with status {@code 500 (Internal Server Error)} if the graduationProject couldn't be updated.
-     * @throws URISyntaxException if the Location URI syntax is incorrect.
-     */
     @PutMapping("/graduation-projects")
     public ResponseEntity<GraduationProject> updateGraduationProject(@RequestBody GraduationProject graduationProject) throws URISyntaxException {
         log.debug("REST request to update GraduationProject : {}", graduationProject);
@@ -85,14 +69,6 @@ public class GraduationProjectResource {
             .body(result);
     }
 
-    /**
-     * {@code GET  /graduation-projects} : get all the graduationProjects.
-     *
-     * @param pageable the pagination information.
-     * @param queryParams a {@link MultiValueMap} query parameters.
-     * @param uriBuilder a {@link UriComponentsBuilder} URI builder.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of graduationProjects in body.
-     */
     @GetMapping("/graduation-projects")
     public ResponseEntity<List<GraduationProject>> getAllGraduationProjects(Pageable pageable, @RequestParam MultiValueMap<String, String> queryParams, UriComponentsBuilder uriBuilder) {
         log.debug("REST request to get a page of GraduationProjects");
@@ -101,12 +77,6 @@ public class GraduationProjectResource {
         return ResponseEntity.ok().headers(headers).body(page.getContent());
     }
 
-    /**
-     * {@code GET  /graduation-projects/:id} : get the "id" graduationProject.
-     *
-     * @param id the id of the graduationProject to retrieve.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the graduationProject, or with status {@code 404 (Not Found)}.
-     */
     @GetMapping("/graduation-projects/{id}")
     public ResponseEntity<GraduationProject> getGraduationProject(@PathVariable Long id) {
         log.debug("REST request to get GraduationProject : {}", id);
@@ -114,12 +84,6 @@ public class GraduationProjectResource {
         return ResponseUtil.wrapOrNotFound(graduationProject);
     }
 
-    /**
-     * {@code DELETE  /graduation-projects/:id} : delete the "id" graduationProject.
-     *
-     * @param id the id of the graduationProject to delete.
-     * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
-     */
     @DeleteMapping("/graduation-projects/{id}")
     public ResponseEntity<Void> deleteGraduationProject(@PathVariable Long id) {
         log.debug("REST request to delete GraduationProject : {}", id);
